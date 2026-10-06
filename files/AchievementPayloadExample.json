@@ -1,0 +1,3898 @@
+{
+  "data": [
+    {
+      "id": "AA302200532",
+      "mis_id": "19557",
+      "type": "RESPECT: Respectful Behaviour",
+      "action": null,
+      "class": null,
+      "subject": null,
+      "points": 1,
+      "total_points": null,
+      "comment": "Excellent behaviour in our PSHE lesson today! Mrs Chapman (added in ClassCharts, 1225713246) [Wonde:A1200265101]",
+      "parents_notified": null,
+      "achievement_date": {
+        "date": "2025-09-03 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "action_date": null,
+      "recorded_date": {
+        "date": "2025-09-03 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "created_at": {
+        "date": "2025-09-03 11:54:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2026-02-14 23:45:41.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "students": {
+        "data": [
+          {
+            "id": "A481365909",
+            "upi": null,
+            "mis_id": "3781",
+            "initials": "IA",
+            "title": null,
+            "surname": "Akande",
+            "forename": "Ismot",
+            "middle_names": "Aramide",
+            "legal_surname": "Akande",
+            "legal_forename": "Ismot",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-05-15 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:19.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-05 19:41:16.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1242369347",
+            "upi": null,
+            "mis_id": "3628",
+            "initials": "PA",
+            "title": null,
+            "surname": "Atkin",
+            "forename": "Poppy",
+            "middle_names": "Lois",
+            "legal_surname": "Atkin",
+            "legal_forename": "Poppy",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-04-25 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:08.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-01 17:38:35.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1428590951",
+            "upi": null,
+            "mis_id": "3652",
+            "initials": "AB",
+            "title": null,
+            "surname": "Bajri",
+            "forename": "Arba",
+            "middle_names": "Arjeta",
+            "legal_surname": "Bajri",
+            "legal_forename": "Arba",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-07-24 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:10.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 17:13:35.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A2025329440",
+            "upi": null,
+            "mis_id": "3734",
+            "initials": "MB",
+            "title": null,
+            "surname": "Bones",
+            "forename": "Mercedes",
+            "middle_names": "Jacqueline Greta",
+            "legal_surname": "Bones",
+            "legal_forename": "Mercedes",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-09-30 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:16.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-01 11:05:06.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1042225916",
+            "upi": null,
+            "mis_id": "3680",
+            "initials": "HB",
+            "title": null,
+            "surname": "Bowyer",
+            "forename": "Harrison",
+            "middle_names": "Scott",
+            "legal_surname": "Bowyer",
+            "legal_forename": "Harrison",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-11-12 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:12.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 13:07:34.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A363453784",
+            "upi": null,
+            "mis_id": "3614",
+            "initials": "MC",
+            "title": null,
+            "surname": "Campbell",
+            "forename": "Mally",
+            "middle_names": "Alexandra",
+            "legal_surname": "Campbell",
+            "legal_forename": "Mally",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-10-11 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:07.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-05 19:41:18.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A408171787",
+            "upi": null,
+            "mis_id": "3588",
+            "initials": "AC",
+            "title": null,
+            "surname": "Chapman",
+            "forename": "Archie",
+            "middle_names": "Terry Leonard",
+            "legal_surname": "Chapman",
+            "legal_forename": "Archie",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-11-07 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:05.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-30 10:13:54.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A2001803575",
+            "upi": null,
+            "mis_id": "3710",
+            "initials": "LD",
+            "title": null,
+            "surname": "Demaertelaere",
+            "forename": "Lenny",
+            "middle_names": "Robert",
+            "legal_surname": "Demaertelaere",
+            "legal_forename": "Lenny",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-02-12 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:14.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-01 17:38:36.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1741199055",
+            "upi": null,
+            "mis_id": "3722",
+            "initials": "ED",
+            "title": null,
+            "surname": "Dodon",
+            "forename": "Emilia",
+            "middle_names": null,
+            "legal_surname": "Dodon",
+            "legal_forename": "Emilia",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-07-04 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:15.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 13:16:01.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A2055044838",
+            "upi": null,
+            "mis_id": "3683",
+            "initials": "LE",
+            "title": null,
+            "surname": "El-Abaire",
+            "forename": "Laith",
+            "middle_names": "Hisham",
+            "legal_surname": "El-Abaire",
+            "legal_forename": "Laith",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-09-05 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:12.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-01 09:04:16.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A843171095",
+            "upi": null,
+            "mis_id": "3636",
+            "initials": "NE",
+            "title": null,
+            "surname": "Evers",
+            "forename": "Nathan",
+            "middle_names": "Samuel George",
+            "legal_surname": "Evers",
+            "legal_forename": "Nathan",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-04-10 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:08.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-05 19:41:17.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1730261775",
+            "upi": null,
+            "mis_id": "3703",
+            "initials": "KI",
+            "title": null,
+            "surname": "Ivanov",
+            "forename": "Kristiyan",
+            "middle_names": "Mariyan",
+            "legal_surname": "Ivanov",
+            "legal_forename": "Kristiyan",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-01-16 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:14.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:31:37.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A50125158",
+            "upi": null,
+            "mis_id": "4382",
+            "initials": "DK",
+            "title": null,
+            "surname": "Kuleshov",
+            "forename": "Daniel",
+            "middle_names": null,
+            "legal_surname": "Kuleshov",
+            "legal_forename": "Daniel",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-11-02 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-08-08 12:50:17.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 13:16:02.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A356163201",
+            "upi": null,
+            "mis_id": "4293",
+            "initials": "CL",
+            "title": null,
+            "surname": "Lal",
+            "forename": "Chaitanya",
+            "middle_names": null,
+            "legal_surname": "Lal",
+            "legal_forename": "Chaitanya",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-07-17 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-05-14 12:51:14.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 12:07:39.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A2141120486",
+            "upi": null,
+            "mis_id": "3761",
+            "initials": "LL",
+            "title": null,
+            "surname": "Larsen",
+            "forename": "Lucas",
+            "middle_names": "James",
+            "legal_surname": "Larsen",
+            "legal_forename": "Lucas",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-12-24 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:18.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-28 15:02:46.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A726537624",
+            "upi": null,
+            "mis_id": "3757",
+            "initials": "HL",
+            "title": null,
+            "surname": "Lawrence",
+            "forename": "Harley",
+            "middle_names": "Albert Charles",
+            "legal_surname": "Lawrence",
+            "legal_forename": "Harley",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-07-05 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:17.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:31:45.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A479769035",
+            "upi": null,
+            "mis_id": "3692",
+            "initials": "RM",
+            "title": null,
+            "surname": "Macpherson",
+            "forename": "Rosie Mae",
+            "middle_names": "Mae",
+            "legal_surname": "Macpherson",
+            "legal_forename": "Rosie Mae",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-05-23 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:13.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-05 14:06:45.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A644291503",
+            "upi": null,
+            "mis_id": "3731",
+            "initials": "BM",
+            "title": null,
+            "surname": "Masterson",
+            "forename": "Betsie-Mae",
+            "middle_names": "Alexandra",
+            "legal_surname": "Masterson",
+            "legal_forename": "Betsie-Mae",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-04-23 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:16.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:31:50.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A544574707",
+            "upi": null,
+            "mis_id": "3775",
+            "initials": "IM",
+            "title": null,
+            "surname": "McNally",
+            "forename": "Isabella-Kate",
+            "middle_names": null,
+            "legal_surname": "McNally",
+            "legal_forename": "Isabella-Kate",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-09-02 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:19.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-30 13:14:48.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1087003459",
+            "upi": null,
+            "mis_id": "3791",
+            "initials": "NN",
+            "title": null,
+            "surname": "Naseer",
+            "forename": "Nehan",
+            "middle_names": null,
+            "legal_surname": "Naseer",
+            "legal_forename": "Nehan",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-02-27 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:20.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:31:56.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1455354232",
+            "upi": null,
+            "mis_id": "3689",
+            "initials": "FN",
+            "title": null,
+            "surname": "Naulls",
+            "forename": "Francis",
+            "middle_names": "Billy",
+            "legal_surname": "Naulls",
+            "legal_forename": "Francis",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-11-25 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:12.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-05 13:14:12.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1630938195",
+            "upi": null,
+            "mis_id": "3746",
+            "initials": "RN",
+            "title": null,
+            "surname": "Niyazi",
+            "forename": "Rome",
+            "middle_names": null,
+            "legal_surname": "Niyazi",
+            "legal_forename": "Rome",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-03-12 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:17.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 06:06:24.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1235058926",
+            "upi": null,
+            "mis_id": "3615",
+            "initials": "TP",
+            "title": null,
+            "surname": "Pearce",
+            "forename": "Tilly",
+            "middle_names": "Alice Doreen",
+            "legal_surname": "Pearce",
+            "legal_forename": "Matilda",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-09-13 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:07.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-30 09:05:00.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1986224429",
+            "upi": null,
+            "mis_id": "3632",
+            "initials": "OS",
+            "title": null,
+            "surname": "Scott",
+            "forename": "Oliver",
+            "middle_names": "Mark",
+            "legal_surname": "Scott",
+            "legal_forename": "Oliver",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-12-16 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:08.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-30 13:14:48.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A511101749",
+            "upi": null,
+            "mis_id": "1733",
+            "initials": "CS",
+            "title": null,
+            "surname": "Sherlock",
+            "forename": "Connor",
+            "middle_names": "Mark James",
+            "legal_surname": "Sherlock",
+            "legal_forename": "Connor",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-08-30 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-04-17 10:50:22.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:32:15.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A2053646843",
+            "upi": null,
+            "mis_id": "3631",
+            "initials": "HS",
+            "title": null,
+            "surname": "Skingsley",
+            "forename": "Hannah",
+            "middle_names": "Gemma",
+            "legal_surname": "Skingsley",
+            "legal_forename": "Hannah",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-12-27 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:08.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-30 13:14:48.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A208358307",
+            "upi": null,
+            "mis_id": "3684",
+            "initials": "KT",
+            "title": null,
+            "surname": "Takem",
+            "forename": "Klen",
+            "middle_names": "Ferdinand",
+            "legal_surname": "Takem",
+            "legal_forename": "Klen",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-11-24 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:12.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 13:07:34.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1978589165",
+            "upi": null,
+            "mis_id": "3574",
+            "initials": "MT",
+            "title": null,
+            "surname": "Turner",
+            "forename": "Matthew",
+            "middle_names": "Richard",
+            "legal_surname": "Turner",
+            "legal_forename": "Matthew",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-09-01 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:04.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:32:32.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1536991894",
+            "upi": null,
+            "mis_id": "3668",
+            "initials": "EW",
+            "title": null,
+            "surname": "Walker",
+            "forename": "Evie",
+            "middle_names": "Kay",
+            "legal_surname": "Walker",
+            "legal_forename": "Evie",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-07-13 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:11.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-01 14:05:14.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A802248970",
+            "upi": null,
+            "mis_id": "3576",
+            "initials": "JY",
+            "title": null,
+            "surname": "Yerlett",
+            "forename": "Jack",
+            "middle_names": "William",
+            "legal_surname": "Yerlett",
+            "legal_forename": "Jack",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-09-15 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:04.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:32:47.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "AA1482877223",
+      "mis_id": "19556",
+      "type": "POTENTIAL: Participation",
+      "action": null,
+      "class": null,
+      "subject": null,
+      "points": 1,
+      "total_points": null,
+      "comment": "Excellent participation during period 3 - well done, great start! (added in ClassCharts, 1225718648) [Wonde:A296277818]",
+      "parents_notified": null,
+      "achievement_date": {
+        "date": "2025-09-03 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "action_date": null,
+      "recorded_date": {
+        "date": "2025-09-03 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "created_at": {
+        "date": "2025-09-03 11:54:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2026-09-06 02:07:46.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "students": {
+        "data": [
+          {
+            "id": "A1213396072",
+            "upi": null,
+            "mis_id": "3732",
+            "initials": "JA",
+            "title": null,
+            "surname": "Aldwinckle",
+            "forename": "Jacob",
+            "middle_names": "Ernest Robert",
+            "legal_surname": "Aldwinckle",
+            "legal_forename": "Jacob",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-03-03 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:16.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-02 12:05:45.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A2139129884",
+            "upi": null,
+            "mis_id": "3670",
+            "initials": "FB",
+            "title": null,
+            "surname": "Baker",
+            "forename": "Frankie",
+            "middle_names": "Keith",
+            "legal_surname": "Baker",
+            "legal_forename": "Frankie",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-11-10 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:11.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 11:07:53.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A287130379",
+            "upi": null,
+            "mis_id": "3749",
+            "initials": "DB",
+            "title": null,
+            "surname": "Birla",
+            "forename": "Dominick",
+            "middle_names": "Andrei",
+            "legal_surname": "Birla",
+            "legal_forename": "Dominick",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-08-17 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:17.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-30 10:13:53.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A525655158",
+            "upi": null,
+            "mis_id": "3756",
+            "initials": "IC",
+            "title": null,
+            "surname": "Carvalho",
+            "forename": "Isabella",
+            "middle_names": "Gunnarsson",
+            "legal_surname": "Carvalho",
+            "legal_forename": "Isabella",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-03-22 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:17.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-30 11:04:46.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A2001588296",
+            "upi": null,
+            "mis_id": "3663",
+            "initials": "HC",
+            "title": null,
+            "surname": "Casey",
+            "forename": "Harry",
+            "middle_names": "John",
+            "legal_surname": "Casey",
+            "legal_forename": "Harry",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-02-13 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:11.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-01 17:38:35.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A383683399",
+            "upi": null,
+            "mis_id": "3742",
+            "initials": "MC",
+            "title": null,
+            "surname": "Crissell",
+            "forename": "Matthew",
+            "middle_names": "James",
+            "legal_surname": "Crissell",
+            "legal_forename": "Matthew",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-03-01 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:16.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:31:11.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1469784231",
+            "upi": null,
+            "mis_id": "3715",
+            "initials": "DD",
+            "title": null,
+            "surname": "Davis",
+            "forename": "Dolly",
+            "middle_names": "Rose",
+            "legal_surname": "Davis",
+            "legal_forename": "Dolly",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-06-27 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:14.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 13:16:01.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A340748861",
+            "upi": null,
+            "mis_id": "3589",
+            "initials": "FE",
+            "title": null,
+            "surname": "Edwards",
+            "forename": "Freddy",
+            "middle_names": null,
+            "legal_surname": "Edwards",
+            "legal_forename": "Freddy",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-12-24 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:05.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-30 10:13:54.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1197913488",
+            "upi": null,
+            "mis_id": "3659",
+            "initials": "KF",
+            "title": null,
+            "surname": "Feltham",
+            "forename": "Kenzie",
+            "middle_names": "Freddie",
+            "legal_surname": "Feltham",
+            "legal_forename": "Kenzie",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-08-17 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:10.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 12:07:39.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1353783042",
+            "upi": null,
+            "mis_id": "3638",
+            "initials": "AG",
+            "title": null,
+            "surname": "Garrod",
+            "forename": "Alvie",
+            "middle_names": "Stephen Flynn",
+            "legal_surname": "Garrod",
+            "legal_forename": "Alvie",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-11-02 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:09.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 13:07:34.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1175638079",
+            "upi": null,
+            "mis_id": "3727",
+            "initials": "CH",
+            "title": null,
+            "surname": "Haines",
+            "forename": "Charlotte",
+            "middle_names": "May",
+            "legal_surname": "Haines",
+            "legal_forename": "Charlotte",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-03-12 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:15.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 17:13:36.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1305194980",
+            "upi": null,
+            "mis_id": "3621",
+            "initials": "JH",
+            "title": null,
+            "surname": "Harrison",
+            "forename": "Jack",
+            "middle_names": "James",
+            "legal_surname": "Harrison",
+            "legal_forename": "Jack",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-12-11 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:07.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 12:07:39.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A410138522",
+            "upi": null,
+            "mis_id": "4219",
+            "initials": "SH",
+            "title": null,
+            "surname": "Harrison",
+            "forename": "Sj",
+            "middle_names": null,
+            "legal_surname": "Harrison",
+            "legal_forename": "Shamar",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-10-26 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-04-17 10:50:22.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 13:16:02.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1243323149",
+            "upi": null,
+            "mis_id": "3726",
+            "initials": "OH",
+            "title": null,
+            "surname": "Higgins",
+            "forename": "Olivia",
+            "middle_names": null,
+            "legal_surname": "Higgins",
+            "legal_forename": "Olivia",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-06-16 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:15.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-01 12:05:49.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1592220546",
+            "upi": null,
+            "mis_id": "3598",
+            "initials": "FJ",
+            "title": null,
+            "surname": "Jiggens",
+            "forename": "Florence",
+            "middle_names": "Anna",
+            "legal_surname": "Jiggens",
+            "legal_forename": "Florence",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-11-09 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:05.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:31:39.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1034915995",
+            "upi": null,
+            "mis_id": "3666",
+            "initials": "BJ",
+            "title": null,
+            "surname": "Joselin",
+            "forename": "Bertie",
+            "middle_names": "Jj Dennis",
+            "legal_surname": "Joselin",
+            "legal_forename": "Albert",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-11-21 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:11.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 13:16:02.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1013325088",
+            "upi": null,
+            "mis_id": "4224",
+            "initials": "JK",
+            "title": null,
+            "surname": "Kolawole",
+            "forename": "Josiah",
+            "middle_names": null,
+            "legal_surname": "Kolawole",
+            "legal_forename": "Josiah",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-02-25 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-04-17 10:50:22.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-28 09:03:10.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1655715498",
+            "upi": null,
+            "mis_id": "3690",
+            "initials": "GN",
+            "title": null,
+            "surname": "Niland",
+            "forename": "George",
+            "middle_names": "Oscar",
+            "legal_surname": "Niland",
+            "legal_forename": "George",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-09-29 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:13.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-28 09:03:10.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A372832866",
+            "upi": null,
+            "mis_id": "3767",
+            "initials": "MP",
+            "title": null,
+            "surname": "Piticariu",
+            "forename": "Matei",
+            "middle_names": "Ioan",
+            "legal_surname": "Piticariu",
+            "legal_forename": "Matei",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-01-20 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:18.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-28 14:03:24.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A410721951",
+            "upi": null,
+            "mis_id": "3774",
+            "initials": "SS",
+            "title": null,
+            "surname": "Singh",
+            "forename": "Simar",
+            "middle_names": "Mundra",
+            "legal_surname": "Singh",
+            "legal_forename": "Simar",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-07-19 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:19.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-02 13:06:34.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A164341879",
+            "upi": null,
+            "mis_id": "3766",
+            "initials": "NT",
+            "title": null,
+            "surname": "Temea",
+            "forename": "Nicholas",
+            "middle_names": "Nicholas",
+            "legal_surname": "Temea",
+            "legal_forename": "Kevin",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-11-07 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:18.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:32:30.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A571514095",
+            "upi": null,
+            "mis_id": "3627",
+            "initials": "GT",
+            "title": null,
+            "surname": "Timbrell",
+            "forename": "Gracie-May",
+            "middle_names": "Anita",
+            "legal_surname": "Timbrell",
+            "legal_forename": "Gracie-May",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-05-27 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:08.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-05 19:41:16.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A91780912",
+            "upi": null,
+            "mis_id": "3607",
+            "initials": "EW",
+            "title": null,
+            "surname": "Watts",
+            "forename": "Emma",
+            "middle_names": "Louise",
+            "legal_surname": "Watts",
+            "legal_forename": "Emma",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-12-30 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:06.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-01 10:05:05.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A431383606",
+            "upi": null,
+            "mis_id": "3613",
+            "initials": "CW",
+            "title": null,
+            "surname": "White",
+            "forename": "Carter",
+            "middle_names": "Henry William",
+            "legal_surname": "White",
+            "legal_forename": "Carter",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-02-18 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:07.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-05 14:06:45.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1347379916",
+            "upi": null,
+            "mis_id": "3733",
+            "initials": "KW",
+            "title": null,
+            "surname": "Whittaker",
+            "forename": "Kylan",
+            "middle_names": "Anthony",
+            "legal_surname": "Whittaker",
+            "legal_forename": "Kylan",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-06-29 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:16.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:32:42.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1091417262",
+            "upi": null,
+            "mis_id": "3798",
+            "initials": "LY",
+            "title": null,
+            "surname": "Yearley",
+            "forename": "Lois",
+            "middle_names": "Eliza",
+            "legal_surname": "Yearley",
+            "legal_forename": "Lois",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-12-15 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:20.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:32:46.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "AA1784202208",
+      "mis_id": "19555",
+      "type": "EFFORT: Attendance and Punctuality",
+      "action": null,
+      "class": null,
+      "subject": null,
+      "points": 1,
+      "total_points": null,
+      "comment": "Great start to year 7 (added in ClassCharts, 1225687978) [Wonde:A890766373]",
+      "parents_notified": null,
+      "achievement_date": {
+        "date": "2025-09-03 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "action_date": null,
+      "recorded_date": {
+        "date": "2025-09-03 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "created_at": {
+        "date": "2025-09-03 11:54:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2026-09-06 02:07:46.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "students": {
+        "data": [
+          {
+            "id": "A1597440683",
+            "upi": null,
+            "mis_id": "3702",
+            "initials": "JA",
+            "title": null,
+            "surname": "Angelo",
+            "forename": "Jake",
+            "middle_names": "Matthew",
+            "legal_surname": "Angelo",
+            "legal_forename": "Jake",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-01-25 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:13.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-05 13:13:49.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1368273218",
+            "upi": null,
+            "mis_id": "3616",
+            "initials": "IA",
+            "title": null,
+            "surname": "Arulmoli",
+            "forename": "Isaac",
+            "middle_names": null,
+            "legal_surname": "Arulmoli",
+            "legal_forename": "Isaac",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-08-11 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:07.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 11:07:53.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1671933620",
+            "upi": null,
+            "mis_id": "3760",
+            "initials": "GA",
+            "title": null,
+            "surname": "Atkins",
+            "forename": "George",
+            "middle_names": "Douglas",
+            "legal_surname": "Atkins",
+            "legal_forename": "George",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-04-13 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:18.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:30:40.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1614767978",
+            "upi": null,
+            "mis_id": "3623",
+            "initials": "HB",
+            "title": null,
+            "surname": "Bagri",
+            "forename": "Harman",
+            "middle_names": "Singh",
+            "legal_surname": "Bagri",
+            "legal_forename": "Harman",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-04-07 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:07.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:30:41.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1400273036",
+            "upi": null,
+            "mis_id": "3752",
+            "initials": "YB",
+            "title": null,
+            "surname": "Bagri",
+            "forename": "Yuvraj",
+            "middle_names": "Singh",
+            "legal_surname": "Bagri",
+            "legal_forename": "Yuvraj",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-04-20 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:17.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:30:41.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A916035250",
+            "upi": null,
+            "mis_id": "3783",
+            "initials": "IC",
+            "title": null,
+            "surname": "Choudhury",
+            "forename": "Is'Haaq",
+            "middle_names": null,
+            "legal_surname": "Choudhury",
+            "legal_forename": "Is'Haaq",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-05-28 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:19.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-05 11:07:27.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1751717459",
+            "upi": null,
+            "mis_id": "3586",
+            "initials": "DC",
+            "title": null,
+            "surname": "Coker",
+            "forename": "Daniel",
+            "middle_names": "Darius Oluwaseun",
+            "legal_surname": "Coker",
+            "legal_forename": "Daniel",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-10-13 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:05.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-01 17:38:20.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1375780994",
+            "upi": null,
+            "mis_id": "3682",
+            "initials": "KD",
+            "title": null,
+            "surname": "Da Silveira",
+            "forename": "Kristian",
+            "middle_names": "Xavier",
+            "legal_surname": "Da Silveira",
+            "legal_forename": "Kristian",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-11-13 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:12.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-30 11:04:46.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1507213301",
+            "upi": null,
+            "mis_id": "3675",
+            "initials": "PE",
+            "title": null,
+            "surname": "Evans",
+            "forename": "Poppy",
+            "middle_names": "Lexi",
+            "legal_surname": "Evans",
+            "legal_forename": "Poppy",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-11-24 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:11.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:31:18.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A583842698",
+            "upi": null,
+            "mis_id": "3700",
+            "initials": "HG",
+            "title": null,
+            "surname": "Gower",
+            "forename": "Hudson",
+            "middle_names": "George",
+            "legal_surname": "Gower",
+            "legal_forename": "Hudson",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-02-28 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:13.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 13:07:34.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A287738358",
+            "upi": null,
+            "mis_id": "3795",
+            "initials": "LH",
+            "title": null,
+            "surname": "Harper",
+            "forename": "Lincoln",
+            "middle_names": null,
+            "legal_surname": "Harper",
+            "legal_forename": "Lincoln",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-12-12 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:20.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-01 17:38:36.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A193926701",
+            "upi": null,
+            "mis_id": "3717",
+            "initials": "IH",
+            "title": null,
+            "surname": "Harvey",
+            "forename": "Izzie",
+            "middle_names": "Amelia",
+            "legal_surname": "Harvey",
+            "legal_forename": "Izzie",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-04-25 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:15.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:31:29.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A867663121",
+            "upi": null,
+            "mis_id": "3713",
+            "initials": "AK",
+            "title": null,
+            "surname": "Kozlowski",
+            "forename": "Abigail",
+            "middle_names": null,
+            "legal_surname": "Kozlowski",
+            "legal_forename": "Abigail",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-01-02 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:14.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:31:43.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A613756463",
+            "upi": null,
+            "mis_id": "3693",
+            "initials": "MM",
+            "title": null,
+            "surname": "Madden",
+            "forename": "Maisie-Rose",
+            "middle_names": null,
+            "legal_surname": "Madden",
+            "legal_forename": "Maisie-Rose",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-02-06 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:13.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:31:47.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A896063703",
+            "upi": null,
+            "mis_id": "3658",
+            "initials": "HM",
+            "title": null,
+            "surname": "Mickley",
+            "forename": "Harry",
+            "middle_names": "James David",
+            "legal_surname": "Mickley",
+            "legal_forename": "Harry",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-06-25 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:10.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-29 11:03:26.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A372749703",
+            "upi": null,
+            "mis_id": "3724",
+            "initials": "RM",
+            "title": null,
+            "surname": "Murray",
+            "forename": "Rowan",
+            "middle_names": "Michael Allan Forrester",
+            "legal_surname": "Murray",
+            "legal_forename": "Rowan",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-08-26 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:15.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:31:55.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1619005907",
+            "upi": null,
+            "mis_id": "3786",
+            "initials": "AR",
+            "title": null,
+            "surname": "Raji",
+            "forename": "Abdul-Sallam",
+            "middle_names": "Oluwayanmife",
+            "legal_surname": "Raji",
+            "legal_forename": "Abdul-Sallam",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-03-09 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:19.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-05 14:06:46.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A335119489",
+            "upi": null,
+            "mis_id": "3718",
+            "initials": "JO",
+            "title": null,
+            "surname": "Ovcinikova",
+            "forename": "Julia",
+            "middle_names": null,
+            "legal_surname": "Ovcinikova",
+            "legal_forename": "Julia",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-12-28 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:15.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-28 15:02:47.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A431729941",
+            "upi": null,
+            "mis_id": "3664",
+            "initials": "JP",
+            "title": null,
+            "surname": "Patston",
+            "forename": "Jacob",
+            "middle_names": "Raymond David",
+            "legal_surname": "Patston",
+            "legal_forename": "Jacob",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-05-06 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:11.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:32:02.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1902611067",
+            "upi": null,
+            "mis_id": "3754",
+            "initials": "JR",
+            "title": null,
+            "surname": "Read",
+            "forename": "Jenson",
+            "middle_names": "Ethan",
+            "legal_surname": "Read",
+            "legal_forename": "Jenson",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-05-23 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:17.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:32:09.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A2067878459",
+            "upi": null,
+            "mis_id": "3612",
+            "initials": "ER",
+            "title": null,
+            "surname": "Reynolds",
+            "forename": "Elijah",
+            "middle_names": "Stephen",
+            "legal_surname": "Reynolds",
+            "legal_forename": "Elijah",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-05-23 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:07.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 13:16:03.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A594726410",
+            "upi": null,
+            "mis_id": "3657",
+            "initials": "MS",
+            "title": null,
+            "surname": "Sidhu",
+            "forename": "Manraj",
+            "middle_names": "Singh",
+            "legal_surname": "Sidhu",
+            "legal_forename": "Manraj",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-11-04 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:10.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 13:07:34.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1320678746",
+            "upi": null,
+            "mis_id": "3591",
+            "initials": "MS",
+            "title": null,
+            "surname": "Smith",
+            "forename": "Maddie K",
+            "middle_names": "Kelsey",
+            "legal_surname": "Smith",
+            "legal_forename": "Maddie",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-01-10 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:05.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-05 12:08:21.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A587601129",
+            "upi": null,
+            "mis_id": "3706",
+            "initials": "GS",
+            "title": null,
+            "surname": "Staron",
+            "forename": "Gaia",
+            "middle_names": "Cristina",
+            "legal_surname": "Staron",
+            "legal_forename": "Gaia",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-01-22 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:14.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-28 14:03:24.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A738767465",
+            "upi": null,
+            "mis_id": "3583",
+            "initials": "HW",
+            "title": null,
+            "surname": "Window",
+            "forename": "Hudson-Blu",
+            "middle_names": null,
+            "legal_surname": "Window",
+            "legal_forename": "Hudson-Blu",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-04-11 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:04.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-01 11:05:06.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A867730428",
+            "upi": null,
+            "mis_id": "3758",
+            "initials": "EZ",
+            "title": null,
+            "surname": "Zideliunaite",
+            "forename": "Elia",
+            "middle_names": null,
+            "legal_surname": "Zideliunaite",
+            "legal_forename": "Elia",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-11-14 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:17.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:32:47.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "AA1829336599",
+      "mis_id": "19558",
+      "type": "RESPECT: Helping Others",
+      "action": null,
+      "class": null,
+      "subject": null,
+      "points": 1,
+      "total_points": null,
+      "comment": "Being helpful and handing out the worksheets (added in ClassCharts, 1225750596) [Wonde:A1198689483]",
+      "parents_notified": null,
+      "achievement_date": {
+        "date": "2025-09-03 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "action_date": null,
+      "recorded_date": {
+        "date": "2025-09-03 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "created_at": {
+        "date": "2025-09-03 12:53:45.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2026-02-14 23:45:41.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "students": {
+        "data": [
+          {
+            "id": "A1116702457",
+            "upi": null,
+            "mis_id": "3738",
+            "initials": "SB",
+            "title": null,
+            "surname": "Boosey",
+            "forename": "Summer",
+            "middle_names": null,
+            "legal_surname": "Boosey",
+            "legal_forename": "Summer",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-06-24 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:16.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:30:47.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1398056423",
+            "upi": null,
+            "mis_id": "3611",
+            "initials": "LM",
+            "title": null,
+            "surname": "McBride",
+            "forename": "Libby",
+            "middle_names": "Marie",
+            "legal_surname": "McBride",
+            "legal_forename": "Libby",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-12-03 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:06.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:31:51.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "AA2131312733",
+      "mis_id": "19559",
+      "type": "EFFORT: Attendance and Punctuality",
+      "action": null,
+      "class": null,
+      "subject": null,
+      "points": 1,
+      "total_points": null,
+      "comment": "Fantastic effort in our transition activities today. Very well done! (added in ClassCharts, 1225981052) [Wonde:A1057301192]",
+      "parents_notified": null,
+      "achievement_date": {
+        "date": "2025-09-03 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "action_date": null,
+      "recorded_date": {
+        "date": "2025-09-03 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "created_at": {
+        "date": "2025-09-03 19:24:58.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2026-02-14 23:45:41.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "students": {
+        "data": [
+          {
+            "id": "A1006599104",
+            "upi": null,
+            "mis_id": "3763",
+            "initials": "KA",
+            "title": null,
+            "surname": "Agada",
+            "forename": "Kye",
+            "middle_names": "Linsford",
+            "legal_surname": "Agada",
+            "legal_forename": "Kye",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-02-04 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:18.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-05 15:06:55.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A12572259",
+            "upi": null,
+            "mis_id": "3780",
+            "initials": "MA",
+            "title": null,
+            "surname": "Ali-Balogun",
+            "forename": "Matthias",
+            "middle_names": "Boluwatife",
+            "legal_surname": "Ali-Balogun",
+            "legal_forename": "Matthias",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-07-21 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:19.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-05 13:13:49.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A84786207",
+            "upi": null,
+            "mis_id": "3655",
+            "initials": "GB",
+            "title": null,
+            "surname": "Beard",
+            "forename": "Grace",
+            "middle_names": "Kimberley",
+            "legal_surname": "Beard",
+            "legal_forename": "Grace",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-09-15 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:10.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:30:44.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A312515137",
+            "upi": null,
+            "mis_id": "3736",
+            "initials": "HB",
+            "title": null,
+            "surname": "Byrne",
+            "forename": "Hannah",
+            "middle_names": "Sophia",
+            "legal_surname": "Byrne",
+            "legal_forename": "Hannah",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-04-30 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:16.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:30:53.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A413660218",
+            "upi": null,
+            "mis_id": "4288",
+            "initials": "KC",
+            "title": null,
+            "surname": "Cave",
+            "forename": "Kyan",
+            "middle_names": null,
+            "legal_surname": "Cave",
+            "legal_forename": "Kyan",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-01-13 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-05-13 10:58:44.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 13:07:34.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A733662397",
+            "upi": null,
+            "mis_id": "3712",
+            "initials": "TD",
+            "title": null,
+            "surname": "Dear",
+            "forename": "Thomas",
+            "middle_names": "Alan",
+            "legal_surname": "Dear",
+            "legal_forename": "Thomas",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-02-05 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:14.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-28 09:03:10.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A449167212",
+            "upi": null,
+            "mis_id": "3601",
+            "initials": "TF",
+            "title": null,
+            "surname": "Fakehinde",
+            "forename": "Tobi",
+            "middle_names": "Immanuel Shali",
+            "legal_surname": "Fakehinde",
+            "legal_forename": "Oluwatobi",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-07-03 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:06.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-30 10:13:54.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A388312449",
+            "upi": null,
+            "mis_id": "3796",
+            "initials": "AG",
+            "title": null,
+            "surname": "Ghatora",
+            "forename": "Aaron",
+            "middle_names": null,
+            "legal_surname": "Ghatora",
+            "legal_forename": "Aaron",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-11-23 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:20.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 13:16:02.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1258670632",
+            "upi": null,
+            "mis_id": "3751",
+            "initials": "EG",
+            "title": null,
+            "surname": "Gize-Uwakwe",
+            "forename": "Ethan",
+            "middle_names": "Nnamdi",
+            "legal_surname": "Gize-Uwakwe",
+            "legal_forename": "Ethan",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-04-14 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:17.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 06:06:24.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1628733866",
+            "upi": null,
+            "mis_id": "3605",
+            "initials": "AG",
+            "title": null,
+            "surname": "Green",
+            "forename": "Abigail",
+            "middle_names": "Janina",
+            "legal_surname": "Green",
+            "legal_forename": "Abigail",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-02-19 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:06.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:31:24.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A886104593",
+            "upi": null,
+            "mis_id": "3790",
+            "initials": "OH",
+            "title": null,
+            "surname": "Hunt",
+            "forename": "Oliver",
+            "middle_names": null,
+            "legal_surname": "Hunt",
+            "legal_forename": "Oliver",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-05-31 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:20.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 12:07:39.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A993924678",
+            "upi": null,
+            "mis_id": "3649",
+            "initials": "LK",
+            "title": null,
+            "surname": "Knight",
+            "forename": "Lexie",
+            "middle_names": "Jeannie Jacqueline",
+            "legal_surname": "Knight",
+            "legal_forename": "Lexie",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-05-14 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:09.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-30 22:09:56.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1295377155",
+            "upi": null,
+            "mis_id": "3650",
+            "initials": "PL",
+            "title": null,
+            "surname": "Lloyd",
+            "forename": "Poppie-May",
+            "middle_names": null,
+            "legal_surname": "Lloyd",
+            "legal_forename": "Poppie-May",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-12-13 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:10.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-01 19:37:39.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A624307648",
+            "upi": null,
+            "mis_id": "3602",
+            "initials": "MM",
+            "title": null,
+            "surname": "Malster",
+            "forename": "Marley",
+            "middle_names": "Kevin James",
+            "legal_surname": "Malster",
+            "legal_forename": "Marley",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-09-26 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:06.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 13:16:02.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1430056737",
+            "upi": null,
+            "mis_id": "3745",
+            "initials": "AM",
+            "title": null,
+            "surname": "Maracineanu",
+            "forename": "Antonia",
+            "middle_names": "Gabriela",
+            "legal_surname": "Maracineanu",
+            "legal_forename": "Antonia",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-04-03 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:17.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 14:01:27.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A2047593632",
+            "upi": null,
+            "mis_id": "3772",
+            "initials": "HM",
+            "title": null,
+            "surname": "Masood",
+            "forename": "Hassan",
+            "middle_names": null,
+            "legal_surname": "Masood",
+            "legal_forename": "Hassan",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-05-11 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:18.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:31:50.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1900625073",
+            "upi": null,
+            "mis_id": "3662",
+            "initials": "BM",
+            "title": null,
+            "surname": "Mitchell",
+            "forename": "Buddy",
+            "middle_names": "Love",
+            "legal_surname": "Mitchell",
+            "legal_forename": "Buddy",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-03-07 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:10.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-30 22:09:56.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A2018334735",
+            "upi": null,
+            "mis_id": "3779",
+            "initials": "AM",
+            "title": null,
+            "surname": "Murphy",
+            "forename": "Athena",
+            "middle_names": "Mae",
+            "legal_surname": "Murphy",
+            "legal_forename": "Athena",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-09-20 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:19.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:31:55.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1538601040",
+            "upi": null,
+            "mis_id": "3759",
+            "initials": "EO",
+            "title": null,
+            "surname": "O'Sullivan",
+            "forename": "Ethan",
+            "middle_names": "Peter",
+            "legal_surname": "O'Sullivan",
+            "legal_forename": "Ethan",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-07-05 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:18.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-05 14:06:45.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A132425910",
+            "upi": null,
+            "mis_id": "3575",
+            "initials": "LM",
+            "title": null,
+            "surname": "Melody Patch",
+            "forename": "Leonardo",
+            "middle_names": "Paul",
+            "legal_surname": "Melody Patch",
+            "legal_forename": "Leonardo",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-09-01 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:04.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-05 19:41:17.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A85593049",
+            "upi": null,
+            "mis_id": "3748",
+            "initials": "SP",
+            "title": null,
+            "surname": "Phillips",
+            "forename": "Scarlett",
+            "middle_names": "Lacey",
+            "legal_surname": "Phillips",
+            "legal_forename": "Scarlett",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-06-16 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:17.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:32:03.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1701598537",
+            "upi": null,
+            "mis_id": "3753",
+            "initials": "LP",
+            "title": null,
+            "surname": "Pilvinis",
+            "forename": "Lukas",
+            "middle_names": null,
+            "legal_surname": "Pilvinis",
+            "legal_forename": "Lukas",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-02-17 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:17.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:32:04.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1295591918",
+            "upi": null,
+            "mis_id": "3701",
+            "initials": "JP",
+            "title": null,
+            "surname": "Pittaway",
+            "forename": "Jak",
+            "middle_names": "Rhys",
+            "legal_surname": "Pittaway",
+            "legal_forename": "Jak",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2013-11-19 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:13.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 13:16:03.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1809475192",
+            "upi": null,
+            "mis_id": "3765",
+            "initials": "YR",
+            "title": null,
+            "surname": "Rahman",
+            "forename": "Yathrib",
+            "middle_names": null,
+            "legal_surname": "Rahman",
+            "legal_forename": "Yathrib",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-01-24 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:18.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:32:08.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1311364398",
+            "upi": null,
+            "mis_id": "4264",
+            "initials": "NS",
+            "title": null,
+            "surname": "Stitt-Richards",
+            "forename": "Niall",
+            "middle_names": null,
+            "legal_surname": "Stitt-Richards",
+            "legal_forename": "Niall",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-06-22 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-04-28 10:50:59.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-05 12:08:22.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A584171625",
+            "upi": null,
+            "mis_id": "3743",
+            "initials": "ET",
+            "title": null,
+            "surname": "Thomas",
+            "forename": "Erin",
+            "middle_names": "Rosemary",
+            "legal_surname": "Thomas",
+            "legal_forename": "Erin",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-05-28 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:16.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:32:30.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A1545255605",
+            "upi": null,
+            "mis_id": "3770",
+            "initials": "RT",
+            "title": null,
+            "surname": "Trickett",
+            "forename": "Robyn",
+            "middle_names": "Emily Aimee",
+            "legal_surname": "Trickett",
+            "legal_forename": "Robyn",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-07-30 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:18.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-05 15:06:54.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          },
+          {
+            "id": "A153062856",
+            "upi": null,
+            "mis_id": "3704",
+            "initials": "LW",
+            "title": null,
+            "surname": "Woodham",
+            "forename": "Luke",
+            "middle_names": "Paul",
+            "legal_surname": "Woodham",
+            "legal_forename": "Luke",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2014-02-22 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2025-03-13 13:06:14.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-09-25 13:32:46.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "points": 1
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "next": "https://api.wonde.com/v1.0/schools/A1500477229/achievements?per_page=5&include=students&achievement_date_after=2025-09-01&page=2",
+      "previous": null,
+      "more": true,
+      "per_page": 5,
+      "current_page": 1
+    },
+    "includes": [
+      "employees",
+      "students"
+    ]
+  }
+}
