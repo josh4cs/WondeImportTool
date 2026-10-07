@@ -64,6 +64,13 @@ internal class Program
             var pageSize = GetPositiveConfigurationValue(config["Wonde:AchievementPageSize"], "Wonde:AchievementPageSize");
             var batchSize = GetPositiveConfigurationValue(config["Wonde:AchievementBatchSize"], "Wonde:AchievementBatchSize");
 
+
+            Console.WriteLine("Schools import started.");
+            await svc.GetSchoolsAsync(cts.Token);
+            Console.WriteLine("Schools import completed.");
+
+
+
             Console.WriteLine("Achievements import started.");
             await svc.GetAchievementsAsync(schoolIds, achievementStartDate, pageSize, batchSize, cts.Token);
             Console.WriteLine("Achievements import completed.");
