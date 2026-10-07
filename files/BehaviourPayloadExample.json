@@ -1,0 +1,397 @@
+{
+  "data": [
+    {
+      "id": "A905514503",
+      "mis_id": "34874",
+      "type": "Missing Pupil",
+      "action": null,
+      "points": 0,
+      "total_points": null,
+      "comment": "(added in ClassCharts, 1417767047) [Wonde:A277342389]",
+      "parents_notified": null,
+      "location": null,
+      "class": null,
+      "subject": null,
+      "status": "Resolved",
+      "incident_date": {
+        "date": "2026-09-03 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "action_date": null,
+      "bullying_type": null,
+      "recorded_date": {
+        "date": "2026-09-03 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "sensitivity": null,
+      "created_at": {
+        "date": "2026-09-03 09:54:15.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2026-09-03 09:54:15.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "students": {
+        "data": [
+          {
+            "id": "A1625677666",
+            "upi": null,
+            "mis_id": "3259",
+            "initials": "KS",
+            "title": null,
+            "surname": "Slade",
+            "forename": "Kathleen",
+            "middle_names": null,
+            "legal_surname": "Slade",
+            "legal_forename": "Kathleen",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2010-11-04 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2024-05-07 07:59:59.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 15:07:14.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "role": "Aggressor",
+              "action": null,
+              "points": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "A1571487310",
+      "mis_id": "34875",
+      "type": "Missing Pupil",
+      "action": null,
+      "points": 0,
+      "total_points": null,
+      "comment": "(added in ClassCharts, 1417845894) [Wonde:A335417460]",
+      "parents_notified": null,
+      "location": null,
+      "class": null,
+      "subject": null,
+      "status": "Resolved",
+      "incident_date": {
+        "date": "2026-09-03 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "action_date": null,
+      "bullying_type": null,
+      "recorded_date": {
+        "date": "2026-09-03 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "sensitivity": null,
+      "created_at": {
+        "date": "2026-09-03 10:54:47.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2026-09-03 10:54:47.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "students": {
+        "data": [
+          {
+            "id": "A193255122",
+            "upi": null,
+            "mis_id": "1123",
+            "initials": "JF",
+            "title": null,
+            "surname": "Frost",
+            "forename": "Jayden",
+            "middle_names": "Mark",
+            "legal_surname": "Frost",
+            "legal_forename": "Jayden",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2011-04-02 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2022-03-17 18:25:39.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 14:08:39.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "role": "Aggressor",
+              "action": null,
+              "points": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "A1228217492",
+      "mis_id": "34876",
+      "type": "Missing Pupil",
+      "action": null,
+      "points": 0,
+      "total_points": null,
+      "comment": "(added in ClassCharts, 1417854719) [Wonde:A1710989943]",
+      "parents_notified": null,
+      "location": null,
+      "class": null,
+      "subject": null,
+      "status": "Resolved",
+      "incident_date": {
+        "date": "2026-09-03 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "action_date": null,
+      "bullying_type": null,
+      "recorded_date": {
+        "date": "2026-09-03 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "sensitivity": null,
+      "created_at": {
+        "date": "2026-09-03 11:54:49.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2026-09-03 11:54:49.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "students": {
+        "data": [
+          {
+            "id": "A1625677666",
+            "upi": null,
+            "mis_id": "3259",
+            "initials": "KS",
+            "title": null,
+            "surname": "Slade",
+            "forename": "Kathleen",
+            "middle_names": null,
+            "legal_surname": "Slade",
+            "legal_forename": "Kathleen",
+            "gender": "FEMALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2010-11-04 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2024-05-07 07:59:59.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 15:07:14.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "role": "Aggressor",
+              "action": null,
+              "points": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "A1160533446",
+      "mis_id": "34877",
+      "type": "On-Call from Lesson",
+      "action": null,
+      "points": 1,
+      "total_points": null,
+      "comment": "Left lesson without permission. (added in ClassCharts, 1417941722) [Wonde:A1260377227]",
+      "parents_notified": null,
+      "location": null,
+      "class": null,
+      "subject": null,
+      "status": "Resolved",
+      "incident_date": {
+        "date": "2026-09-03 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "action_date": null,
+      "bullying_type": null,
+      "recorded_date": {
+        "date": "2026-09-03 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "sensitivity": null,
+      "created_at": {
+        "date": "2026-09-03 11:54:49.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2026-09-03 11:54:49.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "students": {
+        "data": [
+          {
+            "id": "A1640871389",
+            "upi": null,
+            "mis_id": "1140",
+            "initials": "FH",
+            "title": null,
+            "surname": "Hoar",
+            "forename": "Frankie",
+            "middle_names": "William",
+            "legal_surname": "Hoar",
+            "legal_forename": "Frankie",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2011-08-17 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2022-03-17 18:25:39.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-05 12:08:23.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "role": "Participant",
+              "action": null,
+              "points": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "A1136332682",
+      "mis_id": "34879",
+      "type": "Isolation (To be added by SRA ONLY)",
+      "action": null,
+      "points": 1,
+      "total_points": null,
+      "comment": "had a warning, then not following hands on (added in ClassCharts, 1418250240) [Wonde:A1385191372]",
+      "parents_notified": null,
+      "location": null,
+      "class": null,
+      "subject": null,
+      "status": "Resolved",
+      "incident_date": {
+        "date": "2026-09-03 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "action_date": null,
+      "bullying_type": null,
+      "recorded_date": {
+        "date": "2026-09-03 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "sensitivity": null,
+      "created_at": {
+        "date": "2026-09-03 13:15:21.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2026-09-03 13:15:21.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "students": {
+        "data": [
+          {
+            "id": "A193255122",
+            "upi": null,
+            "mis_id": "1123",
+            "initials": "JF",
+            "title": null,
+            "surname": "Frost",
+            "forename": "Jayden",
+            "middle_names": "Mark",
+            "legal_surname": "Frost",
+            "legal_forename": "Jayden",
+            "gender": "MALE",
+            "gender_identity": null,
+            "date_of_birth": {
+              "date": "2011-04-02 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "Europe/London"
+            },
+            "restored_at": null,
+            "created_at": {
+              "date": "2022-03-17 18:25:39.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-10-06 14:08:39.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "role": "Perpetrator",
+              "action": null,
+              "points": 1
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "next": "https://api.wonde.com/v1.0/schools/A1500477229/behaviours?per_page=5&include=students&incident_date_after=2026-09-01&page=2",
+      "previous": null,
+      "more": true,
+      "per_page": 5,
+      "current_page": 1
+    },
+    "includes": [
+      "employees",
+      "students"
+    ]
+  }
+}

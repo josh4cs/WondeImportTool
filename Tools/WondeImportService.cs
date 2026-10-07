@@ -240,6 +240,268 @@ namespace WondeImportTool.Tools
             Console.WriteLine("Achievement staging merge completed.");
         }
 
+        public async Task GetBehavioursAsync(
+            IReadOnlyCollection<string> schoolIds,
+            DateTime behaviourStartDate,
+            int pageSize,
+            int batchSize,
+            CancellationToken cancellationToken = default)
+        {
+            ArgumentNullException.ThrowIfNull(schoolIds);
+
+            if (schoolIds.Count == 0)
+            {
+                throw new ArgumentException("At least one school ID is required.", nameof(schoolIds));
+            }
+
+            if (pageSize <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(pageSize));
+            }
+
+            if (batchSize <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(batchSize));
+            }
+
+            using var client = new HttpClient();
+            await using var connection = new SqlConnection(_connectionString);
+            await connection.OpenAsync(cancellationToken).ConfigureAwait(false);
+            await AcquireBehaviourImportLockAsync(connection, cancellationToken).ConfigureAwait(false);
+            await TruncateBehaviourStagingAsync(connection, cancellationToken).ConfigureAwait(false);
+
+            var behaviourRows = CreateBehaviourTable();
+            var studentRows = CreateBehaviourStudentTable();
+
+            foreach (var schoolId in schoolIds)
+            {
+                if (string.IsNullOrWhiteSpace(schoolId))
+                {
+                    throw new ArgumentException("School IDs cannot be empty.", nameof(schoolIds));
+                }
+
+                var pageUri = BuildBehavioursUri(schoolId, behaviourStartDate, pageSize);
+                var pageNumber = 0;
+
+                while (pageUri is not null)
+                {
+                    cancellationToken.ThrowIfCancellationRequested();
+
+                    using var request = new HttpRequestMessage(HttpMethod.Get, pageUri);
+                    request.Headers.Add("Authorization", _apiKey);
+
+                    using var response = await client.SendAsync(request, cancellationToken).ConfigureAwait(false);
+                    response.EnsureSuccessStatusCode();
+
+                    var json = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    var page = WondeModels.WondeBehaviour.FromJson(json)
+                        ?? throw new InvalidOperationException($"Wonde returned an empty behaviour response for school {schoolId}.");
+
+                    pageNumber++;
+                    Console.WriteLine($"School {schoolId}: received behaviour page {pageNumber} containing {page.data?.Count ?? 0} records.");
+                    AddBehaviourRows(schoolId, page.data, behaviourRows, studentRows);
+
+                    if (behaviourRows.Rows.Count >= batchSize)
+                    {
+                        await WriteBehaviourBatchAsync(connection, behaviourRows, studentRows, cancellationToken).ConfigureAwait(false);
+                    }
+
+                    if (page.meta?.pagination is null)
+                    {
+                        throw new InvalidOperationException($"Wonde response for school {schoolId} did not include behaviour pagination metadata.");
+                    }
+
+                    if (!page.meta.pagination.more)
+                    {
+                        pageUri = null;
+                    }
+                    else if (page.meta.pagination.next is null)
+                    {
+                        throw new InvalidOperationException($"Wonde response for school {schoolId} indicated more behaviour pages but did not provide a next URL.");
+                    }
+                    else
+                    {
+                        pageUri = page.meta.pagination.next;
+                    }
+                }
+            }
+
+            await WriteBehaviourBatchAsync(connection, behaviourRows, studentRows, cancellationToken).ConfigureAwait(false);
+            await MergeBehaviourStagingAsync(connection, cancellationToken).ConfigureAwait(false);
+        }
+
+        private static Uri BuildBehavioursUri(string schoolId, DateTime behaviourStartDate, int pageSize)
+        {
+            var query = string.Join(
+                "&",
+                $"per_page={pageSize.ToString(CultureInfo.InvariantCulture)}",
+                "include=students",
+                $"incident_date_after={Uri.EscapeDataString(behaviourStartDate.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture))}");
+
+            return new Uri($"https://api.wonde.com/v1.0/schools/{Uri.EscapeDataString(schoolId)}/behaviours?{query}");
+        }
+
+        private static DataTable CreateBehaviourTable()
+        {
+            var table = new DataTable();
+            table.Columns.Add("school_id", typeof(string));
+            table.Columns.Add("id", typeof(string));
+            table.Columns.Add("behaviour_type", typeof(string));
+            table.Columns.Add("location", typeof(string));
+            table.Columns.Add("subject", typeof(string));
+            table.Columns.Add("class", typeof(string));
+            table.Columns.Add("status", typeof(string));
+            table.Columns.Add("action", typeof(string));
+            table.Columns.Add("comment", typeof(string));
+            table.Columns.Add("parents_notified", typeof(string));
+            table.Columns.Add("points", typeof(int));
+            table.Columns.Add("incident_date", typeof(DateTime));
+            table.Columns.Add("action_date", typeof(DateTime));
+            table.Columns.Add("created_on", typeof(DateTime));
+            table.Columns.Add("recorded_on", typeof(DateTime));
+            table.Columns.Add("updated_on", typeof(DateTime));
+            table.Columns.Add("imported_on", typeof(DateTime));
+            return table;
+        }
+
+        private static DataTable CreateBehaviourStudentTable()
+        {
+            var table = new DataTable();
+            table.Columns.Add("school_id", typeof(string));
+            table.Columns.Add("id", typeof(string));
+            table.Columns.Add("student_id", typeof(string));
+            table.Columns.Add("points", typeof(int));
+            table.Columns.Add("points_meta", typeof(int));
+            return table;
+        }
+
+        private static void AddBehaviourRows(
+            string schoolId,
+            IReadOnlyCollection<WondeModels.WondeBehaviourDatum>? behaviours,
+            DataTable behaviourRows,
+            DataTable studentRows)
+        {
+            if (behaviours is null)
+            {
+                return;
+            }
+
+            foreach (var behaviour in behaviours)
+            {
+                var behaviourId = RequiredString(behaviour.id, "behaviour id", 50);
+                var behaviourRow = behaviourRows.NewRow();
+                behaviourRow["school_id"] = RequiredString(schoolId, "school ID", 50);
+                behaviourRow["id"] = behaviourId;
+                behaviourRow["behaviour_type"] = NullableString(behaviour.type, "behaviour type", 100);
+                behaviourRow["location"] = NullableString(behaviour.location, "behaviour location", 100);
+                behaviourRow["subject"] = NullableString(behaviour.subject, "behaviour subject", 100);
+                behaviourRow["class"] = NullableString(behaviour.@class, "behaviour class", 100);
+                behaviourRow["status"] = NullableString(behaviour.status, "behaviour status", 100);
+                behaviourRow["action"] = NullableString(ToStringValue(behaviour.action), "behaviour action", 100);
+                behaviourRow["comment"] = NullableString(behaviour.comment, "behaviour comment", int.MaxValue);
+                behaviourRow["parents_notified"] = NullableString(ToStringValue(behaviour.parents_notified), "parents notified", 100) ?? (object)DBNull.Value;
+                behaviourRow["points"] = ToSqlInt32(behaviour.points, "behaviour points");
+                behaviourRow["incident_date"] = ToDbValue(ToSqlDateTime(behaviour.incident_date));
+                behaviourRow["action_date"] = ToDbValue(ToSqlDateTime(behaviour.action_date));
+                behaviourRow["created_on"] = ToDbValue(ToSqlDateTime(behaviour.created_at));
+                behaviourRow["recorded_on"] = ToDbValue(ToSqlDateTime(behaviour.recorded_date));
+                behaviourRow["updated_on"] = ToDbValue(ToSqlDateTime(behaviour.updated_at));
+                behaviourRow["imported_on"] = DateTime.UtcNow;
+                behaviourRows.Rows.Add(behaviourRow);
+
+                if (behaviour.students?.data is null)
+                {
+                    continue;
+                }
+
+                foreach (var student in behaviour.students.data)
+                {
+                    var studentRow = studentRows.NewRow();
+                    studentRow["school_id"] = RequiredString(schoolId, "school ID", 50);
+                    studentRow["id"] = behaviourId;
+                    studentRow["student_id"] = NullableString(student.id, "student ID", 50);
+                    studentRow["points"] = ToSqlInt32(behaviour.points, "behaviour points");
+                    studentRow["points_meta"] = student.meta is null
+                        ? DBNull.Value
+                        : ToSqlInt32(student.meta.points, "behaviour student points metadata");
+                    studentRows.Rows.Add(studentRow);
+                }
+            }
+        }
+
+        private static async Task AcquireBehaviourImportLockAsync(SqlConnection connection, CancellationToken cancellationToken)
+        {
+            await using var command = new SqlCommand(
+                "DECLARE @result int; EXEC @result = sp_getapplock @Resource = N'WondeImportTool.BehaviourImport', @LockMode = N'Exclusive', @LockOwner = N'Session', @LockTimeout = 0; SELECT @result;",
+                connection);
+
+            var result = Convert.ToInt32(await command.ExecuteScalarAsync(cancellationToken).ConfigureAwait(false), CultureInfo.InvariantCulture);
+            if (result < 0)
+            {
+                throw new InvalidOperationException($"Another behaviour import is already running (sp_getapplock returned {result}).");
+            }
+        }
+
+        private static async Task TruncateBehaviourStagingAsync(SqlConnection connection, CancellationToken cancellationToken)
+        {
+            await using var command = new SqlCommand(
+                "TRUNCATE TABLE [dbo].[behaviours_students_insert]; TRUNCATE TABLE [dbo].[behaviours_table_insert];",
+                connection);
+            command.CommandTimeout = 120;
+            await command.ExecuteNonQueryAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        private static async Task WriteBehaviourBatchAsync(
+            SqlConnection connection,
+            DataTable behaviourRows,
+            DataTable studentRows,
+            CancellationToken cancellationToken)
+        {
+            if (behaviourRows.Rows.Count == 0)
+            {
+                return;
+            }
+
+            var behaviourCount = behaviourRows.Rows.Count;
+            var studentCount = studentRows.Rows.Count;
+
+            using (var behaviourCopy = new SqlBulkCopy(connection))
+            {
+                behaviourCopy.DestinationTableName = "[dbo].[behaviours_table_insert]";
+                behaviourCopy.BatchSize = behaviourCount;
+                behaviourCopy.BulkCopyTimeout = 600;
+                AddColumnMappings(behaviourCopy, behaviourRows);
+                await behaviourCopy.WriteToServerAsync(behaviourRows, cancellationToken).ConfigureAwait(false);
+            }
+
+            if (studentCount > 0)
+            {
+                using var studentCopy = new SqlBulkCopy(connection);
+                studentCopy.DestinationTableName = "[dbo].[behaviours_students_insert]";
+                studentCopy.BatchSize = studentCount;
+                studentCopy.BulkCopyTimeout = 600;
+                AddColumnMappings(studentCopy, studentRows);
+                await studentCopy.WriteToServerAsync(studentRows, cancellationToken).ConfigureAwait(false);
+            }
+
+            behaviourRows.Clear();
+            studentRows.Clear();
+            Console.WriteLine($"Staged {behaviourCount} behaviours and {studentCount} behaviour student rows.");
+        }
+
+        private static async Task MergeBehaviourStagingAsync(SqlConnection connection, CancellationToken cancellationToken)
+        {
+            var scriptPath = Path.Combine(AppContext.BaseDirectory, "files", "BehaviourMerge.sql");
+            var script = await File.ReadAllTextAsync(scriptPath, cancellationToken).ConfigureAwait(false);
+
+            await using var command = new SqlCommand(script, connection)
+            {
+                CommandTimeout = 600
+            };
+            await command.ExecuteNonQueryAsync(cancellationToken).ConfigureAwait(false);
+            Console.WriteLine("Behaviour staging merge completed.");
+        }
+
         private static void AddColumnMappings(SqlBulkCopy bulkCopy, DataTable table)
         {
             foreach (DataColumn column in table.Columns)
@@ -372,6 +634,11 @@ namespace WondeImportTool.Tools
         }
 
         private static DateTime? ToSqlDateTime(WondeModels.AchievementDate? value)
+        {
+            return value?.date.UtcDateTime;
+        }
+
+        private static DateTime? ToSqlDateTime(WondeModels.CreatedAt? value)
         {
             return value?.date.UtcDateTime;
         }

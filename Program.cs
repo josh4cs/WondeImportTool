@@ -65,15 +65,19 @@ internal class Program
             var batchSize = GetPositiveConfigurationValue(config["Wonde:AchievementBatchSize"], "Wonde:AchievementBatchSize");
 
 
-            Console.WriteLine("Schools import started.");
-            await svc.GetSchoolsAsync(cts.Token);
-            Console.WriteLine("Schools import completed.");
+            //Console.WriteLine("Schools import started.");
+            //await svc.GetSchoolsAsync(cts.Token);
+            //Console.WriteLine("Schools import completed.");
 
 
 
             Console.WriteLine("Achievements import started.");
             await svc.GetAchievementsAsync(schoolIds, achievementStartDate, pageSize, batchSize, cts.Token);
             Console.WriteLine("Achievements import completed.");
+
+            Console.WriteLine("Behaviours import started.");
+            await svc.GetBehavioursAsync(schoolIds, achievementStartDate, pageSize, batchSize, cts.Token);
+            Console.WriteLine("Behaviours import completed.");
         }
         catch (OperationCanceledException)
         {
