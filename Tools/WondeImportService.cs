@@ -77,6 +77,303 @@ namespace WondeImportTool.Tools
             }
         }
 
+        public async Task GetStudentsAsync(
+            IReadOnlyCollection<string> schoolIds,
+            string academicYear,
+            int pageSize,
+            int batchSize,
+            CancellationToken cancellationToken = default)
+        {
+            ValidateStudentImportArguments(schoolIds, academicYear, pageSize, batchSize);
+
+            using var client = new HttpClient();
+            await using var connection = new SqlConnection(_connectionString);
+            await connection.OpenAsync(cancellationToken).ConfigureAwait(false);
+            await TruncateStudentStagingAsync(connection, cancellationToken).ConfigureAwait(false);
+
+            var studentRows = CreateStudentImportTable();
+            var groupRows = CreateGroupStudentTable();
+
+            foreach (var schoolId in schoolIds)
+            {
+                var pageUri = BuildStudentsUri(schoolId, pageSize);
+                while (pageUri is not null)
+                {
+                    cancellationToken.ThrowIfCancellationRequested();
+                    using var request = new HttpRequestMessage(HttpMethod.Get, pageUri);
+                    request.Headers.Add("Authorization", _apiKey);
+                    using var response = await client.SendAsync(request, cancellationToken).ConfigureAwait(false);
+                    response.EnsureSuccessStatusCode();
+
+                    var json = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    var page = WondeModels.WondeStudent.FromJson(json)
+                        ?? throw new InvalidOperationException($"Wonde returned an empty student response for school {schoolId}.");
+
+                    AddStudentRows(schoolId, academicYear, page.data, studentRows, groupRows);
+                    if (studentRows.Rows.Count >= batchSize)
+                    {
+                        await WriteStudentBatchAsync(connection, studentRows, groupRows, cancellationToken).ConfigureAwait(false);
+                    }
+
+                    pageUri = GetNextPageUri(page.meta?.pagination, schoolId, "student");
+                }
+            }
+
+            await WriteStudentBatchAsync(connection, studentRows, groupRows, cancellationToken).ConfigureAwait(false);
+            await MergeStudentStagingAsync(connection, cancellationToken).ConfigureAwait(false);
+        }
+
+        public async Task GetStudentLeaversAsync(
+            IReadOnlyCollection<string> schoolIds,
+            string academicYear,
+            int pageSize,
+            int batchSize,
+            CancellationToken cancellationToken = default)
+        {
+            ValidateStudentImportArguments(schoolIds, academicYear, pageSize, batchSize);
+
+            using var client = new HttpClient();
+            await using var connection = new SqlConnection(_connectionString);
+            await connection.OpenAsync(cancellationToken).ConfigureAwait(false);
+            await TruncateLeaverStagingAsync(connection, cancellationToken).ConfigureAwait(false);
+
+            var leaverRows = CreateStudentImportTable();
+            var groupRows = CreateGroupStudentTable();
+            var cdbsRows = CreateLeaverCdbsTable();
+
+            foreach (var schoolId in schoolIds)
+            {
+                var pageUri = BuildStudentLeaversUri(schoolId, pageSize);
+                while (pageUri is not null)
+                {
+                    cancellationToken.ThrowIfCancellationRequested();
+                    using var request = new HttpRequestMessage(HttpMethod.Get, pageUri);
+                    request.Headers.Add("Authorization", _apiKey);
+                    using var response = await client.SendAsync(request, cancellationToken).ConfigureAwait(false);
+                    response.EnsureSuccessStatusCode();
+
+                    var json = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    var page = WondeModels.WondeStudent.FromJson(json)
+                        ?? throw new InvalidOperationException($"Wonde returned an empty student-leaver response for school {schoolId}.");
+
+                    AddStudentRows(schoolId, academicYear, page.data, leaverRows, groupRows);
+                    if (page.data is not null)
+                    {
+                        foreach (var student in page.data)
+                        {
+                            var cdbsRow = cdbsRows.NewRow();
+                            cdbsRow["school_id"] = schoolId;
+                            cdbsRow["student_id"] = ToDbValue(student.id);
+                            cdbsRow["N00595"] = ToDbValue(student.cbds?.data?.N00595);
+                            cdbsRows.Rows.Add(cdbsRow);
+                        }
+                    }
+
+                    if (leaverRows.Rows.Count >= batchSize)
+                    {
+                        await WriteLeaverBatchAsync(connection, leaverRows, groupRows, cdbsRows, cancellationToken).ConfigureAwait(false);
+                    }
+
+                    pageUri = GetNextPageUri(page.meta?.pagination, schoolId, "student-leaver");
+                }
+            }
+
+            await WriteLeaverBatchAsync(connection, leaverRows, groupRows, cdbsRows, cancellationToken).ConfigureAwait(false);
+            await MergeLeaverStagingAsync(connection, cancellationToken).ConfigureAwait(false);
+        }
+
+        private static Uri BuildStudentLeaversUri(string schoolId, int pageSize) =>
+            new($"https://api.wonde.com/v1.0/schools/{Uri.EscapeDataString(schoolId)}/students-leaver?per_page={pageSize.ToString(CultureInfo.InvariantCulture)}&include=groups,education_details,extended_details,cbds");
+
+        private static DataTable CreateLeaverCdbsTable()
+        {
+            var table = new DataTable();
+            table.Columns.Add("school_id", typeof(string));
+            table.Columns.Add("student_id", typeof(string));
+            table.Columns.Add("N00595", typeof(string));
+            return table;
+        }
+
+        private static async Task TruncateLeaverStagingAsync(SqlConnection connection, CancellationToken cancellationToken)
+        {
+            await using var command = new SqlCommand(
+                "TRUNCATE TABLE [dbo].[student_leaver_insert]; TRUNCATE TABLE [dbo].[student_leaver_cdbs_insert]; TRUNCATE TABLE [dbo].[groups_students_insert];", connection);
+            command.CommandTimeout = 120;
+            await command.ExecuteNonQueryAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        private static async Task WriteLeaverBatchAsync(
+            SqlConnection connection,
+            DataTable leaverRows,
+            DataTable groupRows,
+            DataTable cdbsRows,
+            CancellationToken cancellationToken)
+        {
+            if (leaverRows.Rows.Count == 0) return;
+
+            using (var leaverCopy = new SqlBulkCopy(connection) { DestinationTableName = "[dbo].[student_leaver_insert]", BatchSize = leaverRows.Rows.Count, BulkCopyTimeout = 600 })
+            {
+                AddColumnMappings(leaverCopy, leaverRows);
+                await leaverCopy.WriteToServerAsync(leaverRows, cancellationToken).ConfigureAwait(false);
+            }
+
+            if (groupRows.Rows.Count > 0)
+            {
+                using var groupCopy = new SqlBulkCopy(connection) { DestinationTableName = "[dbo].[groups_students_insert]", BatchSize = groupRows.Rows.Count, BulkCopyTimeout = 600 };
+                AddColumnMappings(groupCopy, groupRows);
+                await groupCopy.WriteToServerAsync(groupRows, cancellationToken).ConfigureAwait(false);
+            }
+
+            if (cdbsRows.Rows.Count > 0)
+            {
+                using var cdbsCopy = new SqlBulkCopy(connection) { DestinationTableName = "[dbo].[student_leaver_cdbs_insert]", BatchSize = cdbsRows.Rows.Count, BulkCopyTimeout = 600 };
+                AddColumnMappings(cdbsCopy, cdbsRows);
+                await cdbsCopy.WriteToServerAsync(cdbsRows, cancellationToken).ConfigureAwait(false);
+            }
+
+            leaverRows.Clear(); groupRows.Clear(); cdbsRows.Clear();
+        }
+
+        private static async Task MergeLeaverStagingAsync(SqlConnection connection, CancellationToken cancellationToken)
+        {
+            var script = await File.ReadAllTextAsync(Path.Combine(AppContext.BaseDirectory, "files", "StudentLeaverMerge.sql"), cancellationToken).ConfigureAwait(false);
+            await using var command = new SqlCommand(script, connection) { CommandTimeout = 600 };
+            await command.ExecuteNonQueryAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        private static void ValidateStudentImportArguments(
+            IReadOnlyCollection<string> schoolIds,
+            string academicYear,
+            int pageSize,
+            int batchSize)
+        {
+            ArgumentNullException.ThrowIfNull(schoolIds);
+            if (schoolIds.Count == 0) throw new ArgumentException("At least one school ID is required.", nameof(schoolIds));
+            if (string.IsNullOrWhiteSpace(academicYear)) throw new ArgumentException("Academic year is required.", nameof(academicYear));
+            if (academicYear.Length > 50) throw new ArgumentException("Academic year cannot exceed 50 characters.", nameof(academicYear));
+            if (pageSize <= 0) throw new ArgumentOutOfRangeException(nameof(pageSize));
+            if (batchSize <= 0) throw new ArgumentOutOfRangeException(nameof(batchSize));
+        }
+
+        private static Uri BuildStudentsUri(string schoolId, int pageSize) =>
+            new($"https://api.wonde.com/v1.0/schools/{Uri.EscapeDataString(schoolId)}/students?per_page={pageSize.ToString(CultureInfo.InvariantCulture)}&include=groups,education_details,extended_details");
+
+        private static Uri? GetNextPageUri(WondeModels.WondeStudent_Pagination? pagination, string schoolId, string endpointName)
+        {
+            if (pagination is null) throw new InvalidOperationException($"Wonde response for school {schoolId} did not include {endpointName} pagination metadata.");
+            if (!pagination.more) return null;
+            return pagination.next ?? throw new InvalidOperationException($"Wonde response for school {schoolId} indicated more {endpointName} pages but did not provide a next URL.");
+        }
+
+        private static async Task TruncateStudentStagingAsync(SqlConnection connection, CancellationToken cancellationToken)
+        {
+            await using var command = new SqlCommand(
+                "TRUNCATE TABLE [dbo].[students_insert]; TRUNCATE TABLE [dbo].[groups_students_insert];", connection);
+            command.CommandTimeout = 120;
+            await command.ExecuteNonQueryAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        private static DataTable CreateStudentImportTable()
+        {
+            var table = new DataTable();
+            foreach (var column in new[] { "school_id", "academic_year", "id", "upi", "mis_id", "initials", "title", "surname", "forename", "middle_names", "legal_surname", "legal_forename", "gender", "gender_identity" }) table.Columns.Add(column, typeof(string));
+            table.Columns.Add("date_of_birth", typeof(DateTime));
+            foreach (var column in new[] { "restored_at", "created_at", "updated_at" }) table.Columns.Add(column, typeof(DateTime));
+            foreach (var column in new[] { "admission_number", "upn", "local_upn", "former_upn", "learner_number", "current_nc_year", "part_time", "part_time_rate" }) table.Columns.Add(column, typeof(string));
+            foreach (var column in new[] { "admission_date", "leaving_date" }) table.Columns.Add(column, typeof(DateTime));
+            foreach (var column in new[] { "next_of_kin", "religion", "ethnicity", "ethnicity_code", "nationality", "birth_place", "custody_alert", "custody_details", "dietary_needs", "paramedical_support", "sen_status", "first_language", "marital_status" }) table.Columns.Add(column, typeof(string));
+            foreach (var column in new[] { "in_lea_care", "ever_in_care", "free_school_meals", "free_school_meals_6", "english_as_additional_language" }) table.Columns.Add(column, typeof(bool));
+            foreach (var column in new[] { "english_as_additional_language_status", "premium_pupil_notes", "enrolment_status" }) table.Columns.Add(column, typeof(string));
+            foreach (var column in new[] { "premium_pupil_indicator", "premium_pupil_eligible", "service_children_indicator" }) table.Columns.Add(column, typeof(bool));
+            foreach (var column in new[] { "enrolment_start_date", "enrolment_end_date" }) table.Columns.Add(column, typeof(DateTime));
+            table.Columns.Add("gifted_and_talented_status", typeof(bool));
+            foreach (var column in new[] { "national_insurance_number", "application_status", "boarding_status", "permanent_resident", "in_care_details", "general_notes", "leaver_destination", "fsm_review_date", "youth_support_services_agreement", "responsible_care_authority", "home_language" }) table.Columns.Add(column, typeof(string));
+            foreach (var column in new[] { "child_protection_plan", "child_in_need" }) table.Columns.Add(column, typeof(bool));
+            table.Columns.Add("imported_at", typeof(DateTime));
+            return table;
+        }
+
+        private static DataTable CreateGroupStudentTable()
+        {
+            var table = new DataTable();
+            table.Columns.Add("school_id", typeof(string));
+            table.Columns.Add("student_id", typeof(string));
+            table.Columns.Add("group_id", typeof(string));
+            table.Columns.Add("start_date", typeof(DateTime));
+            table.Columns.Add("end_date", typeof(DateTime));
+            table.Columns.Add("imported_at", typeof(DateTime));
+            return table;
+        }
+
+        private static void AddStudentRows(
+            string schoolId,
+            string academicYear,
+            IReadOnlyCollection<WondeModels.WondeStudent_obj>? students,
+            DataTable studentRows,
+            DataTable groupRows)
+        {
+            if (students is null) return;
+            foreach (var student in students)
+            {
+                var education = student.education_details?.data;
+                var extended = student.extended_details?.data;
+                var row = studentRows.NewRow();
+                row["school_id"] = schoolId;
+                row["academic_year"] = academicYear;
+                row["id"] = ToDbValue(NullableString(student.id, "student ID", 50));
+                row["upi"] = ToDbValue(NullableString(student.upi, "upi", 50));
+                row["mis_id"] = ToDbValue(NullableString(student.mis_id, "mis ID", 50));
+                row["initials"] = ToDbValue(NullableString(student.initials, "initials", 50));
+                row["title"] = ToDbValue(student.title); row["surname"] = ToDbValue(student.surname); row["forename"] = ToDbValue(student.forename); row["middle_names"] = ToDbValue(student.middle_names); row["legal_surname"] = ToDbValue(student.legal_surname); row["legal_forename"] = ToDbValue(student.legal_forename);
+                row["gender"] = ToDbValue(student.gender); row["gender_identity"] = ToDbValue(student.gender_identity);
+                row["date_of_birth"] = ToDbValue(ToSqlDateTime(student.date_of_birth)?.Date); row["restored_at"] = ToDbValue(ToSqlDateTime(student.restored_at)); row["created_at"] = ToDbValue(ToSqlDateTime(student.created_at)); row["updated_at"] = ToDbValue(ToSqlDateTime(student.updated_at));
+                row["admission_number"] = ToDbValue(education?.admission_number); row["upn"] = ToDbValue(education?.upn); row["local_upn"] = ToDbValue(education?.local_upn); row["former_upn"] = ToDbValue(education?.former_upn); row["learner_number"] = ToDbValue(education?.learner_number); row["current_nc_year"] = ToDbValue(education?.current_nc_year); row["part_time"] = ToDbValue(education?.part_time?.ToString()); row["part_time_rate"] = ToDbValue(education?.part_time_rate);
+                row["admission_date"] = ToDbValue(ToSqlDateTime(education?.admission_date)?.Date); row["leaving_date"] = ToDbValue(ToSqlDateTime(education?.leaving_date)?.Date);
+                SetExtendedStudentValues(row, extended);
+                row["imported_at"] = DateTime.UtcNow;
+                studentRows.Rows.Add(row);
+
+                if (student.groups?.data is null) continue;
+                foreach (var group in student.groups.data)
+                {
+                    var groupRow = groupRows.NewRow();
+                    groupRow["school_id"] = schoolId; groupRow["student_id"] = ToDbValue(student.id); groupRow["group_id"] = ToDbValue(group.id);
+                    groupRow["start_date"] = ToDbValue(ToSqlDateTime(group.meta?.start_date)); groupRow["end_date"] = ToDbValue(ToSqlDateTime(group.meta?.end_date)); groupRow["imported_at"] = DateTime.UtcNow;
+                    groupRows.Rows.Add(groupRow);
+                }
+            }
+        }
+
+        private static void SetExtendedStudentValues(DataRow row, WondeModels.WondeStudent_ExtendedDetailsData? value)
+        {
+            var strings = new (string, string?)[ ] { ("next_of_kin", value?.next_of_kin), ("religion", value?.religion), ("ethnicity", value?.ethnicity), ("ethnicity_code", value?.ethnicity_code), ("nationality", value?.nationality), ("birth_place", value?.birth_place), ("custody_alert", value?.custody_alert), ("custody_details", value?.custody_details), ("dietary_needs", value?.dietary_needs), ("paramedical_support", value?.paramedical_support), ("sen_status", value?.sen_status), ("first_language", value?.first_language), ("marital_status", value?.marital_status), ("english_as_additional_language_status", value?.english_as_additional_language_status), ("premium_pupil_notes", value?.premium_pupil_notes), ("enrolment_status", value?.enrolment_status), ("national_insurance_number", value?.national_insurance_number), ("application_status", value?.application_status), ("boarding_status", value?.boarding_status), ("permanent_resident", value?.permanent_resident), ("in_care_details", value?.in_care_details), ("general_notes", value?.general_notes), ("leaver_destination", value?.leaver_destination), ("fsm_review_date", value?.fsm_review_date), ("youth_support_services_agreement", value?.youth_support_services_agreement), ("responsible_care_authority", value?.responsible_care_authority), ("home_language", value?.home_language) };
+            foreach (var (name, item) in strings) row[name] = ToDbValue(item);
+            foreach (var (name, item) in new (string, bool?)[ ] { ("in_lea_care", value?.in_lea_care), ("ever_in_care", value?.ever_in_care), ("free_school_meals", value?.free_school_meals), ("free_school_meals_6", value?.free_school_meals_6), ("english_as_additional_language", value?.english_as_additional_language), ("premium_pupil_indicator", value?.premium_pupil_indicator), ("premium_pupil_eligible", value?.premium_pupil_eligible), ("service_children_indicator", value?.service_children_indicator), ("gifted_and_talented_status", value?.gifted_and_talented_status), ("child_protection_plan", value?.child_protection_plan), ("child_in_need", value?.child_in_need) }) row[name] = ToDbValue(item);
+            row["enrolment_start_date"] = ToDbValue(ToSqlDateTime(value?.enrolment_start_date)?.Date); row["enrolment_end_date"] = ToDbValue(ToSqlDateTime(value?.enrolment_end_date)?.Date);
+        }
+
+        private static async Task WriteStudentBatchAsync(SqlConnection connection, DataTable studentRows, DataTable groupRows, CancellationToken cancellationToken)
+        {
+            if (studentRows.Rows.Count == 0) return;
+            using var studentCopy = new SqlBulkCopy(connection) { DestinationTableName = "[dbo].[students_insert]", BatchSize = studentRows.Rows.Count, BulkCopyTimeout = 600 };
+            AddColumnMappings(studentCopy, studentRows);
+            await studentCopy.WriteToServerAsync(studentRows, cancellationToken).ConfigureAwait(false);
+            if (groupRows.Rows.Count > 0)
+            {
+                using var groupCopy = new SqlBulkCopy(connection) { DestinationTableName = "[dbo].[groups_students_insert]", BatchSize = groupRows.Rows.Count, BulkCopyTimeout = 600 };
+                AddColumnMappings(groupCopy, groupRows);
+                await groupCopy.WriteToServerAsync(groupRows, cancellationToken).ConfigureAwait(false);
+            }
+            studentRows.Clear(); groupRows.Clear();
+        }
+
+        private static async Task MergeStudentStagingAsync(SqlConnection connection, CancellationToken cancellationToken)
+        {
+            var script = await File.ReadAllTextAsync(Path.Combine(AppContext.BaseDirectory, "files", "StudentMerge.sql"), cancellationToken).ConfigureAwait(false);
+            await using var command = new SqlCommand(script, connection) { CommandTimeout = 600 };
+            await command.ExecuteNonQueryAsync(cancellationToken).ConfigureAwait(false);
+        }
+
         public async Task GetAchievementsAsync(
             IReadOnlyCollection<string> schoolIds,
             DateTime achievementStartDate,
@@ -400,7 +697,7 @@ namespace WondeImportTool.Tools
                 behaviourRow["action"] = NullableString(ToStringValue(behaviour.action), "behaviour action", 100);
                 behaviourRow["comment"] = NullableString(behaviour.comment, "behaviour comment", int.MaxValue);
                 behaviourRow["parents_notified"] = NullableString(ToStringValue(behaviour.parents_notified), "parents notified", 100) ?? (object)DBNull.Value;
-                behaviourRow["points"] = ToSqlInt32(behaviour.points, "behaviour points");
+                behaviourRow["points"] = ToSqlInt32(behaviour.points ?? 0, "behaviour points");
                 behaviourRow["incident_date"] = ToDbValue(ToSqlDateTime(behaviour.incident_date));
                 behaviourRow["action_date"] = ToDbValue(ToSqlDateTime(behaviour.action_date));
                 behaviourRow["created_on"] = ToDbValue(ToSqlDateTime(behaviour.created_at));
@@ -420,10 +717,10 @@ namespace WondeImportTool.Tools
                     studentRow["school_id"] = RequiredString(schoolId, "school ID", 50);
                     studentRow["id"] = behaviourId;
                     studentRow["student_id"] = NullableString(student.id, "student ID", 50);
-                    studentRow["points"] = ToSqlInt32(behaviour.points, "behaviour points");
+                    studentRow["points"] = ToSqlInt32(behaviour.points ?? 0, "behaviour points");
                     studentRow["points_meta"] = student.meta is null
                         ? DBNull.Value
-                        : ToSqlInt32(student.meta.points, "behaviour student points metadata");
+                        : ToSqlInt32(student.meta.points ?? 0, "behaviour student points metadata");
                     studentRows.Rows.Add(studentRow);
                 }
             }
@@ -563,7 +860,7 @@ namespace WondeImportTool.Tools
                 achievementRow["action"] = NullableString(ToStringValue(achievement.action), "action", 100);
                 achievementRow["subject"] = NullableString(achievement.subject, "subject", 100);
                 achievementRow["class"] = NullableString(achievement.@class, "class", 100);
-                achievementRow["points"] = ToSqlInt32(achievement.points, "achievement points");
+                achievementRow["points"] = ToSqlInt32(achievement.points ?? 0, "achievement points");
                 achievementRow["comments"] = NullableString(achievement.comment, "comments", int.MaxValue);
                 achievementRow["parents_notified"] = ToDbValue(ToNullableBoolean(achievement.parents_notified));
                 achievementRow["achievement_date"] = ToDbValue(ToSqlDateTime(achievement.achievement_date));
@@ -585,10 +882,10 @@ namespace WondeImportTool.Tools
                     studentRow["school_id"] = RequiredString(schoolId, "school ID", 50);
                     studentRow["id"] = achievementId;
                     studentRow["student_id"] = NullableString(student.id, "student ID", 50);
-                    studentRow["points"] = ToSqlInt32(achievement.points, "achievement points");
+                    studentRow["points"] = ToSqlInt32(achievement.points ?? 0, "achievement points");
                     studentRow["points_meta"] = student.meta is null
                         ? DBNull.Value
-                        : ToSqlInt32(student.meta.points, "student points metadata");
+                        : ToSqlInt32(student.meta.points ?? 0, "student points metadata");
                     studentRows.Rows.Add(studentRow);
                 }
             }
@@ -641,6 +938,11 @@ namespace WondeImportTool.Tools
         private static DateTime? ToSqlDateTime(WondeModels.CreatedAt? value)
         {
             return value?.date.UtcDateTime;
+        }
+
+        private static DateTime? ToSqlDateTime(WondeModels.WondeStudent_CreatedAt? value)
+        {
+            return value?.date.ToUniversalTime();
         }
 
         private static bool? ToNullableBoolean(object? value)

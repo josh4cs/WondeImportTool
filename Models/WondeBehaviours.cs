@@ -39,7 +39,7 @@ namespace WondeModels
         public object action { get; set; }
 
         [JsonProperty("points")]
-        public long points { get; set; }
+        public long? points { get; set; }
 
         [JsonProperty("total_points")]
         public object total_points { get; set; }
@@ -168,7 +168,7 @@ namespace WondeModels
         public object action { get; set; }
 
         [JsonProperty("points")]
-        public long points { get; set; }
+        public long? points { get; set; }
     }
 
     public partial class WondeBehaviourMeta

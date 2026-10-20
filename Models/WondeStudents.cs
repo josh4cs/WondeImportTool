@@ -86,8 +86,25 @@ namespace WondeModels
 
         [JsonProperty("sen_needs")]
         public WondeStudent_SenNeeds sen_needs { get; set; }
+
+        [JsonProperty("cbds")]
+        public Cbds cbds { get; set; }
     }
 
+
+
+    public partial class Cbds
+    {
+        [JsonProperty("data")]
+        public CDBSData data { get; set; }
+    }
+
+    public partial class CDBSData
+    {
+
+        [JsonProperty("N00595")]
+        public string N00595 { get; set; }
+    }
 
     public partial class WondeStudent_Groups
     {
@@ -179,7 +196,7 @@ namespace WondeModels
         public string current_nc_year { get; set; }
 
         [JsonProperty("part_time")]
-        public string part_time { get; set; }
+        public bool? part_time { get; set; }
 
         [JsonProperty("part_time_rate")]
         public string part_time_rate { get; set; }

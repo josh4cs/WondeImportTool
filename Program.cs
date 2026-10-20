@@ -64,6 +64,26 @@ internal class Program
             var pageSize = GetPositiveConfigurationValue(config["Wonde:AchievementPageSize"], "Wonde:AchievementPageSize");
             var batchSize = GetPositiveConfigurationValue(config["Wonde:AchievementBatchSize"], "Wonde:AchievementBatchSize");
 
+            var studentSchoolIds = config.GetSection("Wonde:StudentSchoolIds")
+                .GetChildren()
+                .Select(section => section.Value)
+                .Where(value => !string.IsNullOrWhiteSpace(value))
+                .Select(value => value!)
+                .ToArray();
+            if (studentSchoolIds.Length == 0)
+            {
+                throw new InvalidOperationException("Wonde:StudentSchoolIds must contain at least one school ID");
+            }
+
+            var academicYear = config["Wonde:StudentAcademicYear"];
+            if (string.IsNullOrWhiteSpace(academicYear))
+            {
+                throw new InvalidOperationException("Wonde:StudentAcademicYear is missing");
+            }
+
+            var studentPageSize = GetPositiveConfigurationValue(config["Wonde:StudentPageSize"], "Wonde:StudentPageSize");
+            var studentBatchSize = GetPositiveConfigurationValue(config["Wonde:StudentBatchSize"], "Wonde:StudentBatchSize");
+
 
             //Console.WriteLine("Schools import started.");
             //await svc.GetSchoolsAsync(cts.Token);
@@ -71,13 +91,21 @@ internal class Program
 
 
 
-            Console.WriteLine("Achievements import started.");
-            await svc.GetAchievementsAsync(schoolIds, achievementStartDate, pageSize, batchSize, cts.Token);
-            Console.WriteLine("Achievements import completed.");
+            //Console.WriteLine("Achievements import started.");
+            //await svc.GetAchievementsAsync(schoolIds, achievementStartDate, pageSize, batchSize, cts.Token);
+            //Console.WriteLine("Achievements import completed.");
 
-            Console.WriteLine("Behaviours import started.");
-            await svc.GetBehavioursAsync(schoolIds, achievementStartDate, pageSize, batchSize, cts.Token);
-            Console.WriteLine("Behaviours import completed.");
+            //Console.WriteLine("Behaviours import started.");
+            //await svc.GetBehavioursAsync(schoolIds, achievementStartDate, pageSize, batchSize, cts.Token);
+            //Console.WriteLine("Behaviours import completed.");
+
+            //Console.WriteLine("Students import started.");
+            //await svc.GetStudentsAsync(studentSchoolIds, academicYear, studentPageSize, studentBatchSize, cts.Token);
+            //Console.WriteLine("Students import completed.");
+
+            Console.WriteLine("Student leavers import started.");
+            await svc.GetStudentLeaversAsync(studentSchoolIds, academicYear, studentPageSize, studentBatchSize, cts.Token);
+            Console.WriteLine("Student leavers import completed.");
         }
         catch (OperationCanceledException)
         {
