@@ -1,0 +1,144 @@
+{
+  "data": [
+    {
+      "id": "AT1123374707",
+      "date": {
+        "date": "2026-09-02 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "comment": null,
+      "session": "AM",
+      "employee": "A1611456183",
+      "attendance_code": "A930902628",
+      "student": "A733732355"
+    },
+    {
+      "id": "AT448979855",
+      "date": {
+        "date": "2026-09-02 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "comment": null,
+      "session": "AM",
+      "employee": "A1611456183",
+      "attendance_code": "A930902628",
+      "student": "A507436396"
+    },
+    {
+      "id": "AT1126999006",
+      "date": {
+        "date": "2026-09-02 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "comment": null,
+      "session": "AM",
+      "employee": "A1611456183",
+      "attendance_code": "A930902628",
+      "student": "A11039084"
+    },
+    {
+      "id": "AT1930153622",
+      "date": {
+        "date": "2026-09-02 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "comment": null,
+      "session": "AM",
+      "employee": "A1611456183",
+      "attendance_code": "A930902628",
+      "student": "A1265372083"
+    },
+    {
+      "id": "AT394245148",
+      "date": {
+        "date": "2026-09-02 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "comment": null,
+      "session": "AM",
+      "employee": "A1611456183",
+      "attendance_code": "A930902628",
+      "student": "A1374963791"
+    },
+    {
+      "id": "AT1097219901",
+      "date": {
+        "date": "2026-09-02 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "comment": null,
+      "session": "AM",
+      "employee": "A1611456183",
+      "attendance_code": "A930902628",
+      "student": "A1474883046"
+    },
+    {
+      "id": "AT2068743770",
+      "date": {
+        "date": "2026-09-02 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "comment": null,
+      "session": "AM",
+      "employee": "A1611456183",
+      "attendance_code": "A930902628",
+      "student": "A1725672470"
+    },
+    {
+      "id": "AT1368876389",
+      "date": {
+        "date": "2026-09-02 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "comment": null,
+      "session": "AM",
+      "employee": "A1611456183",
+      "attendance_code": "A930902628",
+      "student": "A1898497786"
+    },
+    {
+      "id": "AT1305535495",
+      "date": {
+        "date": "2026-09-02 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "comment": null,
+      "session": "AM",
+      "employee": "A1611456183",
+      "attendance_code": "A930902628",
+      "student": "A905712332"
+    },
+    {
+      "id": "AT238296440",
+      "date": {
+        "date": "2026-09-02 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "comment": null,
+      "session": "AM",
+      "employee": "A1611456183",
+      "attendance_code": "A930902628",
+      "student": "A1955261272"
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "next": "https://api.wonde.com/v1.0/schools/A621656141/attendance/session?per_page=10&attendance_date_before=2026-10-31&attendance_date_after=2026-09-01&page=2",
+      "previous": null,
+      "more": true,
+      "per_page": 10,
+      "current_page": 1
+    },
+    "includes": []
+  }
+}

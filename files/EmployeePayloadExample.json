@@ -1,0 +1,588 @@
+{
+  "data": [
+    {
+      "id": "A689879055",
+      "upi": "562a3a77248ac0f5c976bdddbe74cd72",
+      "mis_id": "11993",
+      "initials": "GA",
+      "title": "Mr",
+      "surname": "Abbott",
+      "forename": "Gordon",
+      "middle_names": null,
+      "legal_surname": "Abbott",
+      "legal_forename": "Gordon",
+      "gender": null,
+      "date_of_birth": null,
+      "restored_at": null,
+      "updated_at": {
+        "date": "2023-05-09 07:29:25.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "created_at": {
+        "date": "2019-12-13 11:52:13.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "contact_details": {
+        "data": {
+          "phones": {
+            "phone": null,
+            "primary": null,
+            "home": null,
+            "work": null,
+            "mobile": null
+          },
+          "emails": {
+            "email": null,
+            "primary": null,
+            "home": null,
+            "work": null
+          },
+          "addresses": {
+            "home": {
+              "house_number": null,
+              "house_name": null,
+              "apartment": null,
+              "street": null,
+              "district": null,
+              "town": null,
+              "county": null,
+              "country": null,
+              "postcode": null,
+              "uprn": null
+            },
+            "work": {
+              "house_number": null,
+              "house_name": null,
+              "apartment": null,
+              "street": null,
+              "district": null,
+              "town": null,
+              "county": null,
+              "country": null,
+              "postcode": null
+            },
+            "postal": {
+              "house_number": null,
+              "house_name": null,
+              "apartment": null,
+              "street": null,
+              "district": null,
+              "town": null,
+              "county": null,
+              "country": null,
+              "postcode": null
+            }
+          },
+          "salutation": null
+        }
+      },
+      "employment_details": {
+        "data": {
+          "current": false,
+          "teaching_staff": false,
+          "teacher_number": null,
+          "teacher_category": null,
+          "staff_code": "GA",
+          "primary_location": null,
+          "employment_start_date": null,
+          "employment_end_date": null,
+          "local_authority_start_date": null,
+          "employment_payroll_number": null,
+          "probation_end_date": null,
+          "police_check_date": null,
+          "health_check_date": null,
+          "employee_payroll_number": null,
+          "working_with_children_registration_number": null,
+          "role_text": null,
+          "qualified_teacher_status": null,
+          "qualified_teacher_status_route": null,
+          "higher_level_teaching_assistant_status": null
+        }
+      }
+    },
+    {
+      "id": "A621932849",
+      "upi": "dc1bb6a1d51194103c2ad1212f80695e",
+      "mis_id": "53",
+      "initials": "RA",
+      "title": "Mr",
+      "surname": "Abley",
+      "forename": "Robert S.",
+      "middle_names": null,
+      "legal_surname": "Abley",
+      "legal_forename": "Robert S",
+      "gender": null,
+      "date_of_birth": null,
+      "restored_at": null,
+      "updated_at": {
+        "date": "2023-05-09 07:29:25.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "created_at": {
+        "date": "2019-12-13 11:52:13.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "contact_details": {
+        "data": {
+          "phones": {
+            "phone": null,
+            "primary": null,
+            "home": null,
+            "work": null,
+            "mobile": null
+          },
+          "emails": {
+            "email": null,
+            "primary": null,
+            "home": null,
+            "work": null
+          },
+          "addresses": {
+            "home": {
+              "house_number": null,
+              "house_name": null,
+              "apartment": null,
+              "street": null,
+              "district": null,
+              "town": null,
+              "county": null,
+              "country": null,
+              "postcode": null,
+              "uprn": null
+            },
+            "work": {
+              "house_number": null,
+              "house_name": null,
+              "apartment": null,
+              "street": null,
+              "district": null,
+              "town": null,
+              "county": null,
+              "country": null,
+              "postcode": null
+            },
+            "postal": {
+              "house_number": null,
+              "house_name": null,
+              "apartment": null,
+              "street": null,
+              "district": null,
+              "town": null,
+              "county": null,
+              "country": null,
+              "postcode": null
+            }
+          },
+          "salutation": null
+        }
+      },
+      "employment_details": {
+        "data": {
+          "current": false,
+          "teaching_staff": true,
+          "teacher_number": "59//10412",
+          "teacher_category": null,
+          "staff_code": "RSA",
+          "primary_location": null,
+          "employment_start_date": {
+            "date": "1990-09-10 00:00:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe/London"
+          },
+          "employment_end_date": {
+            "date": "1992-09-01 00:00:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe/London"
+          },
+          "local_authority_start_date": null,
+          "employment_payroll_number": null,
+          "probation_end_date": null,
+          "police_check_date": null,
+          "health_check_date": null,
+          "employee_payroll_number": null,
+          "working_with_children_registration_number": null,
+          "role_text": null,
+          "qualified_teacher_status": null,
+          "qualified_teacher_status_route": null,
+          "higher_level_teaching_assistant_status": null
+        }
+      }
+    },
+    {
+      "id": "A1124139820",
+      "upi": "d354421709f3b61750e7963254191d67",
+      "mis_id": "17622",
+      "initials": "DA",
+      "title": "Mr",
+      "surname": "Adamson",
+      "forename": "Damien",
+      "middle_names": null,
+      "legal_surname": "Adamson",
+      "legal_forename": "Damien",
+      "gender": null,
+      "date_of_birth": null,
+      "restored_at": null,
+      "updated_at": {
+        "date": "2023-05-09 07:29:25.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "created_at": {
+        "date": "2019-12-13 11:52:13.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "contact_details": {
+        "data": {
+          "phones": {
+            "phone": null,
+            "primary": null,
+            "home": null,
+            "work": null,
+            "mobile": null
+          },
+          "emails": {
+            "email": null,
+            "primary": null,
+            "home": null,
+            "work": null
+          },
+          "addresses": {
+            "home": {
+              "house_number": null,
+              "house_name": null,
+              "apartment": null,
+              "street": null,
+              "district": null,
+              "town": null,
+              "county": null,
+              "country": null,
+              "postcode": null,
+              "uprn": null
+            },
+            "work": {
+              "house_number": null,
+              "house_name": null,
+              "apartment": null,
+              "street": null,
+              "district": null,
+              "town": null,
+              "county": null,
+              "country": null,
+              "postcode": null
+            },
+            "postal": {
+              "house_number": null,
+              "house_name": null,
+              "apartment": null,
+              "street": null,
+              "district": null,
+              "town": null,
+              "county": null,
+              "country": null,
+              "postcode": null
+            }
+          },
+          "salutation": null
+        }
+      },
+      "employment_details": {
+        "data": {
+          "current": false,
+          "teaching_staff": true,
+          "teacher_number": null,
+          "teacher_category": "Qualified Teacher",
+          "staff_code": "DA2",
+          "primary_location": null,
+          "employment_start_date": {
+            "date": "2018-11-20 00:00:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe/London"
+          },
+          "employment_end_date": {
+            "date": "2019-02-15 00:00:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe/London"
+          },
+          "local_authority_start_date": null,
+          "employment_payroll_number": null,
+          "probation_end_date": null,
+          "police_check_date": null,
+          "health_check_date": null,
+          "employee_payroll_number": null,
+          "working_with_children_registration_number": null,
+          "role_text": null,
+          "qualified_teacher_status": null,
+          "qualified_teacher_status_route": null,
+          "higher_level_teaching_assistant_status": null
+        }
+      }
+    },
+    {
+      "id": "A1735063218",
+      "upi": "7197fe3430a16ca1912a1f92a9dc31dd",
+      "mis_id": "44",
+      "initials": "GA",
+      "title": "Mrs",
+      "surname": "Ainsley",
+      "forename": "Glynis Lilian",
+      "middle_names": null,
+      "legal_surname": "Ainsley",
+      "legal_forename": "Glynis Lilian",
+      "gender": null,
+      "date_of_birth": null,
+      "restored_at": null,
+      "updated_at": {
+        "date": "2023-05-09 07:29:25.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "created_at": {
+        "date": "2019-12-13 11:52:13.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "contact_details": {
+        "data": {
+          "phones": {
+            "phone": null,
+            "primary": null,
+            "home": null,
+            "work": null,
+            "mobile": null
+          },
+          "emails": {
+            "email": null,
+            "primary": null,
+            "home": null,
+            "work": null
+          },
+          "addresses": {
+            "home": {
+              "house_number": null,
+              "house_name": null,
+              "apartment": null,
+              "street": null,
+              "district": null,
+              "town": null,
+              "county": null,
+              "country": null,
+              "postcode": null,
+              "uprn": null
+            },
+            "work": {
+              "house_number": null,
+              "house_name": null,
+              "apartment": null,
+              "street": null,
+              "district": null,
+              "town": null,
+              "county": null,
+              "country": null,
+              "postcode": null
+            },
+            "postal": {
+              "house_number": null,
+              "house_name": null,
+              "apartment": null,
+              "street": null,
+              "district": null,
+              "town": null,
+              "county": null,
+              "country": null,
+              "postcode": null
+            }
+          },
+          "salutation": null
+        }
+      },
+      "employment_details": {
+        "data": {
+          "current": false,
+          "teaching_staff": false,
+          "teacher_number": null,
+          "teacher_category": null,
+          "staff_code": "GA",
+          "primary_location": null,
+          "employment_start_date": {
+            "date": "1990-04-01 00:00:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe/London"
+          },
+          "employment_end_date": {
+            "date": "1994-12-31 00:00:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe/London"
+          },
+          "local_authority_start_date": null,
+          "employment_payroll_number": null,
+          "probation_end_date": null,
+          "police_check_date": null,
+          "health_check_date": null,
+          "employee_payroll_number": null,
+          "working_with_children_registration_number": null,
+          "role_text": null,
+          "qualified_teacher_status": null,
+          "qualified_teacher_status_route": null,
+          "higher_level_teaching_assistant_status": null
+        }
+      }
+    },
+    {
+      "id": "A1936469988",
+      "upi": "ab0278abf6962befa234d0685fe82660",
+      "mis_id": "108",
+      "initials": "SA",
+      "title": "Mrs",
+      "surname": "Alder",
+      "forename": "S.",
+      "middle_names": null,
+      "legal_surname": "Alder",
+      "legal_forename": "S.",
+      "gender": null,
+      "date_of_birth": null,
+      "restored_at": null,
+      "updated_at": {
+        "date": "2023-05-09 07:29:25.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "created_at": {
+        "date": "2019-12-13 11:52:13.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "contact_details": {
+        "data": {
+          "phones": {
+            "phone": null,
+            "primary": null,
+            "home": null,
+            "work": null,
+            "mobile": null
+          },
+          "emails": {
+            "email": null,
+            "primary": null,
+            "home": null,
+            "work": null
+          },
+          "addresses": {
+            "home": {
+              "house_number": null,
+              "house_name": null,
+              "apartment": null,
+              "street": null,
+              "district": null,
+              "town": null,
+              "county": null,
+              "country": null,
+              "postcode": null,
+              "uprn": null
+            },
+            "work": {
+              "house_number": null,
+              "house_name": null,
+              "apartment": null,
+              "street": null,
+              "district": null,
+              "town": null,
+              "county": null,
+              "country": null,
+              "postcode": null
+            },
+            "postal": {
+              "house_number": null,
+              "house_name": null,
+              "apartment": null,
+              "street": null,
+              "district": null,
+              "town": null,
+              "county": null,
+              "country": null,
+              "postcode": null
+            }
+          },
+          "salutation": null
+        }
+      },
+      "employment_details": {
+        "data": {
+          "current": false,
+          "teaching_staff": false,
+          "teacher_number": null,
+          "teacher_category": null,
+          "staff_code": "SA",
+          "primary_location": null,
+          "employment_start_date": {
+            "date": "1990-10-29 00:00:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe/London"
+          },
+          "employment_end_date": {
+            "date": "1994-12-31 00:00:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe/London"
+          },
+          "local_authority_start_date": null,
+          "employment_payroll_number": null,
+          "probation_end_date": null,
+          "police_check_date": null,
+          "health_check_date": null,
+          "employee_payroll_number": null,
+          "working_with_children_registration_number": null,
+          "role_text": null,
+          "qualified_teacher_status": null,
+          "qualified_teacher_status_route": null,
+          "higher_level_teaching_assistant_status": null
+        }
+      }
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "next": "https://api.wonde.com/v1.0/schools/A621656141/employees?per_page=5&include=contact_details%2Cemployment_details&page=2",
+      "previous": null,
+      "more": true,
+      "per_page": 5,
+      "current_page": 1
+    },
+    "includes": [
+      "allowances",
+      "allowances.contract",
+      "behaviours",
+      "behaviours.students",
+      "campus",
+      "classes",
+      "classes.subject",
+      "contact_details",
+      "contracts",
+      "contracts.roles",
+      "contracts.salary",
+      "contracts.salary.allowances",
+      "contracts.salary.scales",
+      "employee_absences",
+      "employment_checks",
+      "employment_details",
+      "extended_details",
+      "groups",
+      "hierarchy",
+      "hierarchy.employment_details",
+      "identifiers",
+      "next_of_kin",
+      "photo",
+      "qualifications",
+      "roles",
+      "roles.contract",
+      "salary",
+      "salary.contract",
+      "scales",
+      "scales.contract",
+      "user_defined_fields"
+    ]
+  }
+}

@@ -76,6 +76,15 @@ namespace WondeModels
 
         [JsonProperty("contact_details")]
         public WondeEmployee_ContactDetails contact_details { get; set; }
+
+        [JsonProperty("meta")]
+        public WondeEmployee_DatumMeta meta { get; set; }
+    }
+
+    public partial class WondeEmployee_DatumMeta
+    {
+        [JsonProperty("role")]
+        public string role { get; set; }
     }
 
     public partial class WondeEmployee_EmploymentDetails

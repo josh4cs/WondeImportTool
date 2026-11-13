@@ -89,6 +89,9 @@ namespace WondeModels
 
         [JsonProperty("cbds")]
         public Cbds cbds { get; set; }
+
+        [JsonProperty("meta")]
+        public DatumMeta meta { get; set; }
     }
 
 

@@ -1,0 +1,606 @@
+{
+  "data": [
+    {
+      "id": "A480420808",
+      "mis_id": "39",
+      "name": "07",
+      "code": "7",
+      "type": "YEAR",
+      "description": "Year 07",
+      "notes": null,
+      "division": null,
+      "restored_at": null,
+      "created_at": {
+        "date": "2019-12-13 11:52:55.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2020-09-28 10:47:04.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "meta": null,
+      "employees": {
+        "data": [
+          {
+            "id": "A340233588",
+            "upi": "95482ca630c36a451a0bb195446fbed3",
+            "mis_id": "15603",
+            "initials": "JB",
+            "title": "Mrs",
+            "surname": "Burn",
+            "forename": "Jade",
+            "middle_names": null,
+            "legal_surname": "Burn",
+            "legal_forename": "Jade",
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "updated_at": {
+              "date": "2026-10-22 14:56:33.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "created_at": {
+              "date": "2019-12-13 11:52:16.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "role": "Supervisor",
+              "main": null,
+              "all_roles": [
+                "Supervisor"
+              ]
+            }
+          },
+          {
+            "id": "A2071029733",
+            "upi": "019c66e3acb7b316f2d369b5192bb53e",
+            "mis_id": "11688",
+            "initials": "JS",
+            "title": "Mr",
+            "surname": "Surtees",
+            "forename": "John",
+            "middle_names": "William",
+            "legal_surname": "Surtees",
+            "legal_forename": "John",
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "updated_at": {
+              "date": "2026-10-22 14:56:33.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "created_at": {
+              "date": "2019-12-13 11:52:32.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "role": "Supervisor",
+              "main": null,
+              "all_roles": [
+                "Supervisor"
+              ]
+            }
+          },
+          {
+            "id": "A2078600967",
+            "upi": "72a26d0ad4e0e2fcf6c863cd8b6b79fc",
+            "mis_id": "29075",
+            "initials": "BS",
+            "title": "Mr",
+            "surname": "Steele",
+            "forename": "Benjamin",
+            "middle_names": "McInnes",
+            "legal_surname": "Steele",
+            "legal_forename": "Benjamin",
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "updated_at": {
+              "date": "2026-10-21 09:56:50.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "created_at": {
+              "date": "2026-05-21 11:14:37.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "role": "Head of Year",
+              "main": null,
+              "all_roles": [
+                "Head of Year"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "A312559459",
+      "mis_id": "38",
+      "name": "08",
+      "code": "8",
+      "type": "YEAR",
+      "description": "Year 08",
+      "notes": null,
+      "division": null,
+      "restored_at": null,
+      "created_at": {
+        "date": "2019-12-13 11:52:55.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2020-09-28 10:47:04.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "meta": null,
+      "employees": {
+        "data": [
+          {
+            "id": "A340233588",
+            "upi": "95482ca630c36a451a0bb195446fbed3",
+            "mis_id": "15603",
+            "initials": "JB",
+            "title": "Mrs",
+            "surname": "Burn",
+            "forename": "Jade",
+            "middle_names": null,
+            "legal_surname": "Burn",
+            "legal_forename": "Jade",
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "updated_at": {
+              "date": "2026-10-22 14:56:33.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "created_at": {
+              "date": "2019-12-13 11:52:16.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "role": "Supervisor",
+              "main": null,
+              "all_roles": [
+                "Supervisor"
+              ]
+            }
+          },
+          {
+            "id": "A387796152",
+            "upi": "908de6955fbc5dbc7cd3a7aa057060de",
+            "mis_id": "6902",
+            "initials": "RP",
+            "title": "Mrs",
+            "surname": "Pearson",
+            "forename": "Ruth",
+            "middle_names": null,
+            "legal_surname": "Pearson",
+            "legal_forename": "Ruth",
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "updated_at": {
+              "date": "2026-10-22 12:01:10.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "created_at": {
+              "date": "2019-12-13 11:52:28.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "role": "Pastoral Manager",
+              "main": null,
+              "all_roles": [
+                "Pastoral Manager"
+              ]
+            }
+          },
+          {
+            "id": "A2071029733",
+            "upi": "019c66e3acb7b316f2d369b5192bb53e",
+            "mis_id": "11688",
+            "initials": "JS",
+            "title": "Mr",
+            "surname": "Surtees",
+            "forename": "John",
+            "middle_names": "William",
+            "legal_surname": "Surtees",
+            "legal_forename": "John",
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "updated_at": {
+              "date": "2026-10-22 14:56:33.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "created_at": {
+              "date": "2019-12-13 11:52:32.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "role": "Supervisor",
+              "main": null,
+              "all_roles": [
+                "Supervisor"
+              ]
+            }
+          },
+          {
+            "id": "A1283986654",
+            "upi": "4da9e91a0c26cc19095d1b364a8cf77f",
+            "mis_id": "22356",
+            "initials": "DR",
+            "title": "Mr",
+            "surname": "Rooney",
+            "forename": "Daniel",
+            "middle_names": null,
+            "legal_surname": "Rooney",
+            "legal_forename": "Daniel",
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "updated_at": {
+              "date": "2026-10-22 12:01:09.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "created_at": {
+              "date": "2021-11-04 06:51:27.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "role": "Head of Year",
+              "main": null,
+              "all_roles": [
+                "Head of Year"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "A681842938",
+      "mis_id": "37",
+      "name": "09",
+      "code": "9",
+      "type": "YEAR",
+      "description": "Year 09",
+      "notes": null,
+      "division": null,
+      "restored_at": null,
+      "created_at": {
+        "date": "2019-12-13 11:52:55.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2020-09-28 10:47:04.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "meta": null,
+      "employees": {
+        "data": [
+          {
+            "id": "A340233588",
+            "upi": "95482ca630c36a451a0bb195446fbed3",
+            "mis_id": "15603",
+            "initials": "JB",
+            "title": "Mrs",
+            "surname": "Burn",
+            "forename": "Jade",
+            "middle_names": null,
+            "legal_surname": "Burn",
+            "legal_forename": "Jade",
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "updated_at": {
+              "date": "2026-10-22 14:56:33.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "created_at": {
+              "date": "2019-12-13 11:52:16.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "role": "Supervisor",
+              "main": null,
+              "all_roles": [
+                "Supervisor"
+              ]
+            }
+          },
+          {
+            "id": "A915515885",
+            "upi": "14d96b0d0622c4cf42c2305bae8b0468",
+            "mis_id": "12993",
+            "initials": "SN",
+            "title": "Mr",
+            "surname": "Nicholson",
+            "forename": "Scott",
+            "middle_names": null,
+            "legal_surname": "Nicholson",
+            "legal_forename": "Scott",
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "updated_at": {
+              "date": "2026-10-22 12:01:09.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "created_at": {
+              "date": "2019-12-13 11:52:28.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "role": "Pastoral Manager",
+              "main": null,
+              "all_roles": [
+                "Pastoral Manager"
+              ]
+            }
+          },
+          {
+            "id": "A2071029733",
+            "upi": "019c66e3acb7b316f2d369b5192bb53e",
+            "mis_id": "11688",
+            "initials": "JS",
+            "title": "Mr",
+            "surname": "Surtees",
+            "forename": "John",
+            "middle_names": "William",
+            "legal_surname": "Surtees",
+            "legal_forename": "John",
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "updated_at": {
+              "date": "2026-10-22 14:56:33.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "created_at": {
+              "date": "2019-12-13 11:52:32.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "role": "Supervisor",
+              "main": null,
+              "all_roles": [
+                "Supervisor"
+              ]
+            }
+          },
+          {
+            "id": "A407614679",
+            "upi": "9b5ab4143acc4a3a99e8ff7ff94885c2",
+            "mis_id": "26264",
+            "initials": "AP",
+            "title": "Mr",
+            "surname": "Peacock",
+            "forename": "Andrew",
+            "middle_names": null,
+            "legal_surname": "Peacock",
+            "legal_forename": "Andrew",
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "updated_at": {
+              "date": "2026-10-22 12:01:08.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "created_at": {
+              "date": "2024-05-22 17:16:17.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "role": "Head of Year",
+              "main": null,
+              "all_roles": [
+                "Head of Year"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "A781761685",
+      "mis_id": "36",
+      "name": "10",
+      "code": "10",
+      "type": "YEAR",
+      "description": "Year 10",
+      "notes": null,
+      "division": null,
+      "restored_at": null,
+      "created_at": {
+        "date": "2019-12-13 11:52:55.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2020-09-28 10:47:04.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "meta": null,
+      "employees": {
+        "data": [
+          {
+            "id": "A340233588",
+            "upi": "95482ca630c36a451a0bb195446fbed3",
+            "mis_id": "15603",
+            "initials": "JB",
+            "title": "Mrs",
+            "surname": "Burn",
+            "forename": "Jade",
+            "middle_names": null,
+            "legal_surname": "Burn",
+            "legal_forename": "Jade",
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "updated_at": {
+              "date": "2026-10-22 14:56:33.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "created_at": {
+              "date": "2019-12-13 11:52:16.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "role": "Supervisor",
+              "main": null,
+              "all_roles": [
+                "Supervisor"
+              ]
+            }
+          },
+          {
+            "id": "A2071029733",
+            "upi": "019c66e3acb7b316f2d369b5192bb53e",
+            "mis_id": "11688",
+            "initials": "JS",
+            "title": "Mr",
+            "surname": "Surtees",
+            "forename": "John",
+            "middle_names": "William",
+            "legal_surname": "Surtees",
+            "legal_forename": "John",
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "updated_at": {
+              "date": "2026-10-22 14:56:33.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "created_at": {
+              "date": "2019-12-13 11:52:32.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "role": "Supervisor",
+              "main": null,
+              "all_roles": [
+                "Supervisor"
+              ]
+            }
+          },
+          {
+            "id": "A1484893091",
+            "upi": "75561929fe53e1c2cfe1ceffb9a24449",
+            "mis_id": "23533",
+            "initials": "EB",
+            "title": "Mrs",
+            "surname": "Butterworth",
+            "forename": "Ellie",
+            "middle_names": null,
+            "legal_surname": "Butterworth",
+            "legal_forename": "Ellie",
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "updated_at": {
+              "date": "2026-10-22 12:01:09.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "created_at": {
+              "date": "2023-05-02 13:29:39.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "meta": {
+              "role": "Head of Year",
+              "main": null,
+              "all_roles": [
+                "Head of Year"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "A614420524",
+      "mis_id": "6270",
+      "name": "10 Aida 2",
+      "code": "10 Aida 2",
+      "type": "USER",
+      "description": "Year 10 Aida 2",
+      "notes": null,
+      "division": null,
+      "restored_at": null,
+      "created_at": {
+        "date": "2019-12-13 11:52:55.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2020-09-28 10:47:04.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "meta": null,
+      "employees": {
+        "data": []
+      }
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "next": "https://api.wonde.com/v1.0/schools/A621656141/groups?per_page=5&include=employees&page=2",
+      "previous": null,
+      "more": true,
+      "per_page": 5,
+      "current_page": 1
+    },
+    "includes": [
+      "employees",
+      "employees.contact_details",
+      "employees.employment_details",
+      "employees.extended_details",
+      "students",
+      "students.contact_details",
+      "students.education_details",
+      "students.extended_details",
+      "students_pre_admission",
+      "students_pre_admission.contact_details",
+      "students_pre_admission.contacts",
+      "students_pre_admission.contacts.contact_details",
+      "students_pre_admission.education_details",
+      "students_pre_admission.extended_details"
+    ]
+  }
+}

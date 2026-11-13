@@ -1,0 +1,247 @@
+{
+  "data": [
+    {
+      "id": "A1231951019",
+      "mis_id": "2551",
+      "type": "Suspension",
+      "type_code": "SUSP",
+      "reason": "Verbal abuse/threatening behaviour against an adult",
+      "reason_code": "VA,CB,PA",
+      "start_date": {
+        "date": "2026-09-14 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "start_session": "PM",
+      "end_date": {
+        "date": "2026-09-15 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "end_session": "PM",
+      "sessions": "3.00",
+      "days": "1.50",
+      "academic_year": "2026/2027",
+      "term": "Autumn Term",
+      "comments": null,
+      "agencies_involved": null,
+      "discipline_committee_date": null,
+      "discipline_committee_result": null,
+      "discipline_committee_reinstatement_date": null,
+      "discipline_committee_representation_made": null,
+      "appeal_received": false,
+      "appeal_result": null,
+      "appeal_result_date": null,
+      "appeal_reinstatement_date": null,
+      "created_at": {
+        "date": "2026-09-14 13:12:28.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2026-09-14 13:12:28.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "student": {
+        "data": {
+          "id": "A1351394244",
+          "upi": null,
+          "mis_id": "28633",
+          "initials": "DC",
+          "title": null,
+          "surname": "Corker",
+          "forename": "Dylan",
+          "middle_names": "Kyle",
+          "legal_surname": "Corker",
+          "legal_forename": "Dylan",
+          "gender": "MALE",
+          "gender_identity": null,
+          "date_of_birth": {
+            "date": "2015-01-29 00:00:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe/London"
+          },
+          "restored_at": null,
+          "created_at": {
+            "date": "2026-04-21 13:20:30.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+          },
+          "updated_at": {
+            "date": "2026-10-22 14:56:34.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+          }
+        }
+      }
+    },
+    {
+      "id": "A1872352587",
+      "mis_id": "2552",
+      "type": "Suspension",
+      "type_code": "SUSP",
+      "reason": "Verbal abuse/threatening behaviour against an adult",
+      "reason_code": "VA,CB",
+      "start_date": {
+        "date": "2026-09-28 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "start_session": "AM",
+      "end_date": {
+        "date": "2026-09-30 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "end_session": "PM",
+      "sessions": "6.00",
+      "days": "3.00",
+      "academic_year": "2026/2027",
+      "term": "Autumn Term",
+      "comments": null,
+      "agencies_involved": null,
+      "discipline_committee_date": null,
+      "discipline_committee_result": null,
+      "discipline_committee_reinstatement_date": null,
+      "discipline_committee_representation_made": null,
+      "appeal_received": false,
+      "appeal_result": null,
+      "appeal_result_date": null,
+      "appeal_reinstatement_date": null,
+      "created_at": {
+        "date": "2026-09-28 13:12:11.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2026-09-28 13:12:11.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "student": {
+        "data": {
+          "id": "A1351394244",
+          "upi": null,
+          "mis_id": "28633",
+          "initials": "DC",
+          "title": null,
+          "surname": "Corker",
+          "forename": "Dylan",
+          "middle_names": "Kyle",
+          "legal_surname": "Corker",
+          "legal_forename": "Dylan",
+          "gender": "MALE",
+          "gender_identity": null,
+          "date_of_birth": {
+            "date": "2015-01-29 00:00:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe/London"
+          },
+          "restored_at": null,
+          "created_at": {
+            "date": "2026-04-21 13:20:30.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+          },
+          "updated_at": {
+            "date": "2026-10-22 14:56:34.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+          }
+        }
+      }
+    },
+    {
+      "id": "A417105752",
+      "mis_id": "2553",
+      "type": "Suspension",
+      "type_code": "SUSP",
+      "reason": "Persistent disruptive behaviour - challenging behaviour",
+      "reason_code": "CB",
+      "start_date": {
+        "date": "2026-10-14 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "start_session": "AM",
+      "end_date": {
+        "date": "2026-10-19 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "end_session": "PM",
+      "sessions": "8.00",
+      "days": "4.00",
+      "academic_year": "2026/2027",
+      "term": "Autumn Term",
+      "comments": null,
+      "agencies_involved": null,
+      "discipline_committee_date": null,
+      "discipline_committee_result": null,
+      "discipline_committee_reinstatement_date": null,
+      "discipline_committee_representation_made": null,
+      "appeal_received": false,
+      "appeal_result": null,
+      "appeal_result_date": null,
+      "appeal_reinstatement_date": null,
+      "created_at": {
+        "date": "2026-10-14 13:13:07.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2026-10-14 13:13:07.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "student": {
+        "data": {
+          "id": "A1912802537",
+          "upi": null,
+          "mis_id": "28596",
+          "initials": "SS",
+          "title": null,
+          "surname": "Scott",
+          "forename": "Skyla",
+          "middle_names": "Courtney",
+          "legal_surname": "Scott",
+          "legal_forename": "Skyla-Rose",
+          "gender": "FEMALE",
+          "gender_identity": null,
+          "date_of_birth": {
+            "date": "2014-12-19 00:00:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe/London"
+          },
+          "restored_at": null,
+          "created_at": {
+            "date": "2026-04-21 13:20:29.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+          },
+          "updated_at": {
+            "date": "2026-10-13 09:56:34.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "next": null,
+      "previous": null,
+      "more": false,
+      "per_page": 50,
+      "current_page": 1
+    },
+    "includes": [
+      "cbds",
+      "student",
+      "student-leaver",
+      "student-pre-admission"
+    ]
+  }
+}
