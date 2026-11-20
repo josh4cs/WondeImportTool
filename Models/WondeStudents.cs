@@ -84,6 +84,9 @@ namespace WondeModels
         [JsonProperty("groups")]
         public WondeStudent_Groups groups { get; set; }
 
+        [JsonProperty("contacts")]
+        public WondeStudent_Contacts contacts { get; set; }
+
         [JsonProperty("sen_needs")]
         public WondeStudent_SenNeeds sen_needs { get; set; }
 

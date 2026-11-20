@@ -57,7 +57,7 @@ namespace WondeModels
         public string year_group { get; set; }
 
         [JsonProperty("restored_at")]
-        public object restored_at { get; set; }
+        public WondeClasses_CreatedAt restored_at { get; set; }
 
         [JsonProperty("created_at")]
         public WondeClasses_CreatedAt created_at { get; set; }
@@ -126,7 +126,7 @@ namespace WondeModels
         public string legal_forename { get; set; }
 
         [JsonProperty("gender")]
-        public WondeClasses_CreatedAt gender { get; set; }
+        public string gender { get; set; }
 
         [JsonProperty("date_of_birth")]
         public WondeClasses_CreatedAt date_of_birth { get; set; }

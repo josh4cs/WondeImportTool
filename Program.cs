@@ -109,6 +109,20 @@ internal class Program
                 config["Wonde:EmployeeBatchSize"] ?? config["Wonde:AchievementBatchSize"],
                 "Wonde:EmployeeBatchSize");
 
+            var classesPageSize = GetPositiveConfigurationValue(
+                config["Wonde:ClassesPageSize"] ?? config["Wonde:AchievementPageSize"],
+                "Wonde:ClassesPageSize");
+            var classesBatchSize = GetPositiveConfigurationValue(
+                config["Wonde:ClassesBatchSize"] ?? config["Wonde:AchievementBatchSize"],
+                "Wonde:ClassesBatchSize");
+
+            var subjectsPageSize = GetPositiveConfigurationValue(
+                config["Wonde:SubjectsPageSize"] ?? config["Wonde:AchievementPageSize"],
+                "Wonde:SubjectsPageSize");
+            var subjectsBatchSize = GetPositiveConfigurationValue(
+                config["Wonde:SubjectsBatchSize"] ?? config["Wonde:AchievementBatchSize"],
+                "Wonde:SubjectsBatchSize");
+
             var academicYear = config["Wonde:StudentAcademicYear"];
             if (string.IsNullOrWhiteSpace(academicYear))
             {
@@ -185,6 +199,24 @@ internal class Program
                 Console.WriteLine("Groups import started.");
                 await svc.GetGroupsAsync(schoolIds, universalUpdatedAfterDate, fallbackStartDate, groupsPageSize, groupsBatchSize, requestId, cts.Token);
                 Console.WriteLine("Groups import completed.");
+            }
+
+            Boolean.TryParse(config["Wonde:ImportClasses"], out var importClassesFlag);
+            if (importClassesFlag)
+            {
+                await svc.LogTextAsync("INFO", $"Classes import started:", cts.Token).ConfigureAwait(false);
+                Console.WriteLine("Classes import started.");
+                await svc.GetClassesAsync(schoolIds, universalUpdatedAfterDate, fallbackStartDate, classesPageSize, classesBatchSize, requestId, cts.Token);
+                Console.WriteLine("Classes import completed.");
+            }
+
+            Boolean.TryParse(config["Wonde:ImportSubjects"], out var importSubjectsFlag);
+            if (importSubjectsFlag)
+            {
+                await svc.LogTextAsync("INFO", $"Subjects import started:", cts.Token).ConfigureAwait(false);
+                Console.WriteLine("Subjects import started.");
+                await svc.GetSubjectsAsync(schoolIds, universalUpdatedAfterDate, fallbackStartDate, subjectsPageSize, subjectsBatchSize, requestId, cts.Token);
+                Console.WriteLine("Subjects import completed.");
             }
 
             Boolean.TryParse(config["Wonde:ImportEmployees"], out var importEmployeesFlag);

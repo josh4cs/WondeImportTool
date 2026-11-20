@@ -1,0 +1,1738 @@
+{
+  "data": [
+    {
+      "id": "A1892153047-A240339232",
+      "upi": null,
+      "mis_id": "5276",
+      "initials": "J H",
+      "title": null,
+      "surname": "Hussein",
+      "forename": "Jad",
+      "middle_names": null,
+      "legal_surname": "Hussein",
+      "legal_forename": "Jad",
+      "gender": "MALE",
+      "gender_identity": null,
+      "date_of_birth": {
+        "date": "2011-02-07 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "restored_at": null,
+      "created_at": {
+        "date": "2026-04-02 09:19:33.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2026-11-15 20:09:08.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "contacts": {
+        "data": [
+          {
+            "id": "A1892153047-A197588026",
+            "mis_id": "7621",
+            "upi": null,
+            "title": null,
+            "initials": null,
+            "surname": null,
+            "forename": null,
+            "middle_names": null,
+            "legal_surname": null,
+            "legal_forename": null,
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "created_at": {
+              "date": "2026-04-02 09:18:55.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-04-02 09:27:50.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "relationship": {
+              "bill_payer": null,
+              "lives_with_pupil": true,
+              "email_bills": null,
+              "copy_bills": null,
+              "court_order": null,
+              "pupil_report": null,
+              "parental_responsibility": true,
+              "correspondence": null,
+              "email_notification": null,
+              "sms_notification": null,
+              "mail_notification": null,
+              "push_notification": null,
+              "in_touch_communication": null,
+              "priority": null,
+              "relationship": null,
+              "emergency_contact": null,
+              "portal_access": null,
+              "attendance_notification": null,
+              "mail_merge": null
+            },
+            "contact_details": {
+              "data": {
+                "phones": {
+                  "phone": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null,
+                  "mobile": null
+                },
+                "emails": {
+                  "email": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null
+                },
+                "addresses": {
+                  "home": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": "15 Richmond Hall Crescent",
+                    "district": null,
+                    "town": "Sheffield",
+                    "county": null,
+                    "country": "United Kingdom",
+                    "postcode": "S13 8FN",
+                    "uprn": null
+                  },
+                  "work": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  },
+                  "postal": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  }
+                },
+                "salutation": null
+              }
+            }
+          },
+          {
+            "id": "A1892153047-A29723093",
+            "mis_id": "7706",
+            "upi": null,
+            "title": null,
+            "initials": null,
+            "surname": null,
+            "forename": null,
+            "middle_names": null,
+            "legal_surname": null,
+            "legal_forename": null,
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "created_at": {
+              "date": "2026-04-02 09:18:55.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-04-02 09:27:50.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "relationship": {
+              "bill_payer": null,
+              "lives_with_pupil": false,
+              "email_bills": null,
+              "copy_bills": null,
+              "court_order": null,
+              "pupil_report": null,
+              "parental_responsibility": true,
+              "correspondence": null,
+              "email_notification": null,
+              "sms_notification": null,
+              "mail_notification": null,
+              "push_notification": null,
+              "in_touch_communication": null,
+              "priority": null,
+              "relationship": null,
+              "emergency_contact": null,
+              "portal_access": null,
+              "attendance_notification": null,
+              "mail_merge": null
+            },
+            "contact_details": {
+              "data": {
+                "phones": {
+                  "phone": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null,
+                  "mobile": null
+                },
+                "emails": {
+                  "email": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null
+                },
+                "addresses": {
+                  "home": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": "",
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null,
+                    "uprn": null
+                  },
+                  "work": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  },
+                  "postal": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  }
+                },
+                "salutation": null
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "A1892153047-A374196100",
+      "upi": null,
+      "mis_id": "5281",
+      "initials": "L T",
+      "title": null,
+      "surname": "Tyler",
+      "forename": "Laurie-May",
+      "middle_names": null,
+      "legal_surname": "Tyler",
+      "legal_forename": "Laurie-May",
+      "gender": "FEMALE",
+      "gender_identity": null,
+      "date_of_birth": {
+        "date": "2011-08-18 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "restored_at": null,
+      "created_at": {
+        "date": "2026-04-02 09:19:33.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2026-11-13 19:48:47.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "contacts": {
+        "data": [
+          {
+            "id": "A1892153047-A104344940",
+            "mis_id": "7788",
+            "upi": null,
+            "title": null,
+            "initials": null,
+            "surname": null,
+            "forename": null,
+            "middle_names": null,
+            "legal_surname": null,
+            "legal_forename": null,
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "created_at": {
+              "date": "2026-04-02 09:18:55.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-04-02 09:27:54.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "relationship": {
+              "bill_payer": null,
+              "lives_with_pupil": true,
+              "email_bills": null,
+              "copy_bills": null,
+              "court_order": null,
+              "pupil_report": null,
+              "parental_responsibility": true,
+              "correspondence": null,
+              "email_notification": null,
+              "sms_notification": null,
+              "mail_notification": null,
+              "push_notification": null,
+              "in_touch_communication": null,
+              "priority": null,
+              "relationship": null,
+              "emergency_contact": null,
+              "portal_access": null,
+              "attendance_notification": null,
+              "mail_merge": null
+            },
+            "contact_details": {
+              "data": {
+                "phones": {
+                  "phone": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null,
+                  "mobile": null
+                },
+                "emails": {
+                  "email": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null
+                },
+                "addresses": {
+                  "home": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": "59 Richmond Avenue",
+                    "district": null,
+                    "town": "Sheffield",
+                    "county": null,
+                    "country": "United Kingdom",
+                    "postcode": "S13 8TH",
+                    "uprn": null
+                  },
+                  "work": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  },
+                  "postal": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  }
+                },
+                "salutation": null
+              }
+            }
+          },
+          {
+            "id": "A1892153047-A473743623",
+            "mis_id": "7871",
+            "upi": null,
+            "title": null,
+            "initials": null,
+            "surname": null,
+            "forename": null,
+            "middle_names": null,
+            "legal_surname": null,
+            "legal_forename": null,
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "created_at": {
+              "date": "2026-04-02 09:18:55.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-04-02 09:27:54.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "relationship": {
+              "bill_payer": null,
+              "lives_with_pupil": false,
+              "email_bills": null,
+              "copy_bills": null,
+              "court_order": null,
+              "pupil_report": null,
+              "parental_responsibility": true,
+              "correspondence": null,
+              "email_notification": null,
+              "sms_notification": null,
+              "mail_notification": null,
+              "push_notification": null,
+              "in_touch_communication": null,
+              "priority": null,
+              "relationship": null,
+              "emergency_contact": null,
+              "portal_access": null,
+              "attendance_notification": null,
+              "mail_merge": null
+            },
+            "contact_details": {
+              "data": {
+                "phones": {
+                  "phone": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null,
+                  "mobile": null
+                },
+                "emails": {
+                  "email": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null
+                },
+                "addresses": {
+                  "home": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": "",
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null,
+                    "uprn": null
+                  },
+                  "work": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  },
+                  "postal": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  }
+                },
+                "salutation": null
+              }
+            }
+          },
+          {
+            "id": "A1892153047-A2045427238",
+            "mis_id": "7320",
+            "upi": null,
+            "title": null,
+            "initials": null,
+            "surname": null,
+            "forename": null,
+            "middle_names": null,
+            "legal_surname": null,
+            "legal_forename": null,
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "created_at": {
+              "date": "2026-04-02 09:19:04.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-04-15 19:24:59.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "relationship": {
+              "bill_payer": null,
+              "lives_with_pupil": false,
+              "email_bills": null,
+              "copy_bills": null,
+              "court_order": null,
+              "pupil_report": null,
+              "parental_responsibility": false,
+              "correspondence": null,
+              "email_notification": null,
+              "sms_notification": null,
+              "mail_notification": null,
+              "push_notification": null,
+              "in_touch_communication": null,
+              "priority": null,
+              "relationship": null,
+              "emergency_contact": null,
+              "portal_access": null,
+              "attendance_notification": null,
+              "mail_merge": null
+            },
+            "contact_details": {
+              "data": {
+                "phones": {
+                  "phone": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null,
+                  "mobile": null
+                },
+                "emails": {
+                  "email": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null
+                },
+                "addresses": {
+                  "home": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": "",
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null,
+                    "uprn": null
+                  },
+                  "work": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  },
+                  "postal": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  }
+                },
+                "salutation": null
+              }
+            }
+          },
+          {
+            "id": "A1892153047-A1013659037",
+            "mis_id": "7234",
+            "upi": null,
+            "title": null,
+            "initials": null,
+            "surname": null,
+            "forename": null,
+            "middle_names": null,
+            "legal_surname": null,
+            "legal_forename": null,
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "created_at": {
+              "date": "2026-04-22 06:48:26.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-04-22 08:41:31.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "relationship": {
+              "bill_payer": null,
+              "lives_with_pupil": false,
+              "email_bills": null,
+              "copy_bills": null,
+              "court_order": null,
+              "pupil_report": null,
+              "parental_responsibility": false,
+              "correspondence": null,
+              "email_notification": null,
+              "sms_notification": null,
+              "mail_notification": null,
+              "push_notification": null,
+              "in_touch_communication": null,
+              "priority": null,
+              "relationship": null,
+              "emergency_contact": null,
+              "portal_access": null,
+              "attendance_notification": null,
+              "mail_merge": null
+            },
+            "contact_details": {
+              "data": {
+                "phones": {
+                  "phone": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null,
+                  "mobile": null
+                },
+                "emails": {
+                  "email": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null
+                },
+                "addresses": {
+                  "home": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": "",
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null,
+                    "uprn": null
+                  },
+                  "work": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  },
+                  "postal": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  }
+                },
+                "salutation": null
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "A1892153047-A1386371950",
+      "upi": null,
+      "mis_id": "5288",
+      "initials": "L M P",
+      "title": null,
+      "surname": "Penrose",
+      "forename": "Lukas",
+      "middle_names": "Mark",
+      "legal_surname": "Penrose",
+      "legal_forename": "Lukas",
+      "gender": "MALE",
+      "gender_identity": null,
+      "date_of_birth": {
+        "date": "2011-06-08 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "restored_at": null,
+      "created_at": {
+        "date": "2026-04-02 09:19:33.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2026-11-17 13:34:02.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "contacts": {
+        "data": [
+          {
+            "id": "A1892153047-A908544036",
+            "mis_id": "8181",
+            "upi": null,
+            "title": null,
+            "initials": null,
+            "surname": null,
+            "forename": null,
+            "middle_names": null,
+            "legal_surname": null,
+            "legal_forename": null,
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "created_at": {
+              "date": "2026-04-02 09:18:56.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-07-14 14:52:13.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "relationship": {
+              "bill_payer": null,
+              "lives_with_pupil": true,
+              "email_bills": null,
+              "copy_bills": null,
+              "court_order": null,
+              "pupil_report": null,
+              "parental_responsibility": true,
+              "correspondence": null,
+              "email_notification": null,
+              "sms_notification": null,
+              "mail_notification": null,
+              "push_notification": null,
+              "in_touch_communication": null,
+              "priority": null,
+              "relationship": null,
+              "emergency_contact": null,
+              "portal_access": null,
+              "attendance_notification": null,
+              "mail_merge": null
+            },
+            "contact_details": {
+              "data": {
+                "phones": {
+                  "phone": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null,
+                  "mobile": null
+                },
+                "emails": {
+                  "email": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null
+                },
+                "addresses": {
+                  "home": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": "57 Badger Road",
+                    "district": null,
+                    "town": "Sheffield",
+                    "county": null,
+                    "country": "United Kingdom",
+                    "postcode": "S13 7TQ",
+                    "uprn": null
+                  },
+                  "work": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  },
+                  "postal": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  }
+                },
+                "salutation": null
+              }
+            }
+          },
+          {
+            "id": "A1892153047-A1276898751",
+            "mis_id": "7840",
+            "upi": null,
+            "title": null,
+            "initials": null,
+            "surname": null,
+            "forename": null,
+            "middle_names": null,
+            "legal_surname": null,
+            "legal_forename": null,
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "created_at": {
+              "date": "2026-04-02 09:18:56.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-04-02 09:27:50.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "relationship": {
+              "bill_payer": null,
+              "lives_with_pupil": false,
+              "email_bills": null,
+              "copy_bills": null,
+              "court_order": null,
+              "pupil_report": null,
+              "parental_responsibility": false,
+              "correspondence": null,
+              "email_notification": null,
+              "sms_notification": null,
+              "mail_notification": null,
+              "push_notification": null,
+              "in_touch_communication": null,
+              "priority": null,
+              "relationship": null,
+              "emergency_contact": null,
+              "portal_access": null,
+              "attendance_notification": null,
+              "mail_merge": null
+            },
+            "contact_details": {
+              "data": {
+                "phones": {
+                  "phone": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null,
+                  "mobile": null
+                },
+                "emails": {
+                  "email": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null
+                },
+                "addresses": {
+                  "home": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": "",
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null,
+                    "uprn": null
+                  },
+                  "work": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  },
+                  "postal": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  }
+                },
+                "salutation": null
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "A1892153047-A1687696427",
+      "upi": null,
+      "mis_id": "5299",
+      "initials": "S R",
+      "title": null,
+      "surname": "Rider",
+      "forename": "Shanay",
+      "middle_names": null,
+      "legal_surname": "Rider",
+      "legal_forename": "Shanay",
+      "gender": "FEMALE",
+      "gender_identity": null,
+      "date_of_birth": {
+        "date": "2011-01-29 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "restored_at": null,
+      "created_at": {
+        "date": "2026-04-02 09:19:33.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2026-11-16 19:53:48.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "contacts": {
+        "data": [
+          {
+            "id": "A1892153047-A1478304481",
+            "mis_id": "8139",
+            "upi": null,
+            "title": null,
+            "initials": null,
+            "surname": null,
+            "forename": null,
+            "middle_names": null,
+            "legal_surname": null,
+            "legal_forename": null,
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "created_at": {
+              "date": "2026-04-02 09:18:56.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-04-02 09:27:50.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "relationship": {
+              "bill_payer": null,
+              "lives_with_pupil": false,
+              "email_bills": null,
+              "copy_bills": null,
+              "court_order": null,
+              "pupil_report": null,
+              "parental_responsibility": false,
+              "correspondence": null,
+              "email_notification": null,
+              "sms_notification": null,
+              "mail_notification": null,
+              "push_notification": null,
+              "in_touch_communication": null,
+              "priority": null,
+              "relationship": null,
+              "emergency_contact": null,
+              "portal_access": null,
+              "attendance_notification": null,
+              "mail_merge": null
+            },
+            "contact_details": {
+              "data": {
+                "phones": {
+                  "phone": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null,
+                  "mobile": null
+                },
+                "emails": {
+                  "email": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null
+                },
+                "addresses": {
+                  "home": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": "",
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null,
+                    "uprn": null
+                  },
+                  "work": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  },
+                  "postal": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  }
+                },
+                "salutation": null
+              }
+            }
+          },
+          {
+            "id": "A1892153047-A1578223224",
+            "mis_id": "7291",
+            "upi": null,
+            "title": null,
+            "initials": null,
+            "surname": null,
+            "forename": null,
+            "middle_names": null,
+            "legal_surname": null,
+            "legal_forename": null,
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "created_at": {
+              "date": "2026-04-02 09:18:56.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-04-02 09:27:50.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "relationship": {
+              "bill_payer": null,
+              "lives_with_pupil": true,
+              "email_bills": null,
+              "copy_bills": null,
+              "court_order": null,
+              "pupil_report": null,
+              "parental_responsibility": true,
+              "correspondence": null,
+              "email_notification": null,
+              "sms_notification": null,
+              "mail_notification": null,
+              "push_notification": null,
+              "in_touch_communication": null,
+              "priority": null,
+              "relationship": null,
+              "emergency_contact": null,
+              "portal_access": null,
+              "attendance_notification": null,
+              "mail_merge": null
+            },
+            "contact_details": {
+              "data": {
+                "phones": {
+                  "phone": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null,
+                  "mobile": null
+                },
+                "emails": {
+                  "email": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null
+                },
+                "addresses": {
+                  "home": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": "27 Hurricane Avenue",
+                    "district": null,
+                    "town": "Sheffield",
+                    "county": null,
+                    "country": "United Kingdom",
+                    "postcode": "S13 7AB",
+                    "uprn": null
+                  },
+                  "work": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  },
+                  "postal": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  }
+                },
+                "salutation": null
+              }
+            }
+          },
+          {
+            "id": "A1892153047-A1410636307",
+            "mis_id": "6638",
+            "upi": null,
+            "title": null,
+            "initials": null,
+            "surname": null,
+            "forename": null,
+            "middle_names": null,
+            "legal_surname": null,
+            "legal_forename": null,
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "created_at": {
+              "date": "2026-04-02 09:18:56.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-11-04 13:42:49.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "relationship": {
+              "bill_payer": null,
+              "lives_with_pupil": false,
+              "email_bills": null,
+              "copy_bills": null,
+              "court_order": null,
+              "pupil_report": null,
+              "parental_responsibility": true,
+              "correspondence": null,
+              "email_notification": null,
+              "sms_notification": null,
+              "mail_notification": null,
+              "push_notification": null,
+              "in_touch_communication": null,
+              "priority": null,
+              "relationship": null,
+              "emergency_contact": null,
+              "portal_access": null,
+              "attendance_notification": null,
+              "mail_merge": null
+            },
+            "contact_details": {
+              "data": {
+                "phones": {
+                  "phone": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null,
+                  "mobile": null
+                },
+                "emails": {
+                  "email": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null
+                },
+                "addresses": {
+                  "home": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": "55 Fraser Drive",
+                    "district": null,
+                    "town": "Sheffield",
+                    "county": null,
+                    "country": "United Kingdom",
+                    "postcode": "S8 0JG",
+                    "uprn": null
+                  },
+                  "work": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  },
+                  "postal": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  }
+                },
+                "salutation": null
+              }
+            }
+          },
+          {
+            "id": "A1892153047-A1429953689",
+            "mis_id": "2370",
+            "upi": null,
+            "title": null,
+            "initials": null,
+            "surname": null,
+            "forename": null,
+            "middle_names": null,
+            "legal_surname": null,
+            "legal_forename": null,
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "created_at": {
+              "date": "2026-04-15 12:53:32.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-04-15 19:04:06.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "relationship": {
+              "bill_payer": null,
+              "lives_with_pupil": true,
+              "email_bills": null,
+              "copy_bills": null,
+              "court_order": null,
+              "pupil_report": null,
+              "parental_responsibility": true,
+              "correspondence": null,
+              "email_notification": null,
+              "sms_notification": null,
+              "mail_notification": null,
+              "push_notification": null,
+              "in_touch_communication": null,
+              "priority": null,
+              "relationship": null,
+              "emergency_contact": null,
+              "portal_access": null,
+              "attendance_notification": null,
+              "mail_merge": null
+            },
+            "contact_details": {
+              "data": {
+                "phones": {
+                  "phone": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null,
+                  "mobile": null
+                },
+                "emails": {
+                  "email": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null
+                },
+                "addresses": {
+                  "home": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": "27 Hurricane Avenue",
+                    "district": null,
+                    "town": "Sheffield",
+                    "county": null,
+                    "country": "United Kingdom",
+                    "postcode": "S13 7AB",
+                    "uprn": null
+                  },
+                  "work": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  },
+                  "postal": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  }
+                },
+                "salutation": null
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "A1892153047-A523897015",
+      "upi": null,
+      "mis_id": "5318",
+      "initials": "M A W",
+      "title": null,
+      "surname": "Wood",
+      "forename": "Mia",
+      "middle_names": "Alice",
+      "legal_surname": "Wood",
+      "legal_forename": "Mia",
+      "gender": "FEMALE",
+      "gender_identity": null,
+      "date_of_birth": {
+        "date": "2011-05-30 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/London"
+      },
+      "restored_at": null,
+      "created_at": {
+        "date": "2026-04-02 09:19:33.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2026-11-10 13:59:25.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "contacts": {
+        "data": [
+          {
+            "id": "A1892153047-A1247639834",
+            "mis_id": "7281",
+            "upi": null,
+            "title": null,
+            "initials": null,
+            "surname": null,
+            "forename": null,
+            "middle_names": null,
+            "legal_surname": null,
+            "legal_forename": null,
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "created_at": {
+              "date": "2026-04-02 09:18:56.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-04-02 09:27:50.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "relationship": {
+              "bill_payer": null,
+              "lives_with_pupil": true,
+              "email_bills": null,
+              "copy_bills": null,
+              "court_order": null,
+              "pupil_report": null,
+              "parental_responsibility": true,
+              "correspondence": null,
+              "email_notification": null,
+              "sms_notification": null,
+              "mail_notification": null,
+              "push_notification": null,
+              "in_touch_communication": null,
+              "priority": null,
+              "relationship": null,
+              "emergency_contact": null,
+              "portal_access": null,
+              "attendance_notification": null,
+              "mail_merge": null
+            },
+            "contact_details": {
+              "data": {
+                "phones": {
+                  "phone": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null,
+                  "mobile": null
+                },
+                "emails": {
+                  "email": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null
+                },
+                "addresses": {
+                  "home": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": "7 Ballifield Close",
+                    "district": null,
+                    "town": "Sheffield",
+                    "county": null,
+                    "country": "United Kingdom",
+                    "postcode": "S13 9HP",
+                    "uprn": null
+                  },
+                  "work": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  },
+                  "postal": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  }
+                },
+                "salutation": null
+              }
+            }
+          },
+          {
+            "id": "A1892153047-A1078991541",
+            "mis_id": "8053",
+            "upi": null,
+            "title": null,
+            "initials": null,
+            "surname": null,
+            "forename": null,
+            "middle_names": null,
+            "legal_surname": null,
+            "legal_forename": null,
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "created_at": {
+              "date": "2026-04-02 09:18:56.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-04-02 09:27:50.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "relationship": {
+              "bill_payer": null,
+              "lives_with_pupil": false,
+              "email_bills": null,
+              "copy_bills": null,
+              "court_order": null,
+              "pupil_report": null,
+              "parental_responsibility": false,
+              "correspondence": null,
+              "email_notification": null,
+              "sms_notification": null,
+              "mail_notification": null,
+              "push_notification": null,
+              "in_touch_communication": null,
+              "priority": null,
+              "relationship": null,
+              "emergency_contact": null,
+              "portal_access": null,
+              "attendance_notification": null,
+              "mail_merge": null
+            },
+            "contact_details": {
+              "data": {
+                "phones": {
+                  "phone": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null,
+                  "mobile": null
+                },
+                "emails": {
+                  "email": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null
+                },
+                "addresses": {
+                  "home": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": "",
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null,
+                    "uprn": null
+                  },
+                  "work": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  },
+                  "postal": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  }
+                },
+                "salutation": null
+              }
+            }
+          },
+          {
+            "id": "A1892153047-A1179958860",
+            "mis_id": "8135",
+            "upi": null,
+            "title": null,
+            "initials": null,
+            "surname": null,
+            "forename": null,
+            "middle_names": null,
+            "legal_surname": null,
+            "legal_forename": null,
+            "gender": null,
+            "date_of_birth": null,
+            "restored_at": null,
+            "created_at": {
+              "date": "2026-04-02 09:18:56.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "updated_at": {
+              "date": "2026-04-15 19:03:55.000000",
+              "timezone_type": 3,
+              "timezone": "UTC"
+            },
+            "relationship": {
+              "bill_payer": null,
+              "lives_with_pupil": false,
+              "email_bills": null,
+              "copy_bills": null,
+              "court_order": null,
+              "pupil_report": null,
+              "parental_responsibility": false,
+              "correspondence": null,
+              "email_notification": null,
+              "sms_notification": null,
+              "mail_notification": null,
+              "push_notification": null,
+              "in_touch_communication": null,
+              "priority": null,
+              "relationship": null,
+              "emergency_contact": null,
+              "portal_access": null,
+              "attendance_notification": null,
+              "mail_merge": null
+            },
+            "contact_details": {
+              "data": {
+                "phones": {
+                  "phone": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null,
+                  "mobile": null
+                },
+                "emails": {
+                  "email": null,
+                  "primary": null,
+                  "home": null,
+                  "work": null
+                },
+                "addresses": {
+                  "home": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": "",
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null,
+                    "uprn": null
+                  },
+                  "work": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  },
+                  "postal": {
+                    "house_number": null,
+                    "house_name": null,
+                    "apartment": null,
+                    "street": null,
+                    "district": null,
+                    "town": null,
+                    "county": null,
+                    "country": null,
+                    "postcode": null
+                  }
+                },
+                "salutation": null
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "next": "https://api.wonde.com/v1.0/schools/A1892153047/students?per_page=5&include=contacts.contact_details&page=2",
+      "previous": null,
+      "more": true,
+      "per_page": 5,
+      "current_page": 1
+    },
+    "includes": [
+      "achievements",
+      "achievements.employees",
+      "attendance_summary",
+      "behaviours",
+      "behaviours.employees",
+      "boarding",
+      "boarding.employees",
+      "campus",
+      "cbds",
+      "child_protection_plan_date_ranges",
+      "classes",
+      "classes.employees",
+      "classes.enrolments",
+      "classes.subject",
+      "contact_details",
+      "contacts",
+      "contacts.cbds",
+      "contacts.contact_details",
+      "dietary_details",
+      "doctors",
+      "education_details",
+      "exclusions",
+      "exclusions.cbds",
+      "extended_details",
+      "fsm_date_ranges",
+      "groups",
+      "groups.employees",
+      "house",
+      "house.employees",
+      "identifiers",
+      "in_care_date_ranges",
+      "medical_conditions",
+      "medical_conditions.notes",
+      "medical_events",
+      "medical_events.notes",
+      "medical_notes",
+      "permissions",
+      "photo",
+      "regional_data",
+      "registration",
+      "registration.employees",
+      "results",
+      "results.aspect",
+      "results.resultset",
+      "sen_date_ranges",
+      "sen_needs",
+      "siblings",
+      "siblings.student",
+      "upfsm_exception_date_ranges",
+      "user_defined_fields",
+      "wellbeing",
+      "year",
+      "year.employees"
+    ]
+  }
+}

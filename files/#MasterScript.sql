@@ -152,6 +152,121 @@ CREATE TABLE [dbo].[behaviours_table_insert](
 	[imported_on] [datetime] NULL
 ) 
 GO
+USE [GradeUp_Wonde_NENE]
+GO
+
+
+CREATE TABLE [dbo].[classes](
+	[school_id] [nvarchar](50) NULL,
+	[id] [nvarchar](50) NULL,
+	[mis_id] [nvarchar](50) NULL,
+	[name] [nvarchar](255) NULL,
+	[code] [nvarchar](255) NULL,
+	[description] [nvarchar](255) NULL,
+	[subject] [nvarchar](255) NULL,
+	[alternative] [nvarchar](255) NULL,
+	[priority] [nvarchar](50) NULL,
+	[academic_year] [nvarchar](50) NULL,
+	[year_group] [nvarchar](50) NULL,
+	[restored_at] [datetime] NULL,
+	[created_at] [datetime] NULL,
+	[updated_at] [datetime] NULL,
+	[imported_at] [datetime] NULL
+) 
+GO
+
+ALTER TABLE [dbo].[classes] ADD  DEFAULT (getdate()) FOR [imported_at]
+GO
+
+
+CREATE TABLE [dbo].[classes_employee](
+	[school_id] [nvarchar](50) NULL,
+	[class_id] [nvarchar](50) NULL,
+	[employee_id] [nvarchar](50) NULL,
+	[role] [nvarchar](255) NULL,
+	[is_main_teacher] [bit] NULL,
+	[is_class_teacher] [bit] NULL
+) 
+GO
+
+CREATE TABLE [dbo].[classes_employee_insert](
+	[school_id] [nvarchar](50) NULL,
+	[class_id] [nvarchar](50) NULL,
+	[employee_id] [nvarchar](50) NULL,
+	[role] [nvarchar](255) NULL,
+	[is_main_teacher] [bit] NULL,
+	[is_class_teacher] [bit] NULL
+) 
+GO
+
+CREATE TABLE [dbo].[classes_insert](
+	[school_id] [nvarchar](50) NULL,
+	[id] [nvarchar](50) NULL,
+	[mis_id] [nvarchar](50) NULL,
+	[name] [nvarchar](255) NULL,
+	[code] [nvarchar](255) NULL,
+	[description] [nvarchar](255) NULL,
+	[subject] [nvarchar](255) NULL,
+	[alternative] [nvarchar](255) NULL,
+	[priority] [nvarchar](50) NULL,
+	[academic_year] [nvarchar](50) NULL,
+	[year_group] [nvarchar](50) NULL,
+	[restored_at] [datetime] NULL,
+	[created_at] [datetime] NULL,
+	[updated_at] [datetime] NULL,
+	[imported_at] [datetime] NULL
+) 
+GO
+
+ALTER TABLE [dbo].[classes_insert] ADD  DEFAULT (getdate()) FOR [imported_at]
+GO
+
+
+CREATE TABLE [dbo].[classes_student](
+	[school_id] [nvarchar](50) NULL,
+	[class_id] [nvarchar](50) NULL,
+	[student_id] [nvarchar](50) NULL
+) 
+GO
+
+
+CREATE TABLE [dbo].[classes_student_insert](
+	[school_id] [nvarchar](50) NULL,
+	[class_id] [nvarchar](50) NULL,
+	[student_id] [nvarchar](50) NULL
+) 
+GO
+
+
+
+
+
+CREATE TABLE [dbo].[subjects](
+	[school_id] [nvarchar](50) NOT NULL,
+	[id] [nvarchar](50) NULL,
+	[mis_id] [nvarchar](50) NULL,
+	[code] [nvarchar](255) NULL,
+	[name] [nvarchar](max) NULL,
+	[active] [bit] NULL,
+	[created_at] [smalldatetime] NULL,
+	[updated_at] [smalldatetime] NULL,
+	[imported_at] [smalldatetime] NULL
+) 
+GO
+
+
+CREATE TABLE [dbo].[subjects_insert](
+	[school_id] [nvarchar](50) NOT NULL,
+	[id] [nvarchar](50) NULL,
+	[mis_id] [nvarchar](50) NULL,
+	[code] [nvarchar](255) NULL,
+	[name] [nvarchar](max) NULL,
+	[active] [bit] NULL,
+	[created_at] [smalldatetime] NULL,
+	[updated_at] [smalldatetime] NULL,
+	[imported_at] [smalldatetime] NULL
+) 
+GO
 
 
 CREATE TABLE [dbo].[employee_email](
@@ -743,10 +858,6 @@ ALTER TABLE [dbo].[groups_students] ADD  DEFAULT (getdate()) FOR [imported_at]
 GO
 ALTER TABLE [dbo].[groups_students_insert] ADD  DEFAULT (getdate()) FOR [imported_at]
 GO
-ALTER TABLE [dbo].[student] ADD  DEFAULT (getdate()) FOR [imported_at]
-GO
-ALTER TABLE [dbo].[student_insert] ADD  DEFAULT (getdate()) FOR [imported_at]
-GO
 ALTER TABLE [dbo].[student_leaver] ADD  DEFAULT (getdate()) FOR [imported_at]
 GO
 ALTER TABLE [dbo].[student_leaver_insert] ADD  DEFAULT (getdate()) FOR [imported_at]
@@ -1254,7 +1365,7 @@ GO
 CREATE VIEW [dbo].[v_behaviour]
 AS
   SELECT dbo.behaviours_table.school_id,
-         dbo.behaviours_table.id as W_id,
+         dbo.behaviours_table.id as id,
          dbo.behaviours_students.student_id,
          dbo.behaviours_table.behaviour_type,
          dbo.behaviours_table.location,
@@ -1493,6 +1604,207 @@ GO
 
 ALTER TABLE [dbo].[attendance_session_student_breakdown_cache] ADD  DEFAULT (getdate()) FOR [cached_at]
 GO
+
+
+
+
+
+CREATE TABLE [dbo].[contact_address_insert](
+	[school_id] [nvarchar](50) NOT NULL,
+	[ID] [nvarchar](50) NULL,
+	[address_type] [nvarchar](50) NULL,
+	[house_number] [nvarchar](max) NULL,
+	[house_name] [nvarchar](max) NULL,
+	[apartment] [nvarchar](max) NULL,
+	[street] [nvarchar](max) NULL,
+	[district] [nvarchar](max) NULL,
+	[town] [nvarchar](max) NULL,
+	[county] [nvarchar](max) NULL,
+	[country] [nvarchar](max) NULL,
+	[postcode] [nvarchar](50) NULL,
+	[data_imported_on] [datetime] NULL
+) 
+GO
+
+
+
+CREATE TABLE [dbo].[contact_email_insert](
+	[school_id] [nvarchar](50) NOT NULL,
+	[ID] [nvarchar](50) NULL,
+	[Email] [nvarchar](500) NULL,
+	[primary] [nvarchar](500) NULL,
+	[home] [nvarchar](500) NULL,
+	[work] [nvarchar](500) NULL,
+	[data_imported_on] [datetime] NULL
+)
+GO
+
+
+CREATE TABLE [dbo].[contact_phone_insert](
+	[school_id] [nvarchar](50) NOT NULL,
+	[ID] [nvarchar](50) NULL,
+	[Phone] [nvarchar](50) NULL,
+	[primary] [nvarchar](50) NULL,
+	[home] [nvarchar](50) NULL,
+	[work] [nvarchar](50) NULL,
+	[mobile] [nvarchar](50) NULL,
+	[data_imported_on] [datetime] NULL
+) 
+GO
+
+
+CREATE TABLE [dbo].[contact_relationship_insert](
+	[school_id] [nvarchar](50) NOT NULL,
+	[Contact_ID] [nvarchar](50) NULL,
+	[Student_ID] [nvarchar](50) NULL,
+	[bill_payer] [bit] NULL,
+	[lives_with_pupil] [bit] NULL,
+	[email_bills] [bit] NULL,
+	[copy_bills] [bit] NULL,
+	[court_order] [bit] NULL,
+	[pupil_report] [bit] NULL,
+	[parental_responsibility] [bit] NULL,
+	[correspondence] [bit] NULL,
+	[email_notification] [bit] NULL,
+	[sms_notification] [bit] NULL,
+	[mail_notification] [bit] NULL,
+	[push_notification] [bit] NULL,
+	[in_touch_communication] [bit] NULL,
+	[priority] [int] NULL,
+	[relationship] [nvarchar](50) NULL,
+	[emergency_contact] [bit] NULL,
+	[portal_access] [bit] NULL,
+	[attendance_notification] [bit] NULL,
+	[mail_merge] [bit] NULL,
+	[created_at] [smalldatetime] NULL,
+	[data_updated_on] [smalldatetime] NULL,
+	[data_imported_on] [smalldatetime] NULL
+) 
+GO
+
+
+
+CREATE TABLE [dbo].[contacts_insert](
+	[school_id] [nvarchar](50) NOT NULL,
+	[ID] [nvarchar](50) NULL,
+	[mis_id] [nvarchar](50) NULL,
+	[upi] [nvarchar](100) NULL,
+	[title] [varchar](50) NULL,
+	[initials] [varchar](20) NULL,
+	[surname] [nvarchar](max) NULL,
+	[forename] [nvarchar](max) NULL,
+	[middle_name] [nvarchar](max) NULL,
+	[gender] [varchar](20) NULL,
+	[dob] [date] NULL,
+	[created_at] [smalldatetime] NULL,
+	[data_updated_on] [smalldatetime] NULL,
+	[data_imported_on] [smalldatetime] NULL
+) 
+GO
+
+
+
+
+
+
+
+CREATE TABLE [dbo].[contact_address](
+	[school_id] [nvarchar](50) NOT NULL,
+	[ID] [nvarchar](50) NULL,
+	[address_type] [nvarchar](50) NULL,
+	[house_number] [nvarchar](max) NULL,
+	[house_name] [nvarchar](max) NULL,
+	[apartment] [nvarchar](max) NULL,
+	[street] [nvarchar](max) NULL,
+	[district] [nvarchar](max) NULL,
+	[town] [nvarchar](max) NULL,
+	[county] [nvarchar](max) NULL,
+	[country] [nvarchar](max) NULL,
+	[postcode] [nvarchar](50) NULL,
+	[data_imported_on] [datetime] NULL
+) 
+GO
+
+
+CREATE TABLE [dbo].[contact_email](
+	[school_id] [nvarchar](50) NOT NULL,
+	[ID] [nvarchar](50) NULL,
+	[Email] [nvarchar](500) NULL,
+	[primary] [nvarchar](500) NULL,
+	[home] [nvarchar](500) NULL,
+	[work] [nvarchar](500) NULL,
+	[data_imported_on] [datetime] NULL
+)
+GO
+
+
+CREATE TABLE [dbo].[contact_phone](
+	[school_id] [nvarchar](50) NOT NULL,
+	[ID] [nvarchar](50) NULL,
+	[Phone] [nvarchar](50) NULL,
+	[primary] [nvarchar](50) NULL,
+	[home] [nvarchar](50) NULL,
+	[work] [nvarchar](50) NULL,
+	[mobile] [nvarchar](50) NULL,
+	[data_imported_on] [datetime] NULL
+) 
+GO
+
+
+CREATE TABLE [dbo].[contact_relationship](
+	[school_id] [nvarchar](50) NOT NULL,
+	[Contact_ID] [nvarchar](50) NULL,
+	[Student_ID] [nvarchar](50) NULL,
+	[bill_payer] [bit] NULL,
+	[lives_with_pupil] [bit] NULL,
+	[email_bills] [bit] NULL,
+	[copy_bills] [bit] NULL,
+	[court_order] [bit] NULL,
+	[pupil_report] [bit] NULL,
+	[parental_responsibility] [bit] NULL,
+	[correspondence] [bit] NULL,
+	[email_notification] [bit] NULL,
+	[sms_notification] [bit] NULL,
+	[mail_notification] [bit] NULL,
+	[push_notification] [bit] NULL,
+	[in_touch_communication] [bit] NULL,
+	[priority] [int] NULL,
+	[relationship] [nvarchar](50) NULL,
+	[emergency_contact] [bit] NULL,
+	[portal_access] [bit] NULL,
+	[attendance_notification] [bit] NULL,
+	[mail_merge] [bit] NULL,
+	[created_at] [smalldatetime] NULL,
+	[data_updated_on] [smalldatetime] NULL,
+	[data_imported_on] [smalldatetime] NULL
+) 
+GO
+
+
+
+CREATE TABLE [dbo].[contacts](
+	[school_id] [nvarchar](50) NOT NULL,
+	[ID] [nvarchar](50) NULL,
+	[mis_id] [nvarchar](50) NULL,
+	[upi] [nvarchar](100) NULL,
+	[title] [varchar](50) NULL,
+	[initials] [varchar](20) NULL,
+	[surname] [nvarchar](max) NULL,
+	[forename] [nvarchar](max) NULL,
+	[middle_name] [nvarchar](max) NULL,
+	[gender] [varchar](20) NULL,
+	[dob] [date] NULL,
+	[created_at] [smalldatetime] NULL,
+	[data_updated_on] [smalldatetime] NULL,
+	[data_imported_on] [smalldatetime] NULL
+) 
+GO
+
+
+
+
+
+
 
 
 

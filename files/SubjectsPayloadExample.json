@@ -1,0 +1,869 @@
+{
+  "data": [
+    {
+      "id": "A1918095321",
+      "mis_id": "501",
+      "code": "Ac",
+      "name": "OTHER ACHI",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A139879280",
+      "mis_id": "645",
+      "code": "Ai",
+      "name": "AIDA",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A240453387",
+      "mis_id": "502",
+      "code": "Ar",
+      "name": "ART",
+      "active": true,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A71948450",
+      "mis_id": "646",
+      "code": "As",
+      "name": "ASDAN",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A441220157",
+      "mis_id": "503",
+      "code": "B1",
+      "name": "Business S",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A272830932",
+      "mis_id": "504",
+      "code": "B2",
+      "name": "Business S",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A373798255",
+      "mis_id": "505",
+      "code": "Ba",
+      "name": "COLLEGE",
+      "active": true,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A750405894",
+      "mis_id": "506",
+      "code": "Bi",
+      "name": "BIOLOGY",
+      "active": true,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A582937233",
+      "mis_id": "2205",
+      "code": "Bo",
+      "name": "Business OCR",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A951946792",
+      "mis_id": "507",
+      "code": "Bs",
+      "name": "BUSINESS",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A1051730883",
+      "mis_id": "786",
+      "code": "Bv",
+      "name": "VOC BUSINESS",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A884262746",
+      "mis_id": "508",
+      "code": "C1",
+      "name": "Care Inter",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A1252759797",
+      "mis_id": "509",
+      "code": "C2",
+      "name": "Care Adv",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A1085160588",
+      "mis_id": "510",
+      "code": "Ca",
+      "name": "CARING",
+      "active": true,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A1185075239",
+      "mis_id": "511",
+      "code": "Cc",
+      "name": "CHILDCARE",
+      "active": true,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A1554085310",
+      "mis_id": "849",
+      "code": "Cg",
+      "name": "CATERING",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A1386481993",
+      "mis_id": "512",
+      "code": "Ch",
+      "name": "CHEMISTRY",
+      "active": true,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A1754835680",
+      "mis_id": "802",
+      "code": "Ci",
+      "name": "CIDA",
+      "active": true,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A1855934075",
+      "mis_id": "2244",
+      "code": "Cm",
+      "name": "Core Maths",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A1687413266",
+      "mis_id": "787",
+      "code": "Cn",
+      "name": "CONSTRUCTION",
+      "active": true,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A2056685485",
+      "mis_id": "513",
+      "code": "Co",
+      "name": "Information Technology",
+      "active": true,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A1888836420",
+      "mis_id": "514",
+      "code": "Cp",
+      "name": "COMPUTER S",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A1988754655",
+      "mis_id": "515",
+      "code": "Cr",
+      "name": "CAREERS",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A210538614",
+      "mis_id": "516",
+      "code": "Cs",
+      "name": "Comp Science",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A42152961",
+      "mis_id": "803",
+      "code": "Ct",
+      "name": "CRITICAL THINKING",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A411552152",
+      "mis_id": "2158",
+      "code": "Cw",
+      "name": "Creative Writing",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A519728435",
+      "mis_id": "2247",
+      "code": "Da",
+      "name": "Dance",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A351866570",
+      "mis_id": "517",
+      "code": "De",
+      "name": "GERMAN",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A721265253",
+      "mis_id": "644",
+      "code": "Di",
+      "name": "DIDA",
+      "active": true,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A552617980",
+      "mis_id": "850",
+      "code": "Dn",
+      "name": "DESIGN",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A653728663",
+      "mis_id": "854",
+      "code": "Dp",
+      "name": "DEEP LEARNING",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A1022082862",
+      "mis_id": "816",
+      "code": "Dr",
+      "name": "DRAMA",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A854479033",
+      "mis_id": "518",
+      "code": "Dt",
+      "name": "DT",
+      "active": true,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A1222833232",
+      "mis_id": "519",
+      "code": "Ea",
+      "name": "English Language",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A1323403755",
+      "mis_id": "853",
+      "code": "Eb",
+      "name": "English Literature",
+      "active": true,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A1155804546",
+      "mis_id": "520",
+      "code": "Ec",
+      "name": "ECONOMICS",
+      "active": true,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A1524154653",
+      "mis_id": "2198",
+      "code": "Ed",
+      "name": "Edcl",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A1356817076",
+      "mis_id": "788",
+      "code": "Eg",
+      "name": "ENGINEERING",
+      "active": true,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A1456604751",
+      "mis_id": "2159",
+      "code": "Eh",
+      "name": "Ethics & Religion",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A1826020326",
+      "mis_id": "2160",
+      "code": "Ei",
+      "name": "English Intervention",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A1658158961",
+      "mis_id": "521",
+      "code": "El",
+      "name": "ELECTRONICS",
+      "active": true,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A2026377992",
+      "mis_id": "874",
+      "code": "Em",
+      "name": "EMPLOYABILITY",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A2127344803",
+      "mis_id": "522",
+      "code": "En",
+      "name": "ENGLISH",
+      "active": true,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A1958955066",
+      "mis_id": "789",
+      "code": "Ep",
+      "name": "EXTENDED PROJECT",
+      "active": true,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A180874709",
+      "mis_id": "647",
+      "code": "Er",
+      "name": "ENG RESIT",
+      "active": true,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A54165868",
+      "mis_id": "790",
+      "code": "Es",
+      "name": "SCI ENV",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A423175431",
+      "mis_id": "835",
+      "code": "Et",
+      "name": "ENRICHMENT",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A524142238",
+      "mis_id": "2195",
+      "code": "Eu",
+      "name": "Extended Sports Studies",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A355506729",
+      "mis_id": "523",
+      "code": "Ex",
+      "name": "Exel club",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "A725041088",
+      "mis_id": "2245",
+      "code": "Fd",
+      "name": "GCSE Food",
+      "active": false,
+      "created_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "updated_at": {
+        "date": "2019-12-13 11:51:20.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "next": "https://api.wonde.com/v1.0/schools/A621656141/subjects?page=2",
+      "previous": null,
+      "more": true,
+      "per_page": 50,
+      "current_page": 1
+    },
+    "includes": [
+      "classes",
+      "classes.lessons",
+      "classes.lessons.period",
+      "classes.lessons.room"
+    ]
+  }
+}

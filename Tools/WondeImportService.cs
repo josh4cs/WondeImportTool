@@ -218,6 +218,7 @@ namespace WondeImportTool.Tools
 
             var sectionStartTime = DateTime.UtcNow;
             await LogImportEventAsync("SYSTEM", requestId, "students", "section start", null, sectionStartTime, sectionStartTime, 0, cancellationToken).ConfigureAwait(false);
+            await LogImportEventAsync("SYSTEM", requestId, "contacts", "section start", null, sectionStartTime, sectionStartTime, 0, cancellationToken).ConfigureAwait(false);
 
             using var client = new HttpClient();
             await using var connection = new SqlConnection(_connectionString);
@@ -226,6 +227,11 @@ namespace WondeImportTool.Tools
 
             var studentRows = CreateStudentImportTable();
             var groupRows = CreateGroupStudentTable();
+            var contactRows = CreateContactImportTable();
+            var contactAddressRows = CreateContactAddressTable();
+            var contactEmailRows = CreateContactEmailTable();
+            var contactPhoneRows = CreateContactPhoneTable();
+            var contactRelationshipRows = CreateContactRelationshipTable();
 
             foreach (var schoolId in schoolIds)
             {
@@ -240,6 +246,7 @@ namespace WondeImportTool.Tools
                         cancellationToken).ConfigureAwait(false);
 
                     var pageUri = BuildStudentsUri(schoolId, pageSize);
+                    var pageNumber = 0;
                     while (pageUri is not null)
                     {
                         cancellationToken.ThrowIfCancellationRequested();
@@ -248,6 +255,7 @@ namespace WondeImportTool.Tools
 
                         var requestStartTime = DateTime.UtcNow;
                         await LogImportEventAsync(schoolId, requestId, "students", "request", request.RequestUri?.ToString(), requestStartTime, requestStartTime, 0, cancellationToken).ConfigureAwait(false);
+                        await LogImportEventAsync(schoolId, requestId, "contacts", "request", request.RequestUri?.ToString(), requestStartTime, requestStartTime, 0, cancellationToken).ConfigureAwait(false);
 
                         using var response = await client.SendAsync(request, cancellationToken).ConfigureAwait(false);
                         var responseEndTime = DateTime.UtcNow;
@@ -263,13 +271,36 @@ namespace WondeImportTool.Tools
                         var page = WondeModels.WondeStudent.FromJson(json)
                             ?? throw new InvalidOperationException($"Wonde returned an empty student response for school {schoolId}.");
 
-                        AddStudentRows(schoolId, academicYear, page.data, studentRows, groupRows);
+                        pageNumber++;
+                        Console.WriteLine($"School {schoolId}: received student page {pageNumber} containing {page.data?.Count ?? 0} records.");
+                        AddStudentRows(
+                            schoolId,
+                            academicYear,
+                            page.data,
+                            studentRows,
+                            groupRows,
+                            contactRows,
+                            contactAddressRows,
+                            contactEmailRows,
+                            contactPhoneRows,
+                            contactRelationshipRows);
                         if (studentRows.Rows.Count >= batchSize)
                         {
                             var rowsProcessed = studentRows.Rows.Count;
-                            await WriteStudentBatchAsync(connection, studentRows, groupRows, cancellationToken).ConfigureAwait(false);
+                            var contactsProcessed = contactRows.Rows.Count;
+                            await WriteStudentBatchAsync(
+                                connection,
+                                studentRows,
+                                groupRows,
+                                contactRows,
+                                contactAddressRows,
+                                contactEmailRows,
+                                contactPhoneRows,
+                                contactRelationshipRows,
+                                cancellationToken).ConfigureAwait(false);
                             var batchEndTime = DateTime.UtcNow;
                             await LogImportEventAsync(schoolId, requestId, "students", "insert batch complete", request.RequestUri?.ToString(), requestStartTime, batchEndTime, rowsProcessed, cancellationToken).ConfigureAwait(false);
+                            await LogImportEventAsync(schoolId, requestId, "contacts", "insert batch complete", request.RequestUri?.ToString(), requestStartTime, batchEndTime, contactsProcessed, cancellationToken).ConfigureAwait(false);
                         }
 
                         pageUri = GetNextPageUri(page.meta?.pagination, schoolId, "student");
@@ -282,6 +313,10 @@ namespace WondeImportTool.Tools
                     await LogTextAsync("ERROR", $"Students import failed for school {schoolId}: {ex.Message}", cancellationToken).ConfigureAwait(false);
                     continue;
                 }
+
+                var sectionEndTime = DateTime.UtcNow;
+                await LogImportEventAsync(schoolId, requestId, "students", "section finish", null, sectionStartTime, sectionEndTime, 0, cancellationToken).ConfigureAwait(false);
+                await LogImportEventAsync(schoolId, requestId, "contacts", "section finish", null, sectionStartTime, sectionEndTime, 0, cancellationToken).ConfigureAwait(false);
             }
 
 
@@ -289,15 +324,24 @@ namespace WondeImportTool.Tools
             var finalStudentRows = studentRows.Rows.Count;
             if (finalStudentRows > 0)
             {
+                var finalContactRows = contactRows.Rows.Count;
                 var finalBatchStartTime = DateTime.UtcNow;
-                await WriteStudentBatchAsync(connection, studentRows, groupRows, cancellationToken).ConfigureAwait(false);
+                await WriteStudentBatchAsync(
+                    connection,
+                    studentRows,
+                    groupRows,
+                    contactRows,
+                    contactAddressRows,
+                    contactEmailRows,
+                    contactPhoneRows,
+                    contactRelationshipRows,
+                    cancellationToken).ConfigureAwait(false);
                 var finalBatchEndTime = DateTime.UtcNow;
                 await LogImportEventAsync("SYSTEM", requestId, "students", "insert batch complete", null, finalBatchStartTime, finalBatchEndTime, finalStudentRows, cancellationToken).ConfigureAwait(false);
+                await LogImportEventAsync("SYSTEM", requestId, "contacts", "insert batch complete", null, finalBatchStartTime, finalBatchEndTime, finalContactRows, cancellationToken).ConfigureAwait(false);
             }
             await MergeStudentStagingAsync(connection, cancellationToken).ConfigureAwait(false);
-
-            var sectionEndTime = DateTime.UtcNow;
-            await LogImportEventAsync("SYSTEM", requestId, "students", "section finish", null, sectionStartTime, sectionEndTime, 0, cancellationToken).ConfigureAwait(false);
+            await MergeContactStagingAsync(connection, cancellationToken).ConfigureAwait(false);
         }
 
         public async Task GetStudentLeaversAsync(
@@ -391,6 +435,8 @@ namespace WondeImportTool.Tools
                     await LogTextAsync("ERROR", $"Student leavers import failed for school {schoolId}: {ex.Message}", cancellationToken).ConfigureAwait(false);
                     continue;
                 }
+                var sectionEndTime = DateTime.UtcNow;
+                await LogImportEventAsync(schoolId, requestId, "student_leavers", "section finish", null, sectionStartTime, sectionEndTime, 0, cancellationToken).ConfigureAwait(false);
             }
 
 
@@ -405,8 +451,6 @@ namespace WondeImportTool.Tools
             }
             await MergeLeaverStagingAsync(connection, cancellationToken).ConfigureAwait(false);
 
-            var sectionEndTime = DateTime.UtcNow;
-            await LogImportEventAsync("SYSTEM", requestId, "student_leavers", "section finish", null, sectionStartTime, sectionEndTime, 0, cancellationToken).ConfigureAwait(false);
         }
 
         private static Uri BuildStudentLeaversUri(string schoolId, int pageSize) =>
@@ -483,7 +527,7 @@ namespace WondeImportTool.Tools
         }
 
         private static Uri BuildStudentsUri(string schoolId, int pageSize) =>
-            new($"https://api.wonde.com/v1.0/schools/{Uri.EscapeDataString(schoolId)}/students?per_page={pageSize.ToString(CultureInfo.InvariantCulture)}&include=groups,education_details,extended_details");
+            new($"https://api.wonde.com/v1.0/schools/{Uri.EscapeDataString(schoolId)}/students?per_page={pageSize.ToString(CultureInfo.InvariantCulture)}&include=groups,education_details,extended_details,contacts,contacts.contact_details");
 
         private static Uri? GetNextPageUri(WondeModels.WondeStudent_Pagination? pagination, string schoolId, string endpointName)
         {
@@ -495,7 +539,7 @@ namespace WondeImportTool.Tools
         private static async Task TruncateStudentStagingAsync(SqlConnection connection, CancellationToken cancellationToken)
         {
             await using var command = new SqlCommand(
-                "TRUNCATE TABLE [dbo].[students_insert]; TRUNCATE TABLE [dbo].[groups_students_insert];", connection);
+                "TRUNCATE TABLE [dbo].[students_insert]; TRUNCATE TABLE [dbo].[groups_students_insert]; TRUNCATE TABLE [dbo].[contacts_insert]; TRUNCATE TABLE [dbo].[contact_address_insert]; TRUNCATE TABLE [dbo].[contact_email_insert]; TRUNCATE TABLE [dbo].[contact_phone_insert]; TRUNCATE TABLE [dbo].[contact_relationship_insert];", connection);
             command.CommandTimeout = 120;
             await command.ExecuteNonQueryAsync(cancellationToken).ConfigureAwait(false);
         }
@@ -532,12 +576,84 @@ namespace WondeImportTool.Tools
             return table;
         }
 
+        private static DataTable CreateContactImportTable()
+        {
+            var table = new DataTable();
+            foreach (var column in new[] { "school_id", "ID", "mis_id", "upi", "title", "initials", "surname", "forename", "middle_name", "gender" }) table.Columns.Add(column, typeof(string));
+            table.Columns.Add("dob", typeof(DateTime));
+            foreach (var column in new[] { "created_at", "data_updated_on", "data_imported_on" }) table.Columns.Add(column, typeof(DateTime));
+            return table;
+        }
+
+        private static DataTable CreateContactAddressTable()
+        {
+            var table = new DataTable();
+            foreach (var column in new[] { "school_id", "ID", "address_type", "house_number", "house_name", "apartment", "street", "district", "town", "county", "country", "postcode" }) table.Columns.Add(column, typeof(string));
+            table.Columns.Add("data_imported_on", typeof(DateTime));
+            return table;
+        }
+
+        private static DataTable CreateContactEmailTable()
+        {
+            var table = new DataTable();
+            foreach (var column in new[] { "school_id", "ID", "Email", "primary", "home", "work" }) table.Columns.Add(column, typeof(string));
+            table.Columns.Add("data_imported_on", typeof(DateTime));
+            return table;
+        }
+
+        private static DataTable CreateContactPhoneTable()
+        {
+            var table = new DataTable();
+            foreach (var column in new[] { "school_id", "ID", "Phone", "primary", "home", "work", "mobile" }) table.Columns.Add(column, typeof(string));
+            table.Columns.Add("data_imported_on", typeof(DateTime));
+            return table;
+        }
+
+        private static DataTable CreateContactRelationshipTable()
+        {
+            var table = new DataTable();
+            table.Columns.Add("school_id", typeof(string));
+            table.Columns.Add("Contact_ID", typeof(string));
+            table.Columns.Add("Student_ID", typeof(string));
+            foreach (var column in new[] { "bill_payer", "lives_with_pupil", "email_bills", "copy_bills", "court_order", "pupil_report", "parental_responsibility", "correspondence", "email_notification", "sms_notification", "mail_notification", "push_notification", "in_touch_communication" }) table.Columns.Add(column, typeof(bool));
+            table.Columns.Add("priority", typeof(int));
+            table.Columns.Add("relationship", typeof(string));
+            foreach (var column in new[] { "emergency_contact", "portal_access", "attendance_notification", "mail_merge" }) table.Columns.Add(column, typeof(bool));
+            foreach (var column in new[] { "created_at", "data_updated_on", "data_imported_on" }) table.Columns.Add(column, typeof(DateTime));
+            return table;
+        }
+
         private static void AddStudentRows(
             string schoolId,
             string academicYear,
             IReadOnlyCollection<WondeModels.WondeStudent_obj>? students,
             DataTable studentRows,
             DataTable groupRows)
+        {
+            AddStudentRows(
+                schoolId,
+                academicYear,
+                students,
+                studentRows,
+                groupRows,
+                CreateContactImportTable(),
+                CreateContactAddressTable(),
+                CreateContactEmailTable(),
+                CreateContactPhoneTable(),
+                CreateContactRelationshipTable());
+        }
+
+        private static void AddStudentRows(
+            string schoolId,
+            string academicYear,
+            IReadOnlyCollection<WondeModels.WondeStudent_obj>? students,
+            DataTable studentRows,
+            DataTable groupRows,
+            DataTable contactRows,
+            DataTable contactAddressRows,
+            DataTable contactEmailRows,
+            DataTable contactPhoneRows,
+            DataTable contactRelationshipRows)
         {
             if (students is null) return;
             foreach (var student in students)
@@ -560,15 +676,137 @@ namespace WondeImportTool.Tools
                 row["imported_at"] = DateTime.UtcNow;
                 studentRows.Rows.Add(row);
 
-                if (student.groups?.data is null) continue;
-                foreach (var group in student.groups.data)
+                if (student.groups?.data is not null)
                 {
-                    var groupRow = groupRows.NewRow();
-                    groupRow["school_id"] = schoolId; groupRow["student_id"] = ToDbValue(student.id); groupRow["group_id"] = ToDbValue(group.id);
-                    groupRow["start_date"] = ToDbValue(ToSqlDateTime(group.meta?.start_date)); groupRow["end_date"] = ToDbValue(ToSqlDateTime(group.meta?.end_date)); groupRow["imported_at"] = DateTime.UtcNow;
-                    groupRows.Rows.Add(groupRow);
+                    foreach (var group in student.groups.data)
+                    {
+                        var groupRow = groupRows.NewRow();
+                        groupRow["school_id"] = schoolId; groupRow["student_id"] = ToDbValue(student.id); groupRow["group_id"] = ToDbValue(group.id);
+                        groupRow["start_date"] = ToDbValue(ToSqlDateTime(group.meta?.start_date)); groupRow["end_date"] = ToDbValue(ToSqlDateTime(group.meta?.end_date)); groupRow["imported_at"] = DateTime.UtcNow;
+                        groupRows.Rows.Add(groupRow);
+                    }
                 }
+
+                AddContactRows(
+                    schoolId,
+                    student,
+                    contactRows,
+                    contactAddressRows,
+                    contactEmailRows,
+                    contactPhoneRows,
+                    contactRelationshipRows);
             }
+        }
+
+        private static void AddContactRows(
+            string schoolId,
+            WondeModels.WondeStudent_obj student,
+            DataTable contactRows,
+            DataTable contactAddressRows,
+            DataTable contactEmailRows,
+            DataTable contactPhoneRows,
+            DataTable contactRelationshipRows)
+        {
+            if (student.contacts?.data is null) return;
+
+            foreach (var contact in student.contacts.data)
+            {
+                var importedAt = DateTime.UtcNow;
+                var contactRow = contactRows.NewRow();
+                contactRow["school_id"] = schoolId;
+                contactRow["ID"] = ToDbValue(NullableString(contact.id, "contact ID", 50));
+                contactRow["mis_id"] = ToDbValue(NullableString(contact.mis_id, "contact MIS ID", 50));
+                contactRow["upi"] = ToDbValue(NullableString(contact.upi, "contact UPI", 100));
+                contactRow["title"] = ToDbValue(contact.title);
+                contactRow["initials"] = ToDbValue(contact.initials);
+                contactRow["surname"] = ToDbValue(contact.surname);
+                contactRow["forename"] = ToDbValue(contact.forename);
+                contactRow["middle_name"] = ToDbValue(contact.middle_names);
+                contactRow["gender"] = ToDbValue(contact.gender);
+                contactRow["dob"] = ToDbValue(ToSqlDateTime(contact.date_of_birth)?.Date);
+                contactRow["created_at"] = ToDbValue(ToSqlDateTime(contact.created_at));
+                contactRow["data_updated_on"] = ToDbValue(ToSqlDateTime(contact.updated_at));
+                contactRow["data_imported_on"] = importedAt;
+                contactRows.Rows.Add(contactRow);
+
+                var details = contact.contact_details?.data;
+                var phones = details?.phones;
+                var phoneRow = contactPhoneRows.NewRow();
+                phoneRow["school_id"] = schoolId;
+                phoneRow["ID"] = ToDbValue(contact.id);
+                phoneRow["Phone"] = ToDbValue(phones?.phone);
+                phoneRow["primary"] = ToDbValue(phones?.primary);
+                phoneRow["home"] = ToDbValue(phones?.home);
+                phoneRow["work"] = ToDbValue(phones?.work);
+                phoneRow["mobile"] = ToDbValue(phones?.mobile);
+                phoneRow["data_imported_on"] = importedAt;
+                contactPhoneRows.Rows.Add(phoneRow);
+
+                var emails = details?.emails;
+                var emailRow = contactEmailRows.NewRow();
+                emailRow["school_id"] = schoolId;
+                emailRow["ID"] = ToDbValue(contact.id);
+                emailRow["Email"] = ToDbValue(emails?.email);
+                emailRow["primary"] = ToDbValue(emails?.primary);
+                emailRow["home"] = ToDbValue(emails?.home);
+                emailRow["work"] = ToDbValue(emails?.work);
+                emailRow["data_imported_on"] = importedAt;
+                contactEmailRows.Rows.Add(emailRow);
+
+                AddContactAddressRow(schoolId, contact.id, "home", details?.addresses?.home, importedAt, contactAddressRows);
+                AddContactAddressRow(schoolId, contact.id, "work", details?.addresses?.work, importedAt, contactAddressRows);
+                AddContactAddressRow(schoolId, contact.id, "postal", details?.addresses?.postal, importedAt, contactAddressRows);
+
+                var relationship = contact.relationship;
+                var relationshipRow = contactRelationshipRows.NewRow();
+                relationshipRow["school_id"] = schoolId;
+                relationshipRow["Contact_ID"] = ToDbValue(contact.id);
+                relationshipRow["Student_ID"] = ToDbValue(student.id);
+                foreach (var (name, value) in new (string, bool?)[ ]
+                {
+                    ("bill_payer", relationship?.bill_payer), ("lives_with_pupil", relationship?.lives_with_pupil),
+                    ("email_bills", relationship?.email_bills), ("copy_bills", relationship?.copy_bills),
+                    ("court_order", relationship?.court_order), ("pupil_report", relationship?.pupil_report),
+                    ("parental_responsibility", relationship?.parental_responsibility), ("correspondence", relationship?.correspondence),
+                    ("email_notification", relationship?.email_notification), ("sms_notification", relationship?.sms_notification),
+                    ("mail_notification", relationship?.mail_notification), ("push_notification", relationship?.push_notification),
+                    ("in_touch_communication", relationship?.in_touch_communication), ("emergency_contact", relationship?.emergency_contact),
+                    ("portal_access", relationship?.portal_access), ("attendance_notification", relationship?.attendance_notification),
+                    ("mail_merge", relationship?.mail_merge)
+                }) relationshipRow[name] = ToDbValue(value);
+                relationshipRow["priority"] = ToDbValue(relationship?.priority);
+                relationshipRow["relationship"] = ToDbValue(relationship?.relationship);
+                relationshipRow["created_at"] = ToDbValue(ToSqlDateTime(contact.created_at));
+                relationshipRow["data_updated_on"] = ToDbValue(ToSqlDateTime(contact.updated_at));
+                relationshipRow["data_imported_on"] = importedAt;
+                contactRelationshipRows.Rows.Add(relationshipRow);
+            }
+        }
+
+        private static void AddContactAddressRow(
+            string schoolId,
+            string contactId,
+            string addressType,
+            WondeModels.WondeStudent_ContactAddress? address,
+            DateTime importedAt,
+            DataTable addressRows)
+        {
+            if (address is null) return;
+            var row = addressRows.NewRow();
+            row["school_id"] = schoolId;
+            row["ID"] = ToDbValue(contactId);
+            row["address_type"] = addressType;
+            row["house_number"] = ToDbValue(address.house_number);
+            row["house_name"] = ToDbValue(address.house_name);
+            row["apartment"] = ToDbValue(address.apartment);
+            row["street"] = ToDbValue(address.street);
+            row["district"] = ToDbValue(address.district);
+            row["town"] = ToDbValue(address.town);
+            row["county"] = ToDbValue(address.county);
+            row["country"] = ToDbValue(address.country);
+            row["postcode"] = ToDbValue(address.postcode);
+            row["data_imported_on"] = importedAt;
+            addressRows.Rows.Add(row);
         }
 
         private static void SetExtendedStudentValues(DataRow row, WondeModels.WondeStudent_ExtendedDetailsData? value)
@@ -579,7 +817,16 @@ namespace WondeImportTool.Tools
             row["enrolment_start_date"] = ToDbValue(ToSqlDateTime(value?.enrolment_start_date)?.Date); row["enrolment_end_date"] = ToDbValue(ToSqlDateTime(value?.enrolment_end_date)?.Date);
         }
 
-        private static async Task WriteStudentBatchAsync(SqlConnection connection, DataTable studentRows, DataTable groupRows, CancellationToken cancellationToken)
+        private static async Task WriteStudentBatchAsync(
+            SqlConnection connection,
+            DataTable studentRows,
+            DataTable groupRows,
+            DataTable contactRows,
+            DataTable contactAddressRows,
+            DataTable contactEmailRows,
+            DataTable contactPhoneRows,
+            DataTable contactRelationshipRows,
+            CancellationToken cancellationToken)
         {
             if (studentRows.Rows.Count == 0) return;
             using var studentCopy = new SqlBulkCopy(connection) { DestinationTableName = "[dbo].[students_insert]", BatchSize = studentRows.Rows.Count, BulkCopyTimeout = 600 };
@@ -591,12 +838,49 @@ namespace WondeImportTool.Tools
                 AddColumnMappings(groupCopy, groupRows);
                 await groupCopy.WriteToServerAsync(groupRows, cancellationToken).ConfigureAwait(false);
             }
-            studentRows.Clear(); groupRows.Clear();
+
+            await WriteContactTableAsync(connection, "[dbo].[contacts_insert]", contactRows, cancellationToken).ConfigureAwait(false);
+            await WriteContactTableAsync(connection, "[dbo].[contact_address_insert]", contactAddressRows, cancellationToken).ConfigureAwait(false);
+            await WriteContactTableAsync(connection, "[dbo].[contact_email_insert]", contactEmailRows, cancellationToken).ConfigureAwait(false);
+            await WriteContactTableAsync(connection, "[dbo].[contact_phone_insert]", contactPhoneRows, cancellationToken).ConfigureAwait(false);
+            await WriteContactTableAsync(connection, "[dbo].[contact_relationship_insert]", contactRelationshipRows, cancellationToken).ConfigureAwait(false);
+
+            studentRows.Clear();
+            groupRows.Clear();
+            contactRows.Clear();
+            contactAddressRows.Clear();
+            contactEmailRows.Clear();
+            contactPhoneRows.Clear();
+            contactRelationshipRows.Clear();
+        }
+
+        private static async Task WriteContactTableAsync(
+            SqlConnection connection,
+            string destinationTableName,
+            DataTable rows,
+            CancellationToken cancellationToken)
+        {
+            if (rows.Rows.Count == 0) return;
+            using var copy = new SqlBulkCopy(connection)
+            {
+                DestinationTableName = destinationTableName,
+                BatchSize = rows.Rows.Count,
+                BulkCopyTimeout = 600
+            };
+            AddColumnMappings(copy, rows);
+            await copy.WriteToServerAsync(rows, cancellationToken).ConfigureAwait(false);
         }
 
         private static async Task MergeStudentStagingAsync(SqlConnection connection, CancellationToken cancellationToken)
         {
             var script = await File.ReadAllTextAsync(Path.Combine(AppContext.BaseDirectory, "files", "StudentMerge.sql"), cancellationToken).ConfigureAwait(false);
+            await using var command = new SqlCommand(script, connection) { CommandTimeout = 600 };
+            await command.ExecuteNonQueryAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        private static async Task MergeContactStagingAsync(SqlConnection connection, CancellationToken cancellationToken)
+        {
+            var script = await File.ReadAllTextAsync(Path.Combine(AppContext.BaseDirectory, "files", "ContactMerge.sql"), cancellationToken).ConfigureAwait(false);
             await using var command = new SqlCommand(script, connection) { CommandTimeout = 600 };
             await command.ExecuteNonQueryAsync(cancellationToken).ConfigureAwait(false);
         }
@@ -721,6 +1005,8 @@ namespace WondeImportTool.Tools
                     await LogTextAsync("ERROR", $"Achievements import failed for school {schoolId}: {ex.Message}", cancellationToken).ConfigureAwait(false);
                     continue;
                 }
+                var sectionEndTime = DateTime.UtcNow;
+                await LogImportEventAsync(schoolId, requestId, "achievements", "section finish", null, sectionStartTime, sectionEndTime, 0, cancellationToken).ConfigureAwait(false);
             }
 
             var finalAchievementRows = achievementRows.Rows.Count;
@@ -732,9 +1018,6 @@ namespace WondeImportTool.Tools
                 await LogImportEventAsync("SYSTEM", requestId, "achievements", "insert batch complete", null, finalBatchStartTime, finalBatchEndTime, finalAchievementRows, cancellationToken).ConfigureAwait(false);
             }
             await MergeAchievementStagingAsync(connection, cancellationToken).ConfigureAwait(false);
-
-            var sectionEndTime = DateTime.UtcNow;
-            await LogImportEventAsync("SYSTEM", requestId, "achievements", "section finish", null, sectionStartTime, sectionEndTime, 0, cancellationToken).ConfigureAwait(false);
         }
 
         private static async Task AcquireAchievementImportLockAsync(SqlConnection connection, CancellationToken cancellationToken)
@@ -930,6 +1213,8 @@ namespace WondeImportTool.Tools
                     await LogTextAsync("ERROR", $"Behaviours import failed for school {schoolId}: {ex.Message}", cancellationToken).ConfigureAwait(false);
                     continue;
                 }
+                var sectionEndTime = DateTime.UtcNow;
+                await LogImportEventAsync(schoolId, requestId, "behaviours", "section finish", null, sectionStartTime, sectionEndTime, 0, cancellationToken).ConfigureAwait(false);
             }
 
             var finalBehaviourRows = behaviourRows.Rows.Count;
@@ -942,8 +1227,6 @@ namespace WondeImportTool.Tools
             }
             await MergeBehaviourStagingAsync(connection, cancellationToken).ConfigureAwait(false);
 
-            var sectionEndTime = DateTime.UtcNow;
-            await LogImportEventAsync("SYSTEM", requestId, "behaviours", "section finish", null, sectionStartTime, sectionEndTime, 0, cancellationToken).ConfigureAwait(false);
         }
 
         private static Uri BuildBehavioursUri(string schoolId, DateTime behaviourStartDate, int pageSize)
@@ -1237,6 +1520,9 @@ namespace WondeImportTool.Tools
                     await LogTextAsync("ERROR", $"Attendance import failed for school {schoolId}: {ex.Message}", cancellationToken).ConfigureAwait(false);
                     continue;
                 }
+
+                var sectionEndTime = DateTime.UtcNow;
+                await LogImportEventAsync(schoolId, requestId, "attendance_session", "section finish", null, sectionStartTime, sectionEndTime, 0, cancellationToken).ConfigureAwait(false);
             }
 
             var finalAttendanceRows = attendanceRows.Rows.Count;
@@ -1249,9 +1535,6 @@ namespace WondeImportTool.Tools
             }
 
             await MergeAttendanceStagingAsync(connection, cancellationToken).ConfigureAwait(false);
-
-            var sectionEndTime = DateTime.UtcNow;
-            await LogImportEventAsync("SYSTEM", requestId, "attendance_session", "section finish", null, sectionStartTime, sectionEndTime, 0, cancellationToken).ConfigureAwait(false);
         }
 
         private static Uri BuildAttendanceSessionsUri(string schoolId, DateTime attendanceStartDate, int pageSize)
@@ -1482,6 +1765,9 @@ namespace WondeImportTool.Tools
                     await LogTextAsync("ERROR", $"Exclusions import failed for school {schoolId}: {ex.Message}", cancellationToken).ConfigureAwait(false);
                     continue;
                 }
+
+                var sectionEndTime = DateTime.UtcNow;
+                await LogImportEventAsync(schoolId, requestId, "exclusion_table", "section finish", null, sectionStartTime, sectionEndTime, 0, cancellationToken).ConfigureAwait(false);
             }
 
             var finalExclusionRows = exclusionRows.Rows.Count;
@@ -1494,9 +1780,6 @@ namespace WondeImportTool.Tools
             }
 
             await MergeExclusionStagingAsync(connection, cancellationToken).ConfigureAwait(false);
-
-            var sectionEndTime = DateTime.UtcNow;
-            await LogImportEventAsync("SYSTEM", requestId, "exclusion_table", "section finish", null, sectionStartTime, sectionEndTime, 0, cancellationToken).ConfigureAwait(false);
         }
 
         private static Uri BuildExclusionsUri(string schoolId, DateTime exclusionStartDate, int pageSize)
@@ -1504,8 +1787,9 @@ namespace WondeImportTool.Tools
             var query = string.Join(
                 "&",
                 $"per_page={pageSize.ToString(CultureInfo.InvariantCulture)}",
-                "include=student,student-leaver",
-                $"updated_after={Uri.EscapeDataString(exclusionStartDate.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture))}");
+                "include=student,student-leaver"//,
+                //$"updated_after={Uri.EscapeDataString(exclusionStartDate.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture))}"
+                );
 
             return new Uri($"https://api.wonde.com/v1.0/schools/{Uri.EscapeDataString(schoolId)}/exclusions?{query}");
         }
@@ -1802,6 +2086,9 @@ namespace WondeImportTool.Tools
                     await LogTextAsync("ERROR", $"Groups import failed for school {schoolId}: {ex.Message}", cancellationToken).ConfigureAwait(false);
                     continue;
                 }
+
+                var sectionEndTime = DateTime.UtcNow;
+                await LogImportEventAsync(schoolId, requestId, "groups", "section finish", null, sectionStartTime, sectionEndTime, 0, cancellationToken).ConfigureAwait(false);
             }
 
             var finalGroupRows = groupRows.Rows.Count;
@@ -1814,9 +2101,6 @@ namespace WondeImportTool.Tools
             }
 
             await MergeGroupsStagingAsync(connection, cancellationToken).ConfigureAwait(false);
-
-            var sectionEndTime = DateTime.UtcNow;
-            await LogImportEventAsync("SYSTEM", requestId, "groups", "section finish", null, sectionStartTime, sectionEndTime, 0, cancellationToken).ConfigureAwait(false);
         }
 
         private static Uri BuildGroupsUri(string schoolId, DateTime groupsStartDate, int pageSize)
@@ -2016,6 +2300,347 @@ namespace WondeImportTool.Tools
             Console.WriteLine("Groups staging merge completed.");
         }
 
+        public async Task GetSubjectsAsync(
+            IReadOnlyCollection<string> schoolIds,
+            DateTime? universalUpdatedAfterDate,
+            DateTime fallbackStartDate,
+            int pageSize,
+            int batchSize,
+            string requestId,
+            CancellationToken cancellationToken = default)
+        {
+            ArgumentNullException.ThrowIfNull(schoolIds);
+            if (schoolIds.Count == 0) throw new ArgumentException("At least one school ID is required.", nameof(schoolIds));
+            if (pageSize <= 0) throw new ArgumentOutOfRangeException(nameof(pageSize));
+            if (batchSize <= 0) throw new ArgumentOutOfRangeException(nameof(batchSize));
+
+            var sectionStartTime = DateTime.UtcNow;
+            await LogImportEventAsync("SYSTEM", requestId, "subjects", "section start", null, sectionStartTime, sectionStartTime, 0, cancellationToken).ConfigureAwait(false);
+            using var client = new HttpClient();
+            await using var connection = new SqlConnection(_connectionString);
+            await connection.OpenAsync(cancellationToken).ConfigureAwait(false);
+            await AcquireSubjectsImportLockAsync(connection, cancellationToken).ConfigureAwait(false);
+            await TruncateSubjectsStagingAsync(connection, cancellationToken).ConfigureAwait(false);
+            var subjectRows = CreateSubjectsTable();
+
+            foreach (var schoolId in schoolIds)
+            {
+                if (string.IsNullOrWhiteSpace(schoolId)) throw new ArgumentException("School IDs cannot be empty.", nameof(schoolIds));
+                try
+                {
+                    var updatedAfterDate = await ResolveUpdatedAfterDateAsync(connection, schoolId, "subjects", universalUpdatedAfterDate, fallbackStartDate, cancellationToken).ConfigureAwait(false);
+                    var pageUri = BuildSubjectsUri(schoolId, updatedAfterDate, pageSize);
+                    while (pageUri is not null)
+                    {
+                        cancellationToken.ThrowIfCancellationRequested();
+                        using var request = new HttpRequestMessage(HttpMethod.Get, pageUri);
+                        request.Headers.Add("Authorization", _apiKey);
+                        var requestStartTime = DateTime.UtcNow;
+                        await LogImportEventAsync(schoolId, requestId, "subjects", "request", pageUri.ToString(), requestStartTime, requestStartTime, 0, cancellationToken).ConfigureAwait(false);
+                        using var response = await client.SendAsync(request, cancellationToken).ConfigureAwait(false);
+                        var responseEndTime = DateTime.UtcNow;
+                        await LogImportEventAsync(schoolId, requestId, "subjects", "response", pageUri.ToString(), requestStartTime, responseEndTime, 0, cancellationToken).ConfigureAwait(false);
+                        if (!response.IsSuccessStatusCode)
+                        {
+                            await LogTextAsync("ERROR", $"Subjects API call failed for school {schoolId}: {(int)response.StatusCode} {response.ReasonPhrase}. URL: {pageUri}", cancellationToken).ConfigureAwait(false);
+                            break;
+                        }
+
+                        var json = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        var page = WondeModels.WondeSubject.FromJson(json) ?? throw new InvalidOperationException($"Wonde returned an empty subjects response for school {schoolId}.");
+                        AddSubjectRows(schoolId, page.data, subjectRows);
+                        if (subjectRows.Rows.Count >= batchSize)
+                        {
+                            var rowsProcessed = subjectRows.Rows.Count;
+                            await WriteSubjectsBatchAsync(connection, subjectRows, cancellationToken).ConfigureAwait(false);
+                            await LogImportEventAsync(schoolId, requestId, "subjects", "insert batch complete", pageUri.ToString(), requestStartTime, DateTime.UtcNow, rowsProcessed, cancellationToken).ConfigureAwait(false);
+                        }
+                        if (page.meta?.pagination is null) throw new InvalidOperationException($"Wonde response for school {schoolId} did not include subjects pagination metadata.");
+                        pageUri = page.meta.pagination.more
+                            ? page.meta.pagination.next ?? throw new InvalidOperationException($"Wonde response for school {schoolId} indicated more subjects pages but did not provide a next URL.")
+                            : null;
+                    }
+                }
+                catch (Exception ex) when (ex is not OperationCanceledException)
+                {
+                    var errorTime = DateTime.UtcNow;
+                    await LogImportEventAsync(schoolId, requestId, "subjects", "error", null, errorTime, errorTime, 0, cancellationToken).ConfigureAwait(false);
+                    await LogTextAsync("ERROR", $"Subjects import failed for school {schoolId}: {ex.Message}", cancellationToken).ConfigureAwait(false);
+                }
+                await LogImportEventAsync(schoolId, requestId, "subjects", "section finish", null, sectionStartTime, DateTime.UtcNow, 0, cancellationToken).ConfigureAwait(false);
+            }
+
+            if (subjectRows.Rows.Count > 0) await WriteSubjectsBatchAsync(connection, subjectRows, cancellationToken).ConfigureAwait(false);
+            await MergeSubjectsStagingAsync(connection, cancellationToken).ConfigureAwait(false);
+        }
+
+        private static Uri BuildSubjectsUri(string schoolId, DateTime startDate, int pageSize)
+        {
+            var query = string.Join("&", $"per_page={pageSize.ToString(CultureInfo.InvariantCulture)}");
+            //var query = string.Join("&", $"per_page={pageSize.ToString(CultureInfo.InvariantCulture)}", $"updated_after={Uri.EscapeDataString(startDate.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture))}");
+            return new Uri($"https://api.wonde.com/v1.0/schools/{Uri.EscapeDataString(schoolId)}/subjects?{query}");
+        }
+
+        private static DataTable CreateSubjectsTable()
+        {
+            var table = new DataTable();
+            foreach (var column in new[] { "school_id", "id", "mis_id", "code", "name" }) table.Columns.Add(column, typeof(string));
+            table.Columns.Add("active", typeof(bool));
+            foreach (var column in new[] { "created_at", "updated_at", "imported_at" }) table.Columns.Add(column, typeof(DateTime));
+            return table;
+        }
+
+        private static void AddSubjectRows(string schoolId, IReadOnlyCollection<WondeModels.WondeSubject_Datum>? subjects, DataTable subjectRows)
+        {
+            if (subjects is null) return;
+            foreach (var subject in subjects)
+            {
+                var row = subjectRows.NewRow();
+                row["school_id"] = RequiredString(schoolId, "school ID", 50);
+                row["id"] = NullableString(subject.id, "subject id", 50);
+                row["mis_id"] = NullableString(subject.mis_id, "subject mis id", 50);
+                row["code"] = NullableString(subject.code, "subject code", 255);
+                row["name"] = NullableString(subject.name, "subject name", int.MaxValue);
+                row["active"] = ToDbValue(subject.active);
+                row["created_at"] = ToDbValue(ToSqlDateTime(subject.created_at));
+                row["updated_at"] = ToDbValue(ToSqlDateTime(subject.updated_at));
+                row["imported_at"] = DateTime.UtcNow;
+                subjectRows.Rows.Add(row);
+            }
+        }
+
+        private static async Task AcquireSubjectsImportLockAsync(SqlConnection connection, CancellationToken cancellationToken)
+        {
+            await using var command = new SqlCommand("DECLARE @result int; EXEC @result = sp_getapplock @Resource = N'WondeImportTool.SubjectsImport', @LockMode = N'Exclusive', @LockOwner = N'Session', @LockTimeout = 0; SELECT @result;", connection);
+            var result = Convert.ToInt32(await command.ExecuteScalarAsync(cancellationToken).ConfigureAwait(false), CultureInfo.InvariantCulture);
+            if (result < 0) throw new InvalidOperationException($"Another subjects import is already running (sp_getapplock returned {result}).");
+        }
+
+        private static async Task TruncateSubjectsStagingAsync(SqlConnection connection, CancellationToken cancellationToken)
+        {
+            await using var command = new SqlCommand("TRUNCATE TABLE [dbo].[subjects_insert];", connection) { CommandTimeout = 120 };
+            await command.ExecuteNonQueryAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        private static async Task WriteSubjectsBatchAsync(SqlConnection connection, DataTable subjectRows, CancellationToken cancellationToken)
+        {
+            if (subjectRows.Rows.Count == 0) return;
+            using var copy = new SqlBulkCopy(connection) { DestinationTableName = "[dbo].[subjects_insert]", BatchSize = subjectRows.Rows.Count, BulkCopyTimeout = 600 };
+            AddColumnMappings(copy, subjectRows);
+            await copy.WriteToServerAsync(subjectRows, cancellationToken).ConfigureAwait(false);
+            subjectRows.Clear();
+        }
+
+        private static async Task MergeSubjectsStagingAsync(SqlConnection connection, CancellationToken cancellationToken)
+        {
+            var script = await File.ReadAllTextAsync(Path.Combine(AppContext.BaseDirectory, "files", "SubjectsMerge.sql"), cancellationToken).ConfigureAwait(false);
+            await using var command = new SqlCommand(script, connection) { CommandTimeout = 600 };
+            await command.ExecuteNonQueryAsync(cancellationToken).ConfigureAwait(false);
+            Console.WriteLine("Subjects staging merge completed.");
+        }
+
+        public async Task GetClassesAsync(
+            IReadOnlyCollection<string> schoolIds,
+            DateTime? universalUpdatedAfterDate,
+            DateTime fallbackStartDate,
+            int pageSize,
+            int batchSize,
+            string requestId,
+            CancellationToken cancellationToken = default)
+        {
+            ArgumentNullException.ThrowIfNull(schoolIds);
+            if (schoolIds.Count == 0) throw new ArgumentException("At least one school ID is required.", nameof(schoolIds));
+            if (pageSize <= 0) throw new ArgumentOutOfRangeException(nameof(pageSize));
+            if (batchSize <= 0) throw new ArgumentOutOfRangeException(nameof(batchSize));
+
+            var sectionStartTime = DateTime.UtcNow;
+            await LogImportEventAsync("SYSTEM", requestId, "classes", "section start", null, sectionStartTime, sectionStartTime, 0, cancellationToken).ConfigureAwait(false);
+
+            using var client = new HttpClient();
+            await using var connection = new SqlConnection(_connectionString);
+            await connection.OpenAsync(cancellationToken).ConfigureAwait(false);
+            await AcquireClassesImportLockAsync(connection, cancellationToken).ConfigureAwait(false);
+            await TruncateClassesStagingAsync(connection, cancellationToken).ConfigureAwait(false);
+
+            var classRows = CreateClassesTable();
+            var studentRows = CreateClassesStudentsTable();
+            var employeeRows = CreateClassesEmployeesTable();
+
+            foreach (var schoolId in schoolIds)
+            {
+                if (string.IsNullOrWhiteSpace(schoolId)) throw new ArgumentException("School IDs cannot be empty.", nameof(schoolIds));
+                try
+                {
+                    var updatedAfterDate = await ResolveUpdatedAfterDateAsync(connection, schoolId, "classes", universalUpdatedAfterDate, fallbackStartDate, cancellationToken).ConfigureAwait(false);
+                    var pageUri = BuildClassesUri(schoolId, updatedAfterDate, pageSize);
+                    var pageNumber = 0;
+                    while (pageUri is not null)
+                    {
+                        cancellationToken.ThrowIfCancellationRequested();
+                        using var request = new HttpRequestMessage(HttpMethod.Get, pageUri);
+                        request.Headers.Add("Authorization", _apiKey);
+                        var requestStartTime = DateTime.UtcNow;
+                        await LogImportEventAsync(schoolId, requestId, "classes", "request", pageUri.ToString(), requestStartTime, requestStartTime, 0, cancellationToken).ConfigureAwait(false);
+                        using var response = await client.SendAsync(request, cancellationToken).ConfigureAwait(false);
+                        var responseEndTime = DateTime.UtcNow;
+                        await LogImportEventAsync(schoolId, requestId, "classes", "response", pageUri.ToString(), requestStartTime, responseEndTime, 0, cancellationToken).ConfigureAwait(false);
+                        if (!response.IsSuccessStatusCode)
+                        {
+                            await LogTextAsync("ERROR", $"Classes API call failed for school {schoolId}: {(int)response.StatusCode} {response.ReasonPhrase}. URL: {pageUri}", cancellationToken).ConfigureAwait(false);
+                            break;
+                        }
+
+                        var json = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        var page = WondeModels.WondeClasses.FromJson(json) ?? throw new InvalidOperationException($"Wonde returned an empty classes response for school {schoolId}.");
+                        pageNumber++;
+                        Console.WriteLine($"School {schoolId}: received classes page {pageNumber} containing {page.data?.Count ?? 0} records.");
+                        AddClassesRows(schoolId, page.data, classRows, studentRows, employeeRows);
+
+                        if (classRows.Rows.Count >= batchSize)
+                        {
+                            var rowsProcessed = classRows.Rows.Count;
+                            await WriteClassesBatchAsync(connection, classRows, studentRows, employeeRows, cancellationToken).ConfigureAwait(false);
+                            await LogImportEventAsync(schoolId, requestId, "classes", "insert batch complete", pageUri.ToString(), requestStartTime, DateTime.UtcNow, rowsProcessed, cancellationToken).ConfigureAwait(false);
+                        }
+
+                        if (page.meta?.pagination is null) throw new InvalidOperationException($"Wonde response for school {schoolId} did not include classes pagination metadata.");
+                        pageUri = page.meta.pagination.more
+                            ? page.meta.pagination.next ?? throw new InvalidOperationException($"Wonde response for school {schoolId} indicated more classes pages but did not provide a next URL.")
+                            : null;
+                    }
+                }
+                catch (Exception ex) when (ex is not OperationCanceledException)
+                {
+                    var errorTime = DateTime.UtcNow;
+                    await LogImportEventAsync(schoolId, requestId, "classes", "error", null, errorTime, errorTime, 0, cancellationToken).ConfigureAwait(false);
+                    await LogTextAsync("ERROR", $"Classes import failed for school {schoolId}: {ex.Message}", cancellationToken).ConfigureAwait(false);
+                }
+                await LogImportEventAsync(schoolId, requestId, "classes", "section finish", null, sectionStartTime, DateTime.UtcNow, 0, cancellationToken).ConfigureAwait(false);
+            }
+
+            if (classRows.Rows.Count > 0)
+                await WriteClassesBatchAsync(connection, classRows, studentRows, employeeRows, cancellationToken).ConfigureAwait(false);
+            await MergeClassesStagingAsync(connection, cancellationToken).ConfigureAwait(false);
+        }
+
+        private static Uri BuildClassesUri(string schoolId, DateTime startDate, int pageSize)
+        {
+            var query = string.Join("&", $"per_page={pageSize.ToString(CultureInfo.InvariantCulture)}", "include=students,employees");
+            //var query = string.Join("&", $"per_page={pageSize.ToString(CultureInfo.InvariantCulture)}", "include=students,employees", $"updated_after={Uri.EscapeDataString(startDate.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture))}");
+            return new Uri($"https://api.wonde.com/v1.0/schools/{Uri.EscapeDataString(schoolId)}/classes?{query}");
+        }
+
+        private static DataTable CreateClassesTable()
+        {
+            var table = new DataTable();
+            foreach (var column in new[] { "school_id", "id", "mis_id", "name", "code", "description", "subject", "alternative", "priority", "academic_year", "year_group" }) table.Columns.Add(column, typeof(string));
+            foreach (var column in new[] { "restored_at", "created_at", "updated_at", "imported_at" }) table.Columns.Add(column, typeof(DateTime));
+            return table;
+        }
+
+        private static DataTable CreateClassesStudentsTable()
+        {
+            var table = new DataTable();
+            foreach (var column in new[] { "school_id", "class_id", "student_id" }) table.Columns.Add(column, typeof(string));
+            return table;
+        }
+
+        private static DataTable CreateClassesEmployeesTable()
+        {
+            var table = new DataTable();
+            foreach (var column in new[] { "school_id", "class_id", "employee_id", "role" }) table.Columns.Add(column, typeof(string));
+            table.Columns.Add("is_main_teacher", typeof(bool));
+            table.Columns.Add("is_class_teacher", typeof(bool));
+            return table;
+        }
+
+        private static void AddClassesRows(string schoolId, IReadOnlyCollection<WondeModels.WondeClassesDatum>? classes, DataTable classRows, DataTable studentRows, DataTable employeeRows)
+        {
+            if (classes is null) return;
+            var studentKeys = new HashSet<string>(StringComparer.Ordinal);
+            var employeeKeys = new HashSet<string>(StringComparer.Ordinal);
+            foreach (var item in classes)
+            {
+                var classId = RequiredString(item.id, "class id", 50);
+                var row = classRows.NewRow();
+                row["school_id"] = RequiredString(schoolId, "school ID", 50);
+                row["id"] = classId;
+                row["mis_id"] = NullableString(item.mis_id, "class mis id", 50);
+                row["name"] = NullableString(item.name, "class name", 255);
+                row["code"] = NullableString(item.code?.ToString(), "class code", 255);
+                row["description"] = NullableString(item.description, "class description", 255);
+                row["subject"] = NullableString(item.subject, "class subject", 255);
+                row["alternative"] = NullableString(item.alternative?.ToString(), "class alternative", 50);
+                row["priority"] = NullableString(item.priority?.ToString(), "class priority", 50);
+                row["academic_year"] = NullableString(item.academic_year, "class academic year", 50);
+                row["year_group"] = NullableString(item.year_group, "class year group", 50);
+                row["restored_at"] = ToDbValue(ToSqlDateTime(item.restored_at));
+                row["created_at"] = ToDbValue(ToSqlDateTime(item.created_at));
+                row["updated_at"] = ToDbValue(ToSqlDateTime(item.updated_at));
+                row["imported_at"] = DateTime.UtcNow;
+                classRows.Rows.Add(row);
+
+                foreach (var student in item.students?.data ?? new List<WondeModels.WondeStudent_obj>())
+                {
+                    var studentId = NullableString(student.id, "class student ID", 50);
+                    if (studentId is null || !studentKeys.Add($"{classId}\u001f{studentId}")) continue;
+                    var studentRow = studentRows.NewRow();
+                    studentRow["school_id"] = RequiredString(schoolId, "school ID", 50);
+                    studentRow["class_id"] = classId;
+                    studentRow["student_id"] = studentId;
+                    studentRows.Rows.Add(studentRow);
+                }
+                foreach (var employee in item.employees?.data ?? new List<WondeModels.WondeClasses_EmployeesDatum>())
+                {
+                    var employeeId = NullableString(employee.id, "class employee ID", 50);
+                    if (employeeId is null || !employeeKeys.Add($"{classId}\u001f{employeeId}")) continue;
+                    var employeeRow = employeeRows.NewRow();
+                    employeeRow["school_id"] = RequiredString(schoolId, "school ID", 50);
+                    employeeRow["class_id"] = classId;
+                    employeeRow["employee_id"] = employeeId;
+                    employeeRow["role"] = NullableString(employee.meta?.role, "class employee role", 255);
+                    employeeRow["is_main_teacher"] = ToDbValue(employee.meta?.is_main_teacher);
+                    employeeRow["is_class_teacher"] = ToDbValue(employee.meta?.is_class_teacher);
+                    employeeRows.Rows.Add(employeeRow);
+                }
+            }
+        }
+
+        private static async Task AcquireClassesImportLockAsync(SqlConnection connection, CancellationToken cancellationToken)
+        {
+            await using var command = new SqlCommand("DECLARE @result int; EXEC @result = sp_getapplock @Resource = N'WondeImportTool.ClassesImport', @LockMode = N'Exclusive', @LockOwner = N'Session', @LockTimeout = 0; SELECT @result;", connection);
+            var result = Convert.ToInt32(await command.ExecuteScalarAsync(cancellationToken).ConfigureAwait(false), CultureInfo.InvariantCulture);
+            if (result < 0) throw new InvalidOperationException($"Another classes import is already running (sp_getapplock returned {result}).");
+        }
+
+        private static async Task TruncateClassesStagingAsync(SqlConnection connection, CancellationToken cancellationToken)
+        {
+            await using var command = new SqlCommand("TRUNCATE TABLE [dbo].[classes_employee_insert]; TRUNCATE TABLE [dbo].[classes_student_insert]; TRUNCATE TABLE [dbo].[classes_insert];", connection) { CommandTimeout = 120 };
+            await command.ExecuteNonQueryAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        private static async Task WriteClassesBatchAsync(SqlConnection connection, DataTable classRows, DataTable studentRows, DataTable employeeRows, CancellationToken cancellationToken)
+        {
+            if (classRows.Rows.Count == 0) return;
+            foreach (var pair in new[] { (classRows, "[dbo].[classes_insert]"), (studentRows, "[dbo].[classes_student_insert]"), (employeeRows, "[dbo].[classes_employee_insert]") })
+            {
+                if (pair.Item1.Rows.Count == 0) continue;
+                using var copy = new SqlBulkCopy(connection) { DestinationTableName = pair.Item2, BatchSize = pair.Item1.Rows.Count, BulkCopyTimeout = 600 };
+                AddColumnMappings(copy, pair.Item1);
+                await copy.WriteToServerAsync(pair.Item1, cancellationToken).ConfigureAwait(false);
+            }
+            var counts = $"Staged {classRows.Rows.Count} classes, {studentRows.Rows.Count} class-student rows and {employeeRows.Rows.Count} class-employee rows.";
+            classRows.Clear(); studentRows.Clear(); employeeRows.Clear(); Console.WriteLine(counts);
+        }
+
+        private static async Task MergeClassesStagingAsync(SqlConnection connection, CancellationToken cancellationToken)
+        {
+            var script = await File.ReadAllTextAsync(Path.Combine(AppContext.BaseDirectory, "files", "ClassesMerge.sql"), cancellationToken).ConfigureAwait(false);
+            await using var command = new SqlCommand(script, connection) { CommandTimeout = 600 };
+            await command.ExecuteNonQueryAsync(cancellationToken).ConfigureAwait(false);
+            Console.WriteLine("Classes staging merge completed.");
+        }
+
         public async Task GetEmployeesAsync(
             IReadOnlyCollection<string> schoolIds,
             DateTime? universalUpdatedAfterDate,
@@ -2137,6 +2762,9 @@ namespace WondeImportTool.Tools
                     await LogTextAsync("ERROR", $"Employees import failed for school {schoolId}: {ex.Message}", cancellationToken).ConfigureAwait(false);
                     continue;
                 }
+
+                var sectionEndTime = DateTime.UtcNow;
+                await LogImportEventAsync(schoolId, requestId, "employees", "section finish", null, sectionStartTime, sectionEndTime, 0, cancellationToken).ConfigureAwait(false);
             }
 
             var finalEmployeeRows = employeeRows.Rows.Count;
@@ -2149,9 +2777,6 @@ namespace WondeImportTool.Tools
             }
 
             await MergeEmployeeStagingAsync(connection, cancellationToken).ConfigureAwait(false);
-
-            var sectionEndTime = DateTime.UtcNow;
-            await LogImportEventAsync("SYSTEM", requestId, "employees", "section finish", null, sectionStartTime, sectionEndTime, 0, cancellationToken).ConfigureAwait(false);
         }
 
         private static Uri BuildEmployeesUri(string schoolId, DateTime updatedAfterDate, int pageSize)
@@ -2537,6 +3162,16 @@ namespace WondeImportTool.Tools
         }
 
         private static DateTime? ToSqlDateTime(WondeModels.WondeGroups_Date? value)
+        {
+            return value?.date.ToUniversalTime();
+        }
+
+        private static DateTime? ToSqlDateTime(WondeModels.WondeClasses_CreatedAt? value)
+        {
+            return value?.date.ToUniversalTime();
+        }
+
+        private static DateTime? ToSqlDateTime(WondeModels.WondeSubject_Date? value)
         {
             return value?.date.ToUniversalTime();
         }
